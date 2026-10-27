@@ -45,3 +45,19 @@ Target Audience
 - Heat map and traffic map for navigation
 
 #### Can
+
+## TODOs
+
+- access data and make it useful for us
+  - heatmap of hotspots in the city
+    - compare different areas depending on the heat
+  - bike data: where is it unsafe to drive
+  - (Air quality)
+  - How does the current data impact the decisions of what the city wants to change through its initiatives
+- see if the beehive data is useful?
+- is the birds data useful?
+- create a prototype of the actual project
+
+- backend: stores statically processed data to create visualisation of on a map (heatmap, ...)
+- frontend: website to interact with
+- the view which is relevant shows up when clicking on a specific point of interest
