@@ -22,3 +22,26 @@ Target Audience
 
 - citisens of Heilbronn who want to inform themselves
 - tourists who wants to sight see the european green city capital of 2027
+
+### Features
+
+#### Must
+
+- Map with points of interest
+  - Can click on them to get information about the initiatve
+  - Problems it solves
+  - Purpose
+  - Who does it help
+- sightseeing routes which connects certain points of interest
+  - pre created area based routes (to visit all points of interest in a certain area)
+  - pre created topic based routs (visit points of interest connected by a certain topic)
+  - route can then be exported to google maps for navigation
+- before after view
+  - before: graphical data showing the problem which the initiative tries to adress and solve
+  - after: if data available grphical view with the changes achieved by the initiative
+
+#### Should
+
+- Heat map and traffic map for navigation
+
+#### Can
