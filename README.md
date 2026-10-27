@@ -1,15 +1,29 @@
 # Tree-Mendous
-This Repository is for the implementation of a project idea for the Green City Hackathon in Heilbronn for the team Tree-Mendous
 
-what's happening
-HELOOOO
+Tree-Mendous is an interactive map prototype for exploring Heilbronn’s greener future: city projects, environmental context, and ways residents can participate.
 
-## Create Python Virtual Environment
+## Run locally
 
-1. Create a Python virtual environment in the current folder: 
-    - `python3 -m venv .tree-mendous`
-2. Activate Environment:
-    - Windows: `.tree-mendous\Scripts\activate`
-    - Mac/Unix: `source .wisis-llm-1/bin/activate`
-3. Install necessary Python Lybraries:
-    - `pip install -r requirements.txt`
+This is a static web app with no build step. From the repository root, start a local web server:
+
+```powershell
+python -m http.server 8000
+```
+
+Then open <http://localhost:8000>. Alternatively, use the Live Server extension in Visual Studio Code.
+
+The map uses Leaflet, OpenStreetMap tiles, and Google Fonts from their public CDNs, so an internet connection is needed to load the map and fonts.
+
+## Prototype data and limitations
+
+- The sample initiatives are based on the city’s `Steckbriefe_10-2026_EN.pdf` project fact sheets; project details are paraphrased.
+- Project pins and drawn routes are approximate placeholders, not official geocoded locations.
+- The heat and traffic/noise overlays are conceptual illustrations only. They are not measurements, forecasts, or official environmental datasets.
+- An “Add your idea” pin exists only in the current browser session. The prototype does not submit or store citizen contributions.
+- Participation options are summaries of the fact sheets; check official city channels for current details.
+
+The research notes in [Steckbriefe_Notes.md](./Steckbriefe_Notes.md) list data still needed for a production version, including verified coordinates, district boundaries, and measured heat/noise data.
+
+## Next steps for a production map
+
+Connect verified city datasets and project locations, identify licensing and update responsibilities, and add a real participation workflow before presenting the environmental layers or citizen ideas as authoritative.

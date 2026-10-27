@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f4ed">
+    <meta
+      name="description"
+      content="Explore greener places, climate projects and ways to get involved in Heilbronn."
+    >
+    <title>Tree-Mendous | A greener Heilbronn</title>
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://tile.openstreetmap.org">
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="sidebar" aria-label="Map controls and projects">
+        <header class="brand">
+          <a class="brand-mark" href="#" aria-label="Tree-Mendous home">
+            <span class="brand-icon" aria-hidden="true">✳</span>
+            <span>tree<span class="brand-light">-mendous</span></span>
+          </a>
+          <span class="edition">HEILBRONN · 2027</span>
+        </header>
+
+        <section class="intro">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> A city in the making</p>
+          <h1>A greener<br>Heilbronn, <em>together.</em></h1>
+          <p class="intro-copy">
+            Explore the places changing, the challenges we face, and how you can help.
+          </p>
+        </section>
+
+        <div class="search-wrap">
+          <label class="sr-only" for="project-search">Search projects and places</label>
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input id="project-search" type="search" placeholder="Search projects or places">
+          <kbd>Ctrl K</kbd>
+        </div>
+
+        <section class="layers-section" aria-labelledby="layers-heading">
+          <div class="section-heading">
+            <h2 id="layers-heading">Explore the city</h2>
+            <span class="live-label"><span></span> MAP LAYERS</span>
+          </div>
+          <div class="layer-list">
+            <label class="layer-row">
+              <span class="layer-symbol heat-symbol" aria-hidden="true">◉</span>
+              <span class="layer-copy"><strong>Urban heat</strong><small>Illustrative, not measured</small></span>
+              <input type="checkbox" data-layer="heat" checked>
+              <span class="toggle" aria-hidden="true"></span>
+            </label>
+            <label class="layer-row">
+              <span class="layer-symbol noise-symbol" aria-hidden="true">〰</span>
+              <span class="layer-copy"><strong>Traffic & noise</strong><small>Illustrative, not measured</small></span>
+              <input type="checkbox" data-layer="noise">
+              <span class="toggle" aria-hidden="true"></span>
+            </label>
+            <label class="layer-row">
+              <span class="layer-symbol green-symbol" aria-hidden="true">✳</span>
+              <span class="layer-copy"><strong>Green projects</strong><small>Planned and in progress</small></span>
+              <input type="checkbox" data-layer="projects" checked>
+              <span class="toggle" aria-hidden="true"></span>
+            </label>
+            <label class="layer-row">
+              <span class="layer-symbol route-symbol" aria-hidden="true">↗</span>
+              <span class="layer-copy"><strong>Routes & connections</strong><small>Cycle ring and green links</small></span>
+              <input type="checkbox" data-layer="routes" checked>
+              <span class="toggle" aria-hidden="true"></span>
+            </label>
+          </div>
+          <p class="data-note">
+            <span aria-hidden="true">ⓘ</span>
+            Heat and noise layers are visual concepts only. Official datasets are not yet connected.
+          </p>
+        </section>
+
+        <section class="projects-section" aria-labelledby="projects-heading">
+          <div class="section-heading project-heading">
+            <h2 id="projects-heading">On the map</h2>
+            <span class="project-count" id="project-count">06 PROJECTS</span>
+          </div>
+          <div class="category-filters" role="group" aria-label="Filter projects by theme">
+            <button class="filter-chip is-selected" data-category="all" type="button">All</button>
+            <button class="filter-chip" data-category="greening" type="button">Greening</button>
+            <button class="filter-chip" data-category="mobility" type="button">Mobility</button>
+            <button class="filter-chip" data-category="nature" type="button">Nature</button>
+          </div>
+          <div class="project-list" id="project-list" aria-live="polite"></div>
+          <p class="empty-state" id="empty-state" hidden>No projects match your search.</p>
+        </section>
+
+        <footer class="sidebar-footer">
+          <div class="footer-copy">
+            <span class="footer-spark" aria-hidden="true">✳</span>
+            <span><strong>Small changes. Shared future.</strong><small>Make room for nature in Heilbronn.</small></span>
+          </div>
+          <button class="participate-button" id="participate-button" type="button">
+            <span aria-hidden="true">↗</span> Find ways to take part
+          </button>
+        </footer>
+      </aside>
+
+      <section class="map-stage" aria-label="Interactive map of Heilbronn">
+        <div id="map" role="application" aria-label="Map of Heilbronn with project and environment layers"></div>
+        <div class="map-topbar">
+          <div class="map-location"><span aria-hidden="true">⌖</span> Heilbronn, Germany</div>
+          <div class="map-actions">
+            <span class="map-status"><span></span> PROJECTS FOR 2027</span>
+            <button class="idea-button" id="idea-button" type="button" aria-pressed="false">
+              <span aria-hidden="true">＋</span> Add your idea
+            </button>
+          </div>
+        </div>
+        <div class="map-disclaimer">
+          <span aria-hidden="true">ⓘ</span>
+          Prototype map · overlays and project pins are approximate, not official data
+        </div>
+        <div class="map-legend" aria-label="Map legend">
+          <span class="legend-heading">MAP KEY</span>
+          <span><i class="legend-dot green-dot"></i> Green project</span>
+          <span><i class="legend-dot heat-dot"></i> Heat concept</span>
+          <span><i class="legend-dot noise-dot"></i> Noise concept</span>
+        </div>
+        <div class="map-attribution"><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">© OpenStreetMap contributors</a></div>
+      </section>
+    </main>
+
+    <dialog class="modal" id="participation-dialog" aria-labelledby="participation-title">
+      <form method="dialog" class="modal-close-form">
+        <button class="modal-close" aria-label="Close dialog">×</button>
+      </form>
+      <p class="eyebrow"><span class="eyebrow-dot"></span> Your city, your say</p>
+      <h2 id="participation-title">There’s a place for you in this.</h2>
+      <p class="modal-intro">A few ways to help Heilbronn grow greener, based on the city’s 2027 programme.</p>
+      <div class="opportunity-list">
+        <article class="opportunity-card">
+          <span class="opportunity-icon">🌱</span>
+          <div><h3>Give a tree a home</h3><p>Ask the city about becoming a tree sponsor or joining local planting days.</p></div>
+        </article>
+        <article class="opportunity-card">
+          <span class="opportunity-icon">💡</span>
+          <div><h3>Put an idea in motion</h3><p>The Citizens’ Budget supports small community projects, with funding rounds planned for 2027.</p></div>
+        </article>
+        <article class="opportunity-card">
+          <span class="opportunity-icon">🤝</span>
+          <div><h3>Show up together</h3><p>Find volunteering and neighbourhood activities through “Du machst Heilbronn.”</p></div>
+        </article>
+      </div>
+      <p class="modal-footnote">These opportunities are summarised from the city’s European Green Capital 2027 project fact sheets. Check official city channels for current details.</p>
+    </dialog>
+
+    <dialog class="modal idea-modal" id="idea-dialog" aria-labelledby="idea-title">
+      <form method="dialog" class="modal-close-form">
+        <button class="modal-close" aria-label="Close dialog">×</button>
+      </form>
+      <p class="eyebrow"><span class="eyebrow-dot"></span> A little more green</p>
+      <h2 id="idea-title">What would you change here?</h2>
+      <p class="modal-intro">Your pin will appear on this map for this session only. It won’t be sent or saved.</p>
+      <form id="idea-form">
+        <label class="form-label" for="idea-category">Your idea is about</label>
+        <select id="idea-category" required>
+          <option value="Shade and trees">Shade and trees</option>
+          <option value="A rain garden">A rain garden</option>
+          <option value="A greener route">A greener route</option>
+          <option value="Something else">Something else</option>
+        </select>
+        <label class="form-label" for="idea-description">Describe it in a few words</label>
+        <input id="idea-description" type="text" maxlength="90" placeholder="e.g. More shade by the bus stop" required>
+        <button class="submit-button" type="submit">Add idea to map <span aria-hidden="true">↗</span></button>
+      </form>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>
