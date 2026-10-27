@@ -322,6 +322,7 @@ h1, h2, h3, p { margin-top: 0; }
 .map-stage { position: relative; min-height: 0; overflow: hidden; background: #dfe7df; }
 #map { position: absolute; inset: 0; background: #dfe7df; }
 .leaflet-container { font-family: "DM Sans", sans-serif; }
+.leaflet-tile-pane img { filter: grayscale(1); }
 .leaflet-control-attribution { display: none; }
 .leaflet-control-zoom {
   overflow: hidden;
@@ -417,7 +418,7 @@ h1, h2, h3, p { margin-top: 0; }
 .map-legend > span:not(.legend-heading) { display: flex; align-items: center; gap: 7px; }
 .legend-dot { width: 8px; height: 8px; border-radius: 50%; }
 .green-dot { background: #4f8257; }
-.heat-dot { background: #e88750; }
+.heat-scale { width: 36px; height: 8px; border-radius: 5px; background: linear-gradient(90deg, #377eb8, #65b5c5, #f2df65, #f28e45, #d73027); }
 .noise-dot { background: #718ba2; }
 .map-attribution { position: absolute; z-index: 400; right: 0; bottom: 0; padding: 5px 8px; background: rgb(255 255 255 / 80%); color: #50635a; font-size: 8px; }
 .map-attribution a { color: inherit; text-decoration: none; }

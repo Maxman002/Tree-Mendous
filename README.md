@@ -18,7 +18,7 @@ The map uses Leaflet, OpenStreetMap tiles, and Google Fonts from their public CD
 
 - The sample initiatives are based on the city’s `Steckbriefe_10-2026_EN.pdf` project fact sheets; project details are paraphrased.
 - Project pins and drawn routes are approximate placeholders, not official geocoded locations.
-- The heat and traffic/noise overlays are conceptual illustrations only. They are not measurements, forecasts, or official environmental datasets.
+- The heat overlay is a blurred heatmap built from illustrative sample points; the traffic/noise overlay is also conceptual. Neither layer represents measurements, forecasts, or official environmental datasets.
 - An “Add your idea” pin exists only in the current browser session. The prototype does not submit or store citizen contributions.
 - Participation options are summaries of the fact sheets; check official city channels for current details.
 
