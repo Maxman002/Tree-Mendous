@@ -18,7 +18,8 @@ The map uses Leaflet, OpenStreetMap tiles, and Google Fonts from their public CD
 
 - The sample initiatives are based on the city’s `Steckbriefe_10-2026_EN.pdf` project fact sheets; project details are paraphrased.
 - Project pins and drawn routes are approximate placeholders, not official geocoded locations.
-- The heat overlay is a blurred heatmap built from illustrative sample points; the traffic/noise overlay is also conceptual. Neither layer represents measurements, forecasts, or official environmental datasets.
+- The temperature heatmap reads `data/alles.csv`: 61,546 mobile bike-sensor readings from 1–3 September 2026. It averages readings into roughly 25 m grid cells and interpolates between sampled routes. The blue-to-red scale is relative to the CSV’s measured temperature range; it does not represent citywide coverage or an official city dataset.
+- The traffic/noise overlay is a conceptual illustration, not measured data.
 - An “Add your idea” pin exists only in the current browser session. The prototype does not submit or store citizen contributions.
 - Participation options are summaries of the fact sheets; check official city channels for current details.
 

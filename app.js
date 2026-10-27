@@ -80,35 +80,9 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 }).addTo(map);
 L.control.zoom({ position: "bottomleft" }).addTo(map);
 
-const heatSamples = [
-  [49.1418, 9.2187, 0.85],
-  [49.1411, 9.2177, 0.62],
-  [49.1423, 9.2179, 0.67],
-  [49.1427, 9.2192, 0.55],
-  [49.1408, 9.2195, 0.48],
-  [49.1416, 9.2204, 0.51],
-  [49.1428, 9.2185, 0.58],
-  [49.1407, 9.2172, 0.38],
-  [49.1434, 9.2188, 0.43],
-  [49.1402, 9.2184, 0.36],
-  [49.1420, 9.2165, 0.41],
-  [49.1439, 9.2130, 0.78],
-  [49.1432, 9.2122, 0.57],
-  [49.1445, 9.2121, 0.65],
-  [49.1449, 9.2135, 0.62],
-  [49.1433, 9.2140, 0.53],
-  [49.1440, 9.2147, 0.47],
-  [49.1452, 9.2126, 0.49],
-  [49.1425, 9.2131, 0.40],
-  [49.1457, 9.2138, 0.34],
-  [49.1446, 9.2109, 0.39],
-  [49.1460, 9.2117, 0.31],
-  [49.1429, 9.2150, 0.34]
-];
-
-const heatLayer = L.heatLayer(heatSamples, {
-  radius: 46,
-  blur: 34,
+const heatLayer = L.heatLayer([], {
+  radius: 18,
+  blur: 22,
   maxZoom: 17,
   minOpacity: 0.3,
   gradient: {
@@ -119,6 +93,95 @@ const heatLayer = L.heatLayer(heatSamples, {
     1: "#d73027"
   }
 }).addTo(map);
+
+async function loadHeatMeasurements() {
+  const response = await fetch("data/alles.csv");
+  if (!response.ok) {
+    throw new Error(`Could not load data/alles.csv (${response.status} ${response.statusText}).`);
+  }
+
+  const lines = (await response.text()).split(/\r?\n/);
+  const header = lines.shift()?.split(",");
+  if (!header) {
+    throw new Error("The temperature CSV is empty.");
+  }
+
+  const latitudeColumn = header.indexOf("latitude");
+  const longitudeColumn = header.indexOf("longitude");
+  const temperatureColumn = header.indexOf("temperature");
+  if (latitudeColumn < 0 || longitudeColumn < 0 || temperatureColumn < 0) {
+    throw new Error("The temperature CSV must contain latitude, longitude, and temperature columns.");
+  }
+
+  const cellSizeMeters = 25;
+  const longitudeMetersPerDegree = 111_320 * Math.cos(heilbronn[0] * Math.PI / 180);
+  const cells = new Map();
+  const bounds = L.latLngBounds([]);
+  let validSamples = 0;
+  let minTemperature = Infinity;
+  let maxTemperature = -Infinity;
+
+  lines.forEach((line) => {
+    if (!line.trim()) return;
+    const columns = line.split(",");
+    if (
+      !columns[latitudeColumn]?.trim()
+      || !columns[longitudeColumn]?.trim()
+      || !columns[temperatureColumn]?.trim()
+    ) return;
+    const latitude = Number(columns[latitudeColumn]);
+    const longitude = Number(columns[longitudeColumn]);
+    const temperature = Number(columns[temperatureColumn]);
+    if (
+      !Number.isFinite(latitude) || latitude < -90 || latitude > 90
+      || !Number.isFinite(longitude) || longitude < -180 || longitude > 180
+      || !Number.isFinite(temperature)
+    ) return;
+
+    validSamples += 1;
+    minTemperature = Math.min(minTemperature, temperature);
+    maxTemperature = Math.max(maxTemperature, temperature);
+    bounds.extend([latitude, longitude]);
+
+    const latitudeCell = Math.floor(latitude * 111_320 / cellSizeMeters);
+    const longitudeCell = Math.floor(longitude * longitudeMetersPerDegree / cellSizeMeters);
+    const key = `${latitudeCell}:${longitudeCell}`;
+    const cell = cells.get(key) ?? { latitude: 0, longitude: 0, temperature: 0, count: 0 };
+    cell.latitude += latitude;
+    cell.longitude += longitude;
+    cell.temperature += temperature;
+    cell.count += 1;
+    cells.set(key, cell);
+  });
+
+  if (validSamples === 0) {
+    throw new Error("The temperature CSV contains no valid measurement rows.");
+  }
+
+  const temperatureRange = maxTemperature - minTemperature;
+  const heatPoints = Array.from(cells.values(), (cell) => {
+    const averageTemperature = cell.temperature / cell.count;
+    const intensity = temperatureRange === 0
+      ? 0.5
+      : (averageTemperature - minTemperature) / temperatureRange;
+    return [
+      cell.latitude / cell.count,
+      cell.longitude / cell.count,
+      intensity
+    ];
+  });
+
+  heatLayer.setLatLngs(heatPoints);
+  map.fitBounds(bounds, { padding: [30, 30], maxZoom: 14 });
+  document.getElementById("heat-min").textContent = `${minTemperature.toFixed(1)}°C`;
+  document.getElementById("heat-max").textContent = `${maxTemperature.toFixed(1)}°C`;
+}
+
+loadHeatMeasurements().catch((error) => {
+  console.error("Unable to load the bike temperature measurements.", error);
+  document.getElementById("heat-min").textContent = "Data";
+  document.getElementById("heat-max").textContent = "unavailable";
+});
 
 const noiseLayer = L.layerGroup([
   L.polyline([[49.1488, 9.2139], [49.1472, 9.2136], [49.1458, 9.2133]], {

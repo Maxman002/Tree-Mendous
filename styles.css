@@ -416,9 +416,10 @@ h1, h2, h3, p { margin-top: 0; }
 
 .legend-heading { margin-bottom: 1px; font-size: 8px; }
 .map-legend > span:not(.legend-heading) { display: flex; align-items: center; gap: 7px; }
+.map-legend > .heat-legend { gap: 5px; font-size: 8px; }
 .legend-dot { width: 8px; height: 8px; border-radius: 50%; }
 .green-dot { background: #4f8257; }
-.heat-scale { width: 36px; height: 8px; border-radius: 5px; background: linear-gradient(90deg, #377eb8, #65b5c5, #f2df65, #f28e45, #d73027); }
+.heat-scale { width: 74px; height: 8px; border-radius: 5px; background: linear-gradient(90deg, #377eb8, #65b5c5, #f2df65, #f28e45, #d73027); }
 .noise-dot { background: #718ba2; }
 .map-attribution { position: absolute; z-index: 400; right: 0; bottom: 0; padding: 5px 8px; background: rgb(255 255 255 / 80%); color: #50635a; font-size: 8px; }
 .map-attribution a { color: inherit; text-decoration: none; }

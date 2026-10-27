@@ -140,7 +140,7 @@ Rated by how well they fit a map: ★★★ = fixed physical place and directly 
 - **Timeline / "what's happening now" filter:** almost every project has a 2027 time window, from the Opening in January to the award ceremony in October.
 - **Routes:** Cycling Ring (04), Light Art Festival route (11), vineyard discovery trail (08), Neckar Nature Games stretch (13).
 - **Participation:** tree sponsorships, Citizens' Budget, volunteering and the Sustainability Pilots could be shown as "how can I help?" call-to-actions.
-- **Data we still need:** coordinates for every location, district boundaries, and actual heat and noise data (not part of this PDF).
+- **Data we still need:** verified coordinates for every project and district boundaries. The supplied `data/alles.csv` now provides bike-sensor temperature readings from 1–3 September 2026, but it covers sampled routes rather than the whole city; authoritative city-wide heat data and noise measurements are still missing.
 
 ---
 
