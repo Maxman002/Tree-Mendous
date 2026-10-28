@@ -1,0 +1,32 @@
+/* Routes slot: the stop picker in the tools card and the numbered stops on the map. */
+.route-picker { display: flex; gap: 6px; }
+.route-picker select {
+  min-width: 0;
+  flex: 1;
+  min-height: 30px;
+  padding: 0 8px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: white;
+  color: var(--ink);
+  font-size: 10px;
+}
+.route-stops { margin: 10px 0 0; padding-left: 18px; font-size: 10px; }
+.route-stops:empty { display: none; }
+.route-stops li { padding: 2px 0; }
+.route-stops li span { margin-right: 4px; }
+.route-stops button { border: 0; background: transparent; color: var(--muted); cursor: pointer; font-size: 13px; line-height: 1; }
+.route-hint { margin: 8px 0; color: var(--muted); font-size: 9px; }
+.route-actions { display: flex; gap: 6px; }
+.route-number {
+  display: grid;
+  width: 20px;
+  height: 20px;
+  place-items: center;
+  border: 2px solid white;
+  border-radius: 50%;
+  background: var(--ink);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+}

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f4ed">
+    <meta
+      name="description"
+      content="Explore environmental data and the Green Capital 2027 projects of Heilbronn on one map."
+    >
+    <title>Tree-Mendous | A greener Heilbronn</title>
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://tile.openstreetmap.org">
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    >
+    <link rel="stylesheet" href="css/base.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="sidebar" aria-label="Map controls">
+        <header class="brand">
+          <a class="brand-mark" href="#" aria-label="Tree-Mendous home">
+            <span class="brand-icon" aria-hidden="true">✳</span>
+            <span>tree<span class="brand-light">-mendous</span></span>
+          </a>
+          <div class="lang-switch" id="lang-switch" role="group" aria-label="Language">
+            <button type="button" data-lang="en">EN</button>
+            <button type="button" data-lang="de">DE</button>
+          </div>
+        </header>
+
+        <section class="intro">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> <span data-i18n="core.intro.eyebrow">A city in the making</span></p>
+          <h1><span data-i18n="core.intro.titleStart">A greener Heilbronn,</span> <em data-i18n="core.intro.titleEnd">together.</em></h1>
+          <p class="intro-copy" data-i18n="core.intro.copy">
+            See where the city is hot today and what Heilbronn is doing about it for the European Green Capital 2027.
+          </p>
+        </section>
+
+        <section class="layers-section" aria-labelledby="base-heading">
+          <div class="section-heading">
+            <h2 id="base-heading" data-i18n="core.layers.base">Data layers</h2>
+            <span class="live-label"><span></span> <span data-i18n="core.layers.baseHint">ONE AT A TIME</span></span>
+          </div>
+          <div class="layer-list" id="base-layers"></div>
+
+          <div class="section-heading overlay-heading">
+            <h2 id="overlay-heading" data-i18n="core.layers.overlays">On the map</h2>
+            <span class="live-label"><span></span> <span data-i18n="core.layers.overlaysHint">COMBINE FREELY</span></span>
+          </div>
+          <div class="layer-list" id="overlay-layers"></div>
+        </section>
+
+        <section class="tools-section" aria-labelledby="tools-heading">
+          <div class="section-heading">
+            <h2 id="tools-heading" data-i18n="core.tools.heading">Tools</h2>
+          </div>
+          <div id="tools"></div>
+        </section>
+
+        <footer class="sidebar-footer">
+          <div class="footer-copy">
+            <span class="footer-spark" aria-hidden="true">✳</span>
+            <span>
+              <strong data-i18n="core.footer.title">Small changes. Shared future.</strong>
+              <small data-i18n="core.footer.copy">Green City Hackathon Heilbronn 2026 prototype.</small>
+            </span>
+          </div>
+        </footer>
+      </aside>
+
+      <section class="map-stage" aria-label="Interactive map of Heilbronn">
+        <div id="map" role="application" aria-label="Map of Heilbronn"></div>
+        <div class="map-topbar">
+          <div class="map-location"><span aria-hidden="true">⌖</span> Heilbronn, Germany</div>
+          <span class="map-status"><span></span> <span data-i18n="core.map.status">EUROPEAN GREEN CAPITAL 2027</span></span>
+        </div>
+
+        <aside class="info-panel" id="info-panel" aria-live="polite" hidden>
+          <button class="info-close" type="button" data-i18n-label="core.panel.close" aria-label="Close">×</button>
+          <div class="info-kicker" data-role="kicker"></div>
+          <h3 class="info-title" data-role="title"></h3>
+          <div class="info-body" data-role="body"></div>
+          <p class="info-source" data-role="source"></p>
+        </aside>
+
+        <div class="map-legend" id="legend" aria-label="Map legend" hidden>
+          <span class="legend-heading" data-i18n="core.legend.heading">MAP KEY</span>
+          <div class="legend-groups" data-role="groups"></div>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
