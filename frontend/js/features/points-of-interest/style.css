@@ -1,0 +1,15 @@
+/* Points-of-interest slot: round markers, coloured by kind (marker style from the vibin-branch prototype). */
+.poi-marker {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border: 2px solid white;
+  border-radius: 50%;
+  box-shadow: 0 3px 10px rgb(30 55 38 / 30%);
+  color: white;
+  font-size: 13px;
+  transition: transform 150ms ease;
+}
+.poi-marker:hover { transform: scale(1.15); }
+.poi-action { width: 100%; margin-bottom: 8px; }

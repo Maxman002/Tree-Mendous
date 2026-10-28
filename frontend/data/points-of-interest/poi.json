@@ -1,0 +1,80 @@
+[
+  {
+    "id": "1",
+    "title": { "en": "Birdhouse", "de": "Vogelhaus" },
+    "description": {
+      "en": "Part of a smart bird houses network all over Heilbronn that log visits and conditions, giving a window into how urban wildlife responds to the changing climate.",
+      "de": "Teil eines Netzes smarter Vogelhäuser in ganz Heilbronn, die Besuche und Bedingungen aufzeichnen. Sie zeigen, wie die Tiere in der Stadt auf das sich ändernde Klima reagieren."
+    },
+    "kind": "smart-sensors",
+    "coordinates": [49.151995, 9.215480],
+    "link": "",
+    "birdhouse": "birdhouse-01"
+  },
+  {
+    "id": "2",
+    "title": { "en": "Beehive", "de": "Bienenstock" },
+    "description": {
+      "en": "Smart beehive: Sensor equipped beehive. Outside, 2026 swung from about −5 °C in winter to more than 30 °C in summer. Inside three hives on the 42 campus, the story is very different. In January and February the sensors read only 10–15 °C. The colony sits in a tight cluster and the rest of the hive is cold. Then, from about March, there's a shift. The bees start raising young, and the hive warms to around 35 °C, the temperature the brood needs. From spring through summer the hive temperature stays there, even on days when the outside air jumps by 20 degrees. The bees heat on cold days and cool on hot ones, with no electronics, only thousands of small bodies working together.",
+      "de": "Smarter Bienenstock: ein Bienenstock mit Sensoren. Draußen schwankte 2026 zwischen etwa −5 °C im Winter und mehr als 30 °C im Sommer. In drei Bienenstöcken auf dem 42-Campus sieht es ganz anders aus. Im Januar und Februar messen die Sensoren nur 10–15 °C. Das Volk sitzt dicht gedrängt in einer Traube, der Rest des Stocks bleibt kalt. Ab etwa März ändert sich das: Die Bienen ziehen Brut auf, und der Stock erwärmt sich auf rund 35 °C, die Temperatur, die die Brut braucht. Von Frühling bis Sommer bleibt es dabei, auch an Tagen, an denen die Außenluft um 20 Grad springt. Die Bienen heizen an kalten Tagen und kühlen an heißen, ohne Elektronik, nur durch Tausende kleiner Körper, die zusammenarbeiten."
+    },
+    "kind": "smart-sensors",
+    "coordinates": [49.151805, 9.215302],
+    "link": "https://beehive-grafana-production.up.railway.app/d/beehappy-monitor/beehappy-e28094-bienenstock-monitor?orgId=1&from=now-7d&to=now&timezone=browser&refresh=15m"
+  },
+  {
+    "id": "3",
+    "title": { "en": "BUGA spielplatz", "de": "BUGA-Spielplatz" },
+    "description": {
+      "en": "Large green area developed in the urban environment with playground and sports facilities. Great example of how a city can create green spaces for recreation.",
+      "de": "Große Grünfläche mitten in der Stadt mit Spielplatz und Sportanlagen. Ein gutes Beispiel dafür, wie eine Stadt Grünflächen zur Erholung schaffen kann."
+    },
+    "kind": "park",
+    "coordinates": [49.150353, 9.207446],
+    "link": ""
+  },
+  {
+    "id": "4",
+    "title": { "en": "Bleichinsel Bridge", "de": "Bleichinselbrücke" },
+    "description": {
+      "en": "As part of the European Green Capital 2027 initiative, Bleichinsel bridge is transforming into a central block of green. Green structures that promote biodiversity and improve the urban climate are placed. Cycle lanes on the bridge in both directions, connecting to the existing network.",
+      "de": "Im Rahmen der Grünen Hauptstadt Europas 2027 wird die Bleichinselbrücke zu einem zentralen grünen Baustein. Grünstrukturen fördern die Artenvielfalt und verbessern das Stadtklima. Radwege in beide Richtungen schließen an das bestehende Netz an."
+    },
+    "kind": "green-capital",
+    "coordinates": [49.147158, 9.211756],
+    "link": ""
+  },
+  {
+    "id": "5",
+    "title": { "en": "Friedrich-Ebert Bridge", "de": "Friedrich-Ebert-Brücke" },
+    "description": {
+      "en": "As part of the European Green Capital 2027 initiative, Friedrich-Ebert bridge is redesigned for a trial period of 3 months. The bridge will be closed for motor vehicles except for buses.",
+      "de": "Im Rahmen der Grünen Hauptstadt Europas 2027 wird die Friedrich-Ebert-Brücke für einen Versuchszeitraum von 3 Monaten umgestaltet. Die Brücke wird für Kraftfahrzeuge gesperrt, Busse dürfen weiter fahren."
+    },
+    "kind": "green-capital",
+    "coordinates": [49.142434, 9.215012],
+    "link": ""
+  },
+  {
+    "id": "6",
+    "title": { "en": "Robert Mayer Monument", "de": "Robert-Mayer-Denkmal" },
+    "description": {
+      "en": "As part of the European Green Capital 2027 initiative, the area around the Robert Mayer Monument is being upgraded, with new plantings of trees, shrubs and perennials to create two green zones that enhance the urban space, provide shade and improve the microclimate",
+      "de": "Im Rahmen der Grünen Hauptstadt Europas 2027 wird das Umfeld des Robert-Mayer-Denkmals aufgewertet: Neue Bäume, Sträucher und Stauden bilden zwei grüne Zonen, die den Stadtraum aufwerten, Schatten spenden und das Mikroklima verbessern."
+    },
+    "kind": "green-capital",
+    "coordinates": [49.142452, 9.218943],
+    "link": ""
+  },
+  {
+    "id": "7",
+    "title": { "en": "Wollhaus", "de": "Wollhaus" },
+    "description": {
+      "en": "As part of the European Green Capital 2027 initiative, Wollhaus's rooftop is transformed to WOW-haus, showcasing sustainable urban development. Topics like greening, water retention and energy generation are showcased. The exhibition 'Heilbronn- European Green Capital' will take place on the ground floor.",
+      "de": "Im Rahmen der Grünen Hauptstadt Europas 2027 wird das Dach des Wollhauses zum WOW-haus, das nachhaltige Stadtentwicklung zeigt: Begrünung, Wasserrückhalt und Energiegewinnung. Im Erdgeschoss findet die Ausstellung „Heilbronn – Grüne Hauptstadt Europas“ statt."
+    },
+    "kind": "green-capital",
+    "coordinates": [49.139597, 9.219810],
+    "link": ""
+  }
+]

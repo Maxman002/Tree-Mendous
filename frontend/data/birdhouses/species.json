@@ -1,0 +1,62 @@
+{
+  "Parus major": {
+    "en": "Great tit",
+    "de": "Kohlmeise",
+    "color": "#e3ad2b",
+    "typicalWeight": "16–21 g",
+    "fact": {
+      "en": "The largest tit in Europe and one of the most common garden birds. Look for the black stripe running down its yellow belly – males have a wider ‘tie’ than females.",
+      "de": "Die größte Meise Europas und einer der häufigsten Gartenvögel. Erkennbar am schwarzen Streifen über dem gelben Bauch – Männchen haben eine breitere „Krawatte“ als Weibchen."
+    }
+  },
+  "Cyanistes caeruleus": {
+    "en": "Blue tit",
+    "de": "Blaumeise",
+    "color": "#3a8cc1",
+    "typicalWeight": "9–12 g",
+    "fact": {
+      "en": "Small, acrobatic and bright blue on the head and wings. Blue tits can hang upside down from thin twigs to pick insects – and seeds from feeders.",
+      "de": "Klein, akrobatisch und leuchtend blau an Kopf und Flügeln. Blaumeisen hängen kopfüber an dünnen Zweigen, um Insekten zu picken – und Körner am Futterhaus."
+    }
+  },
+  "Passer domesticus": {
+    "en": "House sparrow",
+    "de": "Haussperling",
+    "color": "#c9773e",
+    "typicalWeight": "24–38 g",
+    "fact": {
+      "en": "A social bird that lives close to people and almost always arrives in groups. Its numbers have dropped in many European cities, so every visit counts.",
+      "de": "Ein geselliger Vogel, der nah beim Menschen lebt und fast immer in Gruppen kommt. In vielen europäischen Städten ist er seltener geworden – jeder Besuch zählt."
+    }
+  },
+  "Periparus ater": {
+    "en": "Coal tit",
+    "de": "Tannenmeise",
+    "color": "#2c6849",
+    "typicalWeight": "8–10 g",
+    "fact": {
+      "en": "Europe’s smallest tit. Unlike the great tit it has a white patch on the back of its head and no black stripe down the belly. It often hides seeds to eat later.",
+      "de": "Die kleinste Meise Europas. Anders als die Kohlmeise hat sie einen weißen Nackenfleck und keinen schwarzen Bauchstreifen. Sie versteckt oft Samen für später."
+    }
+  },
+  "Motacilla alba": {
+    "en": "White wagtail",
+    "de": "Bachstelze",
+    "color": "#5e6e7d",
+    "typicalWeight": "17–25 g",
+    "fact": {
+      "en": "Easy to recognise by its black-and-white plumage and the constantly bobbing tail. It usually hunts insects on the ground rather than eating seeds.",
+      "de": "Leicht zu erkennen am schwarz-weißen Gefieder und dem ständig wippenden Schwanz. Sie jagt meist Insekten am Boden, statt Körner zu fressen."
+    }
+  },
+  "Phoenicurus ochruros": {
+    "en": "Black redstart",
+    "de": "Hausrotschwanz",
+    "color": "#c24a3a",
+    "typicalWeight": "14–20 g",
+    "fact": {
+      "en": "Originally a mountain bird, it now loves buildings and rooftops. The rust-red tail quivers constantly while it perches.",
+      "de": "Ursprünglich ein Gebirgsvogel, heute ein Liebhaber von Gebäuden und Dächern. Der rostrote Schwanz zittert ständig, während er sitzt."
+    }
+  }
+}

@@ -1,56 +1,157 @@
 # Tree-Mendous
 
-Tree-Mendous is an interactive map prototype for exploring Heilbronn’s greener future: city projects, environmental context, and ways residents can participate.
+This repository holds the Tree-Mendous team's project for the Green City Hackathon Heilbronn
+("Data for the Heilbronn of Tomorrow", 27–29 October 2026).
+Hackathon website: https://hackathon.greencity.hn
 
-## Run locally
+**Tree-Mendous** is an interactive map of Heilbronn for residents and tourists. It shows environmental
+data (heat, air quality) as the *problem* and the city's European Green Capital 2027 projects as the
+*solution*, in the same place. The pitch story is "from hot spot to oasis": the measured heat on the
+Marktplatz next to the wellbeing oasis the city is planning there.
 
-This is a static web app with no build step. From the repository root, start a local web server:
+Working on a feature? Read [`AGENT.md`](AGENT.md) first: it explains how to fill a slot.
 
-```powershell
-python -m http.server 8000
+## Run the website locally
+
+No build step, no installation. You need Python 3 (only for its built-in web server) and a desktop
+browser.
+
+```sh
+cd frontend
+python3 -m http.server 8000
 ```
 
-Then open <http://localhost:8000>. Alternatively, use the Live Server extension in Visual Studio Code.
+Then open http://localhost:8000. Opening `index.html` directly from the file system does not work,
+because browsers block ES modules and `fetch()` on `file://` pages.
 
-The map uses Leaflet, OpenStreetMap tiles, and Google Fonts from their public CDNs, so an internet connection is needed to load the map and fonts.
+Leaflet 1.9.4, Leaflet.heat, OpenStreetMap tiles and Google Fonts come from public CDNs, so the page
+needs internet access.
 
-## Datasets ambientales y cuadernos Jupyter
+## Slots
 
-Las páginas de [recursos](https://hackathon.greencity.hn/resources) y [datos senseBox:bike](https://hackathon.greencity.hn/resources/bike-data) distinguen tres fuentes. No deben combinarse solo porque los nombres de algunos archivos se parezcan:
+The website is a **foundation with one slot per feature**. Each slot is a folder in
+`frontend/js/features/<slot>/` with an `index.js` and a `README.md`. The core adds each slot's layer,
+legend and texts automatically.
 
-| Fuente | Origen que identifica la documentación | Uso y límites |
-| --- | --- | --- |
-| **Mobile Datalogger** | El enlace de descarga de la tarjeta Mobile Datalogger lleva a la carpeta Nextcloud `Heat-Island-Summerschool 2026`; el archivo local analizado es [`data/alles.csv`](./data/alles.csv). | Recorridos móviles y análisis por fecha/hora local. En `recording` aparecen nombres `senseBox_bike`, además de campos GPS y velocidad: esto contradice la descripción del logger a pie y deja pendiente confirmar la procedencia con quien publicó los datos. No se debe declarar que es la colección bike de ATRAI sin esa confirmación. |
-| **senseBox:bike** | Colección cruda `osem_bike_data` en la [API ATRAI](https://api.atrai.bike/collections), descrita en la [guía de bike-data](https://hackathon.greencity.hn/resources/bike-data). Incluye varias campañas/ciudades; `groupTags` identifica la campaña. | Datos móviles por punto, con temperatura, humedad, PM, velocidad y otros campos. El notebook filtra la etiqueta exacta `heilbronn`, pagina la API y cachea las lecturas de un día. |
-| **senseBox:home** | La tarjeta senseBox:home enlaza a `osem_home_data_heilbronn` en la [API ATRAI](https://api.atrai.bike/collections/osem_home_data_heilbronn/items?f=json&limit=1000000). | Estaciones fijas con series por `boxName`. La API contiene más de dos millones de registros y la fecha se filtra localmente tras paginar; inspecciona el nombre y las coordenadas de cada estación. |
+| Slot | Kind | Status | What it does now |
+|---|---|---|---|
+| [`heatmap`](frontend/js/features/heatmap/README.md) | base layer | ready | Bike-sensor temperatures (1–3 Sep 2026, 61,546 readings), averaged into 25 m cells; click for the cell's temperature |
+| [`air-quality`](frontend/js/features/air-quality/README.md) | base layer | ready | PM2.5 on 2 Sep 2026: 6,175 senseBox:bike readings in 50 m cells plus four senseBox:home sensors, WHO-based colours |
+| [`points-of-interest`](frontend/js/features/points-of-interest/README.md) | overlay | ready | Eirini's seven points (smart sensors, a park, Green Capital 2027 projects) with a detail card; the birdhouse opens the bird dashboard |
+| [`weather-stations`](frontend/js/features/weather-stations/README.md) | overlay | ready | The five senseBox:home stations with their mean temperature on 2 Sep 2026; card with min/max, humidity, PM2.5 and an hourly chart |
+| [`birdhouses`](frontend/js/features/birdhouses/README.md) | overlay | ready | The bird feeder at the 42 campus (Birdiary); card with its top birds and a full-screen bird dashboard (ring chart, photos, 30 days / since April) |
+| [`tour`](frontend/js/features/tour/README.md) | tool | ready | A fixed walking tour from the Wollhaus past every point and back, with a "Start the tour on Google Maps" button |
+Base layers are shown one at a time (radio buttons); overlays can be combined (checkboxes); tools get
+a card in the sidebar. The language switch (EN/DE) changes every text; German falls back to English
+where a text is missing.
 
-Hay un cuaderno independiente para cada fuente:
+## Data
 
-- [Mobile Datalogger / `alles.csv`](./notebooks/mobile_datalogger_temperature.ipynb): calidad, cobertura, horarios y tabla del 2 de septiembre.
-- [senseBox:bike / `osem_bike_data`](./notebooks/sensebox_bike_temperature.ipynb): campaña Heilbronn y resúmenes por hora/sensor para una fecha.
-- [senseBox:home / `osem_home_data_heilbronn`](./notebooks/sensebox_home_temperature.ipynb): estaciones fijas y resúmenes por hora/estación para una fecha.
+Data is prepared **offline** by Python scripts in `backend/scripts/<slot>/`, which write small static
+files (aim for under 1 MB per layer) into `frontend/data/<slot>/`. The browser never loads raw sensor
+data.
 
-Los tres cuadernos usan inicialmente el 2 de septiembre de 2026 y la franja 10:00–14:00 (fin exclusivo) para facilitar la exploración. El CSV convierte explícitamente UTC a `Europe/Berlin`; las muestras API no incluyen zona horaria en `createdAt`. Por tanto, sus horas todavía no se pueden afirmar como la misma franja CEST: confirma la zona horaria, la identidad del sensor, la ubicación y la calibración antes de comparar temperaturas.
+### Regenerate the data
 
-Para ejecutarlos en Windows con Visual Studio Code, selecciona el kernel del entorno local `.venv`. Si faltan dependencias, instálalas en ese entorno existente:
+```sh
+python3 -m venv .tree-mendous
+source .tree-mendous/bin/activate      # Windows: .tree-mendous\Scripts\activate
+pip install -r backend/requirements.txt
 
-```powershell
-.\.venv\Scripts\python -m pip install -r requirements-notebook.txt
+python3 backend/scripts/heatmap/prepare_heatmap.py
+python3 backend/scripts/air-quality/prepare_air_quality.py
+python3 backend/scripts/weather-stations/prepare_weather_stations.py
+python3 backend/scripts/birdhouses/prepare_birdhouses.py   # needs internet
 ```
 
-Abre el cuaderno y ejecuta todas las celdas. Las dependencias y las consultas de API requieren conexión a internet. Los cuadernos API recorren la colección completa la primera vez y guardan el resultado del día elegido en `data/processed/`; las siguientes ejecuciones usan la caché. Los dos CSV fechados actualmente incluidos son snapshots intencionales; otras cachés generadas permanecen ignoradas. Consulta [DATASETS.md](./DATASETS.md) para procedencia, campos y límites de interpretación.
+| Script | Input | Output |
+|---|---|---|
+| `backend/scripts/heatmap/prepare_heatmap.py` | `backend/data/heatmap/alles.csv` (raw bike readings) | `frontend/data/heatmap/temperature-cells.json` (about 20 KB) |
+| `backend/scripts/air-quality/prepare_air_quality.py` | `backend/data/air-quality/osem_bike_data_heilbronn_2026-09-02.csv` and the senseBox:home snapshot below | `frontend/data/air-quality/pm.json` (about 30 KB) |
+| `backend/scripts/weather-stations/prepare_weather_stations.py` | `backend/data/weather-stations/osem_home_data_heilbronn_2026-09-02.csv` | `frontend/data/weather-stations/stations.json` (about 4 KB) |
+| `backend/scripts/birdhouses/prepare_birdhouses.py` | Birdiary API + `backend/data/birdhouses/species.json` (stations, species whitelist, AI fixes) | `frontend/data/birdhouses/birdhouses.json`, `species.json` (a few KB) |
 
-## Prototype data and limitations
+`points-of-interest` and `tour` read the hand-written `frontend/data/points-of-interest/poi.json`.
 
-- The sample initiatives are based on the city’s `Steckbriefe_10-2026_EN.pdf` project fact sheets; project details are paraphrased.
-- Project pins and drawn routes are approximate placeholders, not official geocoded locations.
-- The temperature heatmap reads `data/alles.csv`: 61,546 mobile readings from 1–3 September 2026. The CSV's device provenance is not yet resolved because its `recording` filenames say `senseBox_bike`, while the linked resource identifies the download as Mobile Datalogger data. The map averages readings into roughly 25 m grid cells and interpolates between sampled routes. The blue-to-red scale is relative to the CSV’s measured temperature range; it does not represent citywide coverage or an official city dataset.
-- The traffic/noise overlay is a conceptual illustration, not measured data.
-- An “Add your idea” pin exists only in the current browser session. The prototype does not submit or store citizen contributions.
-- Participation options are summaries of the fact sheets; check official city channels for current details.
+### Datasets
 
-The research notes in [Steckbriefe_Notes.md](./Steckbriefe_Notes.md) list data still needed for a production version, including verified coordinates, district boundaries, and measured heat/noise data.
+The two ATRAI snapshots of 2 Sep 2026 come from `vibin-branch` (`data/processed/`); its `DATASETS.md`
+explains them in detail, with notebooks. In short:
 
-## Next steps for a production map
+- **senseBox:bike** (`osem_bike_data`, tag `heilbronn`): 13,275 mobile readings from six bikes;
+  PM2.5/PM10 on 6,175 of them. → `air-quality`
+- **senseBox:home** (`osem_home_data_heilbronn`): 8,781 readings from five stationary sensors
+  (temperature, humidity, PM). Two of them are outside Heilbronn (Beilstein, about 13 km;
+  Wolf-von-Gemmingen-Schule, about 17 km), and three only recorded part of the day.
+  → `weather-stations`, `air-quality`
+- The `createdAt` times of both have no time zone; they are shown as recorded.
+- **Mobile Datalogger** (`alles.csv`, 1–3 Sep 2026): its provenance (walking logger or bike) is
+  still open, see `DATASETS.md`. → `heatmap`
+- **Smart birdhouses** (Birdiary) and the **beehive** (Grafana link in the points of interest).
+  → `birdhouses`, `points-of-interest`
+- **Green Capital 2027 projects**: the city's fact sheets `Steckbriefe_10-2026.pdf` (German) and
+  `Steckbriefe_10-2026_EN.pdf`, with our notes in `Steckbriefe_Notes.md`. → `points-of-interest`
+- Not used yet: senseBox:bike particulate-matter danger zones,
+  `https://api.atrai.bike/collections/danger_zones_PM_heilbronn/items?f=json&limit=0`.
 
-Connect verified city datasets and project locations, identify licensing and update responsibilities, and add a real participation workflow before presenting the environmental layers or citizen ideas as authoritative.
+## Project structure
+
+```
+backend/      Python data preparation (scripts and raw data), no server
+frontend/     the static website (index.html, css/, js/core/, js/features/, data/, i18n/)
+AGENT.md      how to add a feature (for team members and their coding agents)
+```
+
+The full file tree is in [`AGENT.md`](AGENT.md#how-it-is-built).
+
+## General project idea
+
+Create a website / application that guides users through the city of Heilbronn. The focus is on
+spots where the city has carried out projects or initiatives in the past or plans to do so, to make
+Heilbronn greener and more nature friendly as the European Green Capital 2027. The purpose is to
+educate users on these initiatives: what their purpose is, what problem they solve and what they
+improve. To show what each initiative improves, data can show what was or is problematic before
+(like the heat map or the streets where biking is unsafe).
+
+Target audience:
+
+- citizens of Heilbronn who want to inform themselves
+- tourists who want to see the European Green Capital of 2027
+
+### Features
+
+#### Must
+
+- Map with points of interest
+  - Can click on them to get information about the initiative
+  - Problems it solves
+  - Purpose
+  - Who does it help
+- Sightseeing routes which connect certain points of interest
+  - pre-created area-based routes (to visit all points of interest in a certain area)
+  - pre-created topic-based routes (visit points of interest connected by a certain topic)
+  - route can then be exported to Google Maps for navigation
+- Before/after view
+  - before: graphical data showing the problem which the initiative tries to address and solve
+  - after: if data is available, a graphical view with the changes achieved by the initiative
+
+#### Should
+
+- Heat map and traffic map for navigation
+
+#### Can
+
+## TODOs
+
+- access data and make it useful for us
+  - heatmap of hotspots in the city
+    - compare different areas depending on the heat
+  - bike data: where is it unsafe to drive
+  - (Air quality)
+  - How does the current data impact the decisions of what the city wants to change through its initiatives
+- see if the beehive data is useful?
+- is the birds data useful?
+- ~~create a prototype of the actual project~~ (foundation with slots is in place)
+- backend: stores statically processed data to create visualisations on a map (heatmap, ...)
+- frontend: website to interact with
+- the view which is relevant shows up when clicking on a specific point of interest

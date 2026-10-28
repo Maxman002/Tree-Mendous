@@ -1,0 +1,18 @@
+/* Heat-map slot: grey tiles and a fade while the heat map is on (from the vibin-branch prototype). */
+#map .leaflet-tile-pane img {
+  filter: grayscale(0);
+  transition: filter 600ms ease;
+}
+#map.heatmap-active .leaflet-tile-pane img { filter: grayscale(1); }
+
+#map .leaflet-heatmap-layer {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 600ms ease;
+}
+#map.heatmap-active .leaflet-heatmap-layer { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  #map .leaflet-tile-pane img,
+  #map .leaflet-heatmap-layer { transition: none; }
+}
