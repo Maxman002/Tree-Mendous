@@ -1,0 +1,3 @@
+- This branch contains the `points_of_interest.json` file for the points-of-interest slot. Use the exact information in this json file to fill in the slot. 
+- For the link field in `"id": 1, "name": "Birdhouse"` field, use the branch "nora" and link what she designed there.
+- Scrap the `routes` slot and instead create a button "Start the tour on Google Maps" that takes the user to google maps through this link: https://www.google.com/maps/dir/?api=1&origin=49.139597,9.21981&destination=49.139597,9.21981&waypoints=49.142452,9.218943%7C49.142434,9.215012%7C49.147158,9.211756%7C49.150353,9.207446%7C49.151805,9.215302%7C49.151995,9.21548&travelmode=walking
