@@ -80,6 +80,49 @@
           <span class="map-status"><span></span> <span data-i18n="core.map.status">EUROPEAN GREEN CAPITAL 2027</span></span>
         </div>
 
+        <div class="map-source-control" id="temperature-source-control" hidden>
+          <div class="map-source-heading" data-i18n="heatmap.selectorLabel">Temperature data</div>
+          <fieldset class="map-source-group">
+            <legend data-i18n="heatmap.groups.reedu">Reedu</legend>
+            <label class="map-source-option">
+              <input type="checkbox" data-temperature-source="senseboxBike">
+              <span data-i18n="heatmap.sources.senseboxBike.title">senseBox:bike</span>
+            </label>
+            <label class="map-source-option">
+              <input type="checkbox" data-temperature-source="mobileDatalogger" checked>
+              <span data-i18n="heatmap.sources.mobileDatalogger.title">Mobile Datalogger</span>
+            </label>
+            <label class="map-source-option">
+              <input type="checkbox" data-temperature-source="senseboxHome">
+              <span data-i18n="heatmap.sources.senseboxHome.title">senseBox:home</span>
+            </label>
+          </fieldset>
+          <fieldset class="map-source-group map-source-group-single">
+            <legend data-i18n="heatmap.groups.dwd">DWD</legend>
+            <label class="map-source-option">
+              <input type="checkbox" data-temperature-source="dwd">
+              <span>DWD</span>
+            </label>
+          </fieldset>
+          <fieldset class="map-source-group map-source-group-single">
+            <legend data-i18n="heatmap.groups.openMeteo">Open-Meteo</legend>
+            <label class="map-source-option">
+              <input type="checkbox" data-temperature-source="openMeteo">
+              <span>Open-Meteo</span>
+            </label>
+          </fieldset>
+          <label class="map-source-hour" for="temperature-hour" data-i18n="heatmap.hourLabel">
+            Hour for DWD and Open-Meteo
+          </label>
+          <div class="map-source-hour-control">
+            <input id="temperature-hour" type="range" min="0" max="23" step="1" value="14">
+            <output id="temperature-hour-output" for="temperature-hour">14:00</output>
+          </div>
+          <p class="map-source-note" data-i18n="heatmap.locationNote">
+            Markers show the real sampling points: the DWD station is outside Heilbronn; Open-Meteo is a regional grid cell.
+          </p>
+        </div>
+
         <aside class="info-panel" id="info-panel" aria-live="polite" hidden>
           <button class="info-close" type="button" data-i18n-label="core.panel.close" aria-label="Close">×</button>
           <div class="info-kicker" data-role="kicker"></div>

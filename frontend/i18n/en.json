@@ -36,9 +36,52 @@
     }
   },
   "heatmap": {
+<<<<<<< Updated upstream
     "kicker": "Measured temperature",
     "cell": "Average of {count} readings in this {size} m grid cell, recorded by bike on 1–3 Sep 2026.",
     "range": "Across all rides the averages range from {min} °C to {max} °C."
+=======
+    "selectorLabel": "Temperature data sources",
+    "groups": {
+      "reedu": "Reedu",
+      "dwd": "DWD",
+      "openMeteo": "Open-Meteo"
+    },
+    "hourLabel": "Hour for DWD and Open-Meteo · local time",
+    "locationNote": "Markers show the real sampling points: the DWD station is about 10 km east of Heilbronn; Open-Meteo is a regional grid cell.",
+    "panel": {
+      "kicker": "Selected temperature data",
+      "sourcesCount": "Nearby readings from {count} sources"
+    },
+    "sources": {
+      "senseboxBike": {
+        "title": "senseBox:bike",
+        "kicker": "Measured temperature · senseBox:bike",
+        "cell": "Average of {count} senseBox:bike readings in this {size} m grid cell on 2 Sep 2026.",
+        "range": "Across all rides the averages range from {min} °C to {max} °C."
+      },
+      "mobileDatalogger": {
+        "title": "Mobile Datalogger",
+        "kicker": "Mobile Datalogger temperature",
+        "cell": "Average of {count} Mobile Datalogger readings in this {size} m grid cell on 2 Sep 2026.",
+        "range": "Cell averages range from {min} °C to {max} °C in this source."
+      },
+      "senseboxHome": {
+        "title": "senseBox:home",
+        "kicker": "senseBox:home temperature",
+        "cell": "Average of {count} stationary readings in this {size} m grid cell on 2 Sep 2026.",
+        "range": "Station cell averages range from {min} °C to {max} °C in this source."
+      },
+      "dwd": {
+        "reading": "Reference station Obersulm-Willsbach, about 10 km east of Heilbronn · {timestamp} local time.",
+        "humidity": "Relative humidity: {humidity}%"
+      },
+      "openMeteo": {
+        "reading": "ERA5-Land modelled grid estimate · {timestamp} local time; not a station observation.",
+        "humidity": "Relative humidity: {humidity}%"
+      }
+    }
+>>>>>>> Stashed changes
   },
   "air-quality": {
     "kicker": "Particulate matter, bike rides",
