@@ -1,8 +1,9 @@
-// Each source keeps its own colour ramp so simultaneous layers remain identifiable.
+// Each heatmap source keeps its own ramp; weather sources use distinct point colours.
 const CLICK_RADIUS_METERS = 40;
 const CLICK_RADIUS_PIXELS = 30;
 const CELL_SIZE_METERS = 25;
-const DEFAULT_HOUR = 14;
+const WEATHER_WINDOW_START = Date.parse("2026-09-02T10:29:08.999+02:00");
+const WEATHER_WINDOW_END = Date.parse("2026-09-02T13:07:39.661+02:00");
 const HEILBRONN = [49.1427, 9.2185];
 
 const SOURCES = [
@@ -41,9 +42,9 @@ const SOURCES = [
   },
   {
     id: "dwd",
-    type: "hourly",
+    type: "weather-point",
     title: { en: "DWD", de: "DWD" },
-    gradient: ["#2166ac", "#8073ac", "#f7f7f7", "#f1a340", "#b2182b"],
+    markerColor: "#2166ac",
     source: {
       en: "DWD station 03734 Obersulm-Willsbach",
       de: "DWD-Station 03734 Obersulm-Willsbach"
@@ -52,12 +53,12 @@ const SOURCES = [
   },
   {
     id: "openMeteo",
-    type: "hourly",
+    type: "weather-point",
     title: { en: "Open-Meteo", de: "Open-Meteo" },
-    gradient: ["#4575b4", "#91bfdb", "#ffffbf", "#fc8d59", "#d73027"],
+    markerColor: "#d97706",
     source: {
-      en: "Open-Meteo ERA5-Land hourly reanalysis · Heilbronn grid cell",
-      de: "Open-Meteo ERA5-Land-Stunden-Reanalyse · Heilbronner Rasterzelle"
+      en: "Open-Meteo ERA5-Land reanalysis · Heilbronn grid cell",
+      de: "Open-Meteo ERA5-Land-Reanalyse · Heilbronner Rasterzelle"
     },
     dataPath: "heatmap/open-meteo/temperature.csv"
   }
@@ -121,15 +122,18 @@ function parseHourly(text, dataPath) {
     const latitude = Number(row.latitude);
     const longitude = Number(row.longitude);
     const temperature = Number(row.temperature_c);
-    const hour = Number(row.timestamp.slice(11, 13));
+    const timestamp = Date.parse(row.timestamp);
     if (
       !Number.isFinite(latitude) || latitude < -90 || latitude > 90
       || !Number.isFinite(longitude) || longitude < -180 || longitude > 180
-      || !Number.isFinite(temperature) || !Number.isInteger(hour) || hour < 0 || hour > 23
+      || !Number.isFinite(temperature)
+      || !Number.isFinite(timestamp)
+      || timestamp < WEATHER_WINDOW_START
+      || timestamp > WEATHER_WINDOW_END
     ) return [];
     return [{
       timestamp: row.timestamp,
-      hour,
+      timestampValue: timestamp,
       latitude,
       longitude,
       temperature,
@@ -138,11 +142,31 @@ function parseHourly(text, dataPath) {
       sourceId: row.source_id
     }];
   });
-  if (!cells.length) throw new Error(`Hourly heat-map CSV ${dataPath} contains no valid rows.`);
+  if (!cells.length) {
+    throw new Error(`Weather-point CSV ${dataPath} has no readings in the 10:29–13:07 local-time window.`);
+  }
+  cells.sort((first, second) => first.timestampValue - second.timestampValue);
+  const first = cells[0];
+  if (cells.some((cell) => cell.latitude !== first.latitude || cell.longitude !== first.longitude)) {
+    throw new Error(`Weather-point CSV ${dataPath} must contain readings from one location.`);
+  }
+  const humidityReadings = cells
+    .map((cell) => cell.humidity)
+    .filter((humidity) => Number.isFinite(humidity));
+  const average = (values) => values.reduce((sum, value) => sum + value, 0) / values.length;
+  const temperature = average(cells.map((cell) => cell.temperature));
   return {
-    cells,
-    minTemperature: Math.min(...cells.map((cell) => cell.temperature)),
-    maxTemperature: Math.max(...cells.map((cell) => cell.temperature))
+    cells: [{
+      timestamp: first.timestamp,
+      endTimestamp: cells[cells.length - 1].timestamp,
+      latitude: first.latitude,
+      longitude: first.longitude,
+      temperature,
+      humidity: humidityReadings.length ? average(humidityReadings) : null,
+      count: cells.length,
+      measurementType: first.measurementType,
+      sourceId: first.sourceId
+    }]
   };
 }
 
@@ -166,40 +190,20 @@ function heatLayer(L, source, cells) {
   });
 }
 
-function temperatureColor(temperature, source) {
-  const range = source.data.maxTemperature - source.data.minTemperature;
-  const position = range ? (temperature - source.data.minTemperature) / range : 0.5;
-  const scaledPosition = position * (source.gradient.length - 1);
-  const start = Math.floor(scaledPosition);
-  const end = Math.min(start + 1, source.gradient.length - 1);
-  const fraction = scaledPosition - start;
-  const channels = [1, 3, 5].map((offset) => {
-    const first = Number.parseInt(source.gradient[start].slice(offset, offset + 2), 16);
-    const second = Number.parseInt(source.gradient[end].slice(offset, offset + 2), 16);
-    return Math.round(first + (second - first) * fraction)
-      .toString(16)
-      .padStart(2, "0");
+function weatherMarker(L, source, cell, title) {
+  const marker = L.circleMarker([cell.latitude, cell.longitude], {
+    radius: 9,
+    color: "#fff",
+    weight: 3,
+    opacity: 1,
+    fillColor: source.markerColor,
+    fillOpacity: 1
   });
-  return `#${channels.join("")}`;
-}
-
-function hourlyMarkers(L, source, cells, hour) {
-  return cells.map((cell) => {
-    const marker = L.circleMarker([cell.latitude, cell.longitude], {
-      radius: 8,
-      color: "#fff",
-      weight: 3,
-      opacity: 1,
-      fillColor: temperatureColor(cell.temperature, source),
-      fillOpacity: 1
-    });
-    marker.bindTooltip(
-      `${source.id === "dwd" ? "DWD" : "Open-Meteo"} · ${cell.temperature.toFixed(1)} °C · `
-        + `${String(hour).padStart(2, "0")}:00`,
-      { permanent: true, direction: "top", offset: [0, -7], className: "heatmap-point-label" }
-    );
-    return marker;
-  });
+  marker.bindTooltip(
+    `${title} · ${cell.temperature.toFixed(1)} °C`,
+    { permanent: true, direction: "top", offset: [0, -7], className: "heatmap-point-label" }
+  );
+  return marker;
 }
 
 const temperatureSlot = {
@@ -223,7 +227,7 @@ const temperatureSlot = {
       const text = await ctx.loadData(source.dataPath);
       return {
         ...source,
-        data: source.type === "hourly"
+        data: source.type === "weather-point"
           ? parseHourly(text, source.dataPath)
           : parseCells(text, source.dataPath)
       };
@@ -232,9 +236,7 @@ const temperatureSlot = {
     const stage = map.getContainer().parentElement;
     const control = stage?.querySelector("#temperature-source-control");
     const sourceInputs = control?.querySelectorAll("[data-temperature-source]");
-    const hourInput = control?.querySelector("#temperature-hour");
-    const hourOutput = control?.querySelector("#temperature-hour-output");
-    if (!control || !sourceInputs?.length || !hourInput || !hourOutput) {
+    if (!control || !sourceInputs?.length) {
       throw new Error("The temperature-source map control is missing from the map layout.");
     }
 
@@ -242,57 +244,50 @@ const temperatureSlot = {
     sourceInputs.forEach((input) => {
       input.checked = selectedIds.has(input.dataset.temperatureSource);
     });
-    let selectedHour = DEFAULT_HOUR;
-
-    function cellsForHour(source) {
-      return source.type === "hourly"
-        ? source.data.cells.filter((cell) => cell.hour === selectedHour)
-        : source.data.cells;
-    }
-
     L.DomEvent.disableClickPropagation(control);
     L.DomEvent.disableScrollPropagation(control);
 
     const layer = L.layerGroup();
     function drawLegend() {
-      ctx.setLegend(preparedSources.filter((source) => (
-        selectedIds.has(source.id) && cellsForHour(source).length > 0
-      ))
-        .map((source) => ({
-          gradient: source.gradient,
-          from: `${ctx.pick(source.title)} · ${source.data.minTemperature.toFixed(1)} °C`,
-          to: `${source.data.maxTemperature.toFixed(1)} °C`
-        })));
+      ctx.setLegend(preparedSources.filter((source) => selectedIds.has(source.id))
+        .map((source) => source.type === "weather-point"
+          ? {
+            color: source.markerColor,
+            label: {
+              en: `${source.title.en} · ${source.data.cells[0].temperature.toFixed(1)} °C average`,
+              de: `${source.title.de} · ${source.data.cells[0].temperature.toFixed(1)} °C Mittelwert`
+            }
+          }
+          : {
+            gradient: source.gradient,
+            from: `${ctx.pick(source.title)} · ${source.data.minTemperature.toFixed(1)} °C`,
+            to: `${source.data.maxTemperature.toFixed(1)} °C`
+          }));
     }
 
     function renderSelectedLayers() {
       layer.clearLayers();
-      let renderedSourceCount = 0;
+      let renderedHeatmap = false;
       preparedSources.forEach((source) => {
         if (!selectedIds.has(source.id)) return;
-        const heatmap = heatLayer(L, source, cellsForHour(source));
-        if (heatmap) {
-          layer.addLayer(heatmap);
-          if (source.type === "hourly") {
-            hourlyMarkers(L, source, cellsForHour(source), selectedHour)
-              .forEach((marker) => layer.addLayer(marker));
+        if (source.type === "weather-point") {
+          source.data.cells.forEach((cell) => {
+            layer.addLayer(weatherMarker(L, source, cell, ctx.pick(source.title)));
+          });
+        } else {
+          const heatmap = heatLayer(L, source, source.data.cells);
+          if (heatmap) {
+            layer.addLayer(heatmap);
+            renderedHeatmap = true;
           }
-          renderedSourceCount += 1;
         }
       });
       drawLegend();
       map.getContainer().classList.toggle(
         "heatmap-active",
-        map.hasLayer(layer) && renderedSourceCount > 0
+        map.hasLayer(layer) && renderedHeatmap
       );
       ctx.panel.close();
-    }
-
-    function updateHour() {
-      selectedHour = Number(hourInput.value);
-      hourOutput.value = `${String(selectedHour).padStart(2, "0")}:00`;
-      hourOutput.textContent = hourOutput.value;
-      renderSelectedLayers();
     }
 
     sourceInputs.forEach((input) => input.addEventListener("change", () => {
@@ -311,10 +306,8 @@ const temperatureSlot = {
       }
       renderSelectedLayers();
     }));
-    hourInput.addEventListener("input", updateHour);
-    hourInput.addEventListener("change", updateHour);
     ctx.onLanguageChange(drawLegend);
-    updateHour();
+    renderSelectedLayers();
 
     function showNearestCell(event) {
       const nearestBySource = [];
@@ -328,7 +321,7 @@ const temperatureSlot = {
         if (!selectedIds.has(source.id)) continue;
         let nearestCell = null;
         let nearestDistance = Infinity;
-        for (const cell of cellsForHour(source)) {
+        for (const cell of source.data.cells) {
           const distance = event.latlng.distanceTo([cell.latitude, cell.longitude]);
           if (distance < nearestDistance) {
             nearestCell = cell;
@@ -346,9 +339,11 @@ const temperatureSlot = {
       }
 
       const readings = nearestBySource.map(({ source, cell }) => {
-        const detail = source.type === "hourly"
+        const detail = source.type === "weather-point"
           ? `<p>${ctx.escapeHtml(ctx.t(`sources.${source.id}.reading`, {
-            timestamp: cell.timestamp.slice(11, 16)
+            count: cell.count,
+            from: cell.timestamp.slice(11, 16),
+            to: cell.endTimestamp.slice(11, 16)
           }))}</p>`
             + (cell.humidity === null || !Number.isFinite(cell.humidity)
               ? ""

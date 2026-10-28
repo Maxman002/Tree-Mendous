@@ -5,39 +5,22 @@ any combination of these five independently rendered sources:
 
 - **Reedu** group: senseBox:bike, Mobile Datalogger and senseBox:home. Each dataset contains
   2 September 2026 temperature averages in approximately 25 m cells.
-- **DWD**: hourly observation from station 03734, Obersulm-Willsbach. The CSV is fetched from the
+- **DWD**: station observation from station 03734, Obersulm-Willsbach. The CSV is fetched from the
   Bright Sky API, but the interface identifies the provider as DWD. The station is about 10 km east
-  of Heilbronn; activating it frames the city and the true station location together.
-- **Open-Meteo**: hourly ERA5-Land reanalysis at the grid cell returned for Heilbronn. It is a model
-  estimate, not a local station observation.
+  of Heilbronn and is displayed as a point, not as citywide coverage.
+- **Open-Meteo**: ERA5-Land reanalysis at the grid cell returned for Heilbronn. It is a model
+  estimate, not a local station observation, and is displayed at its actual grid coordinate.
 
-<<<<<<< Updated upstream
-The colours are relative: blue is the coolest and red the hottest average in this data set, not
-fixed temperature thresholds. Temperatures exist only along the routes that were ridden; the heat
-layer blurs between them, so it is not citywide coverage.
-=======
-The hour slider filters DWD and Open-Meteo only; Reedu data remain daily cell averages. The map shows
-an independent heat layer and a separate legend scale for every selected source. Hourly sources also
-show a labelled point marker at the actual station/grid coordinate, with the selected hour's value,
-so a single reading is easy to locate and is not mistaken for city-wide coverage. Each source uses a
-distinct blue-to-red colour ramp, normalized to that source's own temperature range. Heat blur is a
-visual aid, not evidence that the city between measurements has the same temperature.
->>>>>>> Stashed changes
+DWD and Open-Meteo are filtered to the Mobile Datalogger's 2 September recording window:
+10:29:08–13:07:39 **Europe/Berlin** local time. Their hourly rows inside that range are averaged
+into one visible point per source. Reedu data remain the prepared cell averages. The cell heatmap
+blurs between measurements, so it is not citywide coverage.
 
 The `alles.csv` export is treated as Mobile Datalogger because that is how the GreenCity resources
 page identifies it, although its `recording` values contain `senseBox_bike` filenames. This
 discrepancy is disclosed rather than used to relabel the dataset.
 
-<<<<<<< Updated upstream
-- **Source:** mobile temperature loggers (senseBox:bike), recorded by the team on 1–3 September 2026
-  (61,546 readings). Raw file: `backend/data/heatmap/alles.csv` (columns `timestamp, latitude,
-  longitude, temperature, humidity, gps_speed, recording`).
-- **Website file:** `frontend/data/heatmap/temperature-cells.json` (about 20 KB):
-  `minTemperature`, `maxTemperature`, `cellSizeMeters` and `cells`, a list of
-  `[latitude, longitude, average temperature, number of readings]`.
-=======
 ## Input and output files
->>>>>>> Stashed changes
 
 | Source | Backend input | Prepared frontend CSV |
 |---|---|---|
@@ -77,17 +60,7 @@ not commit raw or unrelated API cache data.
 
 ## Depends on
 
-<<<<<<< Updated upstream
-- [Leaflet.heat 0.2.0](https://github.com/Leaflet/Leaflet.heat), loaded from unpkg in `init()`.
-
-## Ideas / open
-
-- Use fixed temperature bands (e.g. °C steps) instead of a relative scale.
-- Add the Heat-Island Summer School heat-walk loggers.
-- Show the humidity column as well.
-=======
 - [Leaflet.heat 0.2.0](https://github.com/Leaflet/Leaflet.heat), loaded on demand from unpkg.
 - [Bright Sky weather API](https://brightsky.dev/) for DWD station observations.
 - [Open-Meteo Historical Weather API](https://open-meteo.com/en/docs/historical-weather-api) for
   ERA5-Land reanalysis.
->>>>>>> Stashed changes
