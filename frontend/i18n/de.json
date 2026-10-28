@@ -41,21 +41,22 @@
     "range": "Über alle Fahrten liegen die Mittelwerte zwischen {min} °C und {max} °C."
   },
   "air-quality": {
-    "kicker": "Feinstaub"
+    "kicker": "Feinstaub, Radfahrten",
+    "stationKicker": "Feinstaub, fester Sensor",
+    "cell": "Mittel aus {count} Messungen per Rad in dieser {size}-m-Rasterzelle am 2. Sep. 2026.",
+    "station": "Tagesmittel aus {count} Messungen am 2. Sep. 2026."
   },
   "points-of-interest": {
-    "environment": "Warum es wichtig ist",
     "more": "Mehr erfahren",
-    "categories": {
-      "greening": "Begrünung",
-      "mobility": "Mobilität",
-      "nature": "Natur",
-      "energy": "Energie",
-      "circular": "Kreislaufwirtschaft",
-      "culture": "Kultur",
-      "education": "Bildung",
-      "participation": "Beteiligung"
-    }
+    "birds": "Vogel-Dashboard öffnen"
+  },
+  "weather-stations": {
+    "kicker": "Wetterstation, 2. Sep. 2026",
+    "mean": "Mittlere Temperatur",
+    "range": "Tiefst – Höchst",
+    "humidity": "Luftfeuchte",
+    "recorded": "{count} Messungen zwischen {from} und {to} (Uhrzeit wie vom Sensor erfasst).",
+    "distance": "{km} km vom Marktplatz entfernt."
   },
   "birdhouses": {
     "kicker": "Smartes Futterhaus",
@@ -95,13 +96,7 @@
     "qr": "Scannen für die Live-Kamera",
     "footer": "Die KI des Futterhauses verwechselt europäische Vögel oft mit ähnlich aussehenden Arten anderer Kontinente. Die Besuche wurden mit Videos und Gewicht geprüft; unplausible Bestimmungen sind als „Unsicher“ zusammengefasst."
   },
-  "routes": {
-    "add": "Halt hinzufügen",
-    "open": "In Google Maps öffnen",
-    "clear": "Leeren",
-    "remove": "Halt entfernen",
-    "hint": "Wähle mindestens zwei Halte, um eine Route zu zeichnen.",
-    "count": "{count} von höchstens {max} Halten",
-    "tooMany": "Eine Google-Maps-Route kann höchstens {max} Halte haben."
+  "tour": {
+    "start": "Tour in Google Maps starten"
   }
 }

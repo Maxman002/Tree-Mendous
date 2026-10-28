@@ -3,13 +3,15 @@
 import heatmap from "./heatmap/index.js";
 import airQuality from "./air-quality/index.js";
 import pointsOfInterest from "./points-of-interest/index.js";
+import weatherStations from "./weather-stations/index.js";
 import birdhouses from "./birdhouses/index.js";
-import routes from "./routes/index.js";
+import tour from "./tour/index.js";
 
 export default [
   heatmap,
   airQuality,
   pointsOfInterest,
+  weatherStations,
   birdhouses,
-  routes
+  tour
 ];
