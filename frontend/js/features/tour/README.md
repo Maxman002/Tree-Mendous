@@ -4,7 +4,9 @@
 
 A fixed walking tour along the points of interest. The tools card lists the stops in order and has a
 **Start the tour on Google Maps** button; the route is drawn on the map as a dashed line (straight
-lines between the stops, Google Maps does the real routing).
+lines between the stops, Google Maps does the real routing). The line is only shown while the
+**Projects and places** layer is on: the `points-of-interest` slot fires a
+`points-of-interest:toggle` event on the map (`{ visible }`) and the tour listens for it.
 
 It replaces the earlier `routes` slot (pick your own stops), following Eirini's `instructions.md` on
 the `eirini` branch.
