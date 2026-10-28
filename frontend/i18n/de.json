@@ -1,1 +1,26 @@
-{ "core": {} }
+{
+  "core": {
+    "intro": {
+      "eyebrow": "Eine Stadt im Wandel",
+      "titleStart": "Ein grüneres Heilbronn,",
+      "titleEnd": "gemeinsam.",
+      "copy": "Sieh, wo die Stadt heute heiß ist und was Heilbronn als Grüne Hauptstadt Europas 2027 dagegen tut."
+    },
+    "layers": {
+      "base": "Datenebenen",
+      "baseHint": "EINE ZUR ZEIT",
+      "overlays": "Auf der Karte",
+      "overlaysHint": "FREI KOMBINIERBAR",
+      "failed": "Diese Ebene konnte nicht geladen werden"
+    },
+    "tools": { "heading": "Werkzeuge" },
+    "status": { "placeholder": "BEISPIEL", "sampleNote": "Beispieldaten, keine echten Messwerte" },
+    "panel": { "source": "Quelle", "close": "Schließen" },
+    "legend": { "heading": "LEGENDE" },
+    "map": { "status": "GRÜNE HAUPTSTADT EUROPAS 2027" },
+    "footer": {
+      "title": "Kleine Schritte. Gemeinsame Zukunft.",
+      "copy": "Prototyp vom Green City Hackathon Heilbronn 2026."
+    }
+  }
+}
