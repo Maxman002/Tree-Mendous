@@ -4,8 +4,8 @@
     "name": "Birdhouse",
     "lat": 49.151995,
     "lng": 9.215480,
-    "category": "Birdhouse",
-    "description": "Part of  a smart bird houses network all over Heilbronn that log visits and conditions, giving a window into how urban wildlife responds to the changing climate.",
+    "category": "Smart Sensors",
+    "description": "Part of a smart bird houses network all over Heilbronn that log visits and conditions, giving a window into how urban wildlife responds to the changing climate.",
     "link": "https://wiediversistmeingarten.org/view/station/699b7f2c-3855-4273-af7f-ed61a54541f9"
   },
   {
@@ -13,7 +13,7 @@
     "name": "Beehive",
     "lat": 49.151805,
     "lng": 9.215302,
-    "category": "Beehive",
+    "category": "Smart Sensors",
     "description": "Smart beehive: Sensor equipped beehive. Outside, 2026 swung from about −5 °C in winter to more than 30 °C in summer. Inside three hives on the 42 campus, the story is very different. In January and February the sensors read only 10–15 °C. The colony sits in a tight cluster and the rest of the hive is cold. Then, from about March, there's a shift. The bees start raising young, and the hive warms to around 35 °C, the temperature the brood needs. From spring through summer the hive temperature stays there, even on days when the outside air jumps by 20 degrees. The bees heat on cold days and cool on hot ones, with no electronics, only thousands of small bodies working together. ",
     "link": "https://beehive-grafana-production.up.railway.app/d/beehappy-monitor/beehappy-e28094-bienenstock-monitor?orgId=1&from=now-7d&to=now&timezone=browser&refresh=15m"
   },
