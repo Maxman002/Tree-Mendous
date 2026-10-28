@@ -46,47 +46,20 @@
   },
   {
     "id": 6,
-    "name": "FILL IN: name of spot 6",
-    "lat": 0.0,
-    "lng": 0.0,
-    "category": "FILL IN: e.g. park",
-    "description": "FILL IN: short description",
+    "name": "Robert Mayer Monument",
+    "lat": 49.142452,
+    "lng": 9.218943,
+    "category": "European Green Capital 2027",
+    "description": "As part of the European Green Capital 2027 initiative, the area around the Robert Mayer Monument is being upgraded, with new plantings of trees, shrubs and perennials to create two green zones that enhance the urban space, provide shade and improve the microclimate",
     "link": ""
   },
   {
     "id": 7,
-    "name": "FILL IN: name of spot 7",
-    "lat": 0.0,
-    "lng": 0.0,
-    "category": "FILL IN: e.g. park",
-    "description": "FILL IN: short description",
-    "link": ""
-  },
-  {
-    "id": 8,
-    "name": "FILL IN: name of spot 8",
-    "lat": 0.0,
-    "lng": 0.0,
-    "category": "FILL IN: e.g. park",
-    "description": "FILL IN: short description",
-    "link": ""
-  },
-  {
-    "id": 9,
-    "name": "FILL IN: name of spot 9",
-    "lat": 0.0,
-    "lng": 0.0,
-    "category": "FILL IN: e.g. park",
-    "description": "FILL IN: short description",
-    "link": ""
-  },
-  {
-    "id": 10,
-    "name": "FILL IN: name of spot 10",
-    "lat": 0.0,
-    "lng": 0.0,
-    "category": "FILL IN: e.g. park",
-    "description": "FILL IN: short description",
+    "name": "Wollhaus",
+    "lat": 49.139597,
+    "lng": 9.219810,
+    "category": "European Green Capital 2027",
+    "description": "As part of the European Green Capital 2027 initiative, Wollhaus's rooftop is transformed to WOW-haus, showcasing sustainable urban developmentTopics like greening, water retention and energy generation are showcased. The exhibition 'Heilbronn- European Green Capital' will take place on the ground floor.",
     "link": ""
   }
 ]
