@@ -1,0 +1,1162 @@
+id;name;typ
+8315007;Badenweiler;gemeinde
+8315016;Breitnau;gemeinde
+8315030;Eichstetten;gemeinde
+8315037;Feldberg (Schwarzwald);gemeinde
+8315048;Hartheim am Rhein;gemeinde
+8315059;Ihringen;gemeinde
+8315072;Merdingen;gemeinde
+8315133;Vogtsburg im Kaiserstuhl;gemeinde
+8316010;Elzach;gemeinde
+8316017;Herbolzheim;gemeinde
+8316038;Sasbach;gemeinde
+8316045;Vörstetten;gemeinde
+8316054;Freiamt;gemeinde
+8317008;Bad Peterstal-Griesbach;gemeinde
+8317021;Durbach;gemeinde
+8317029;Fischerbach;gemeinde
+8317039;Gutach (Schwarzwaldbahn);gemeinde
+8317046;Hofstetten;gemeinde
+8317051;Hornberg;gemeinde
+8317110;Renchen;gemeinde
+8317114;Rust;gemeinde
+8436053;Königseggwald;gemeinde
+8436055;Leutkirch im Allgäu;gemeinde
+8436067;Riedhausen;gemeinde
+8436077;Unterwaldhausen;gemeinde
+8436079;Waldburg;gemeinde
+8436082;Weingarten;gemeinde
+8436083;Wilhelmsdorf;gemeinde
+8436085;Wolfegg;gemeinde
+8436095;Horgenzell;gemeinde
+8437005;Beuron;gemeinde
+8437044;Herbertingen;gemeinde
+8437056;Illmensee;gemeinde
+8437076;Mengen;gemeinde
+8437078;Meßkirch;gemeinde
+8437086;Ostrach;gemeinde
+8437100;Bad Saulgau;gemeinde
+8437102;Schwenningen;gemeinde
+8437104;Sigmaringen;gemeinde
+8437107;Stetten am kalten Markt;gemeinde
+8437118;Wald;gemeinde
+8437123;Sauldorf;gemeinde
+8327041;Renquishausen;gemeinde
+8327048;Talheim;gemeinde
+8327051;Wehingen;gemeinde
+8327055;Seitingen-Oberflacht;gemeinde
+8327057;Emmingen-Liptingen;gemeinde
+8335002;Allensbach;gemeinde
+8335021;Eigeltingen;gemeinde
+8335022;Engen;gemeinde
+8335026;Gailingen am Hochrhein;gemeinde
+8335035;Hilzingen;gemeinde
+8335043;Konstanz;gemeinde
+8335057;Mühlingen;gemeinde
+8335063;Radolfzell am Bodensee;gemeinde
+8335077;Steißlingen;gemeinde
+8335080;Tengen;gemeinde
+8335096;Hohenfels;gemeinde
+8335099;Orsingen-Nenzingen;gemeinde
+8336006;Bad Bellingen;gemeinde
+8336010;Böllen;gemeinde
+8336014;Efringen-Kirchen;gemeinde
+8336024;Fischingen;gemeinde
+8317126;Seebach;gemeinde
+8317145;Wolfach;gemeinde
+8317153;Rheinau;gemeinde
+8325009;Bösingen;gemeinde
+8325024;Hardt;gemeinde
+8325053;Schramberg;gemeinde
+8325070;Fluorn-Winzeln;gemeinde
+8326075;Brigachtal;gemeinde
+8327005;Balgheim;gemeinde
+8327009;Deilingen;gemeinde
+8327013;Egesheim;gemeinde
+8327020;Gunningen;gemeinde
+8327027;Irndorf;gemeinde
+8327036;Mühlheim an der Donau;gemeinde
+8327050;Tuttlingen;gemeinde
+8335075;Singen (Hohentwiel);gemeinde
+8215109;Stutensee;gemeinde
+8216002;Au am Rhein;gemeinde
+8216006;Bischweier;gemeinde
+8216009;Durmersheim;gemeinde
+8216015;Gaggenau;gemeinde
+8216023;Iffezheim;gemeinde
+8216029;Loffenau;gemeinde
+8216039;Ötigheim;gemeinde
+8216052;Steinmauern;gemeinde
+8216059;Weisenbach;gemeinde
+8221000;Heidelberg;gemeinde
+8225001;Adelsheim;gemeinde
+8225002;Aglasterhausen;gemeinde
+8225009;Billigheim;gemeinde
+8225024;Fahrenbach;gemeinde
+8225032;Hardheim;gemeinde
+8225033;Haßmersheim;gemeinde
+8225042;Hüffenhardt;gemeinde
+8225064;Neckargerach;gemeinde
+8225074;Obrigheim;gemeinde
+8225075;Osterburken;gemeinde
+8225091;Seckach;gemeinde
+8336034;Hasel;gemeinde
+8336043;Inzlingen;gemeinde
+8336045;Kandern;gemeinde
+8336057;Maulburg;gemeinde
+8336079;Schönau im Schwarzwald;gemeinde
+8336081;Schopfheim;gemeinde
+8336089;Tunau;gemeinde
+8336091;Weil am Rhein;gemeinde
+8336096;Wieden;gemeinde
+8336100;Wittlingen;gemeinde
+8336104;Malsburg-Marzell;gemeinde
+8336105;Grenzach-Wyhlen;gemeinde
+8337002;Albbruck;gemeinde
+8337022;Bonndorf im Schwarzwald;gemeinde
+8337032;Dogern;gemeinde
+8337049;Herrischried;gemeinde
+8337051;Höchenschwand;gemeinde
+8337060;Jestetten;gemeinde
+8337070;Lottstetten;gemeinde
+8337076;Murg;gemeinde
+8337090;Rickenbach;gemeinde
+8337097;Sankt Blasien;gemeinde
+8335081;Volkertshausen;gemeinde
+8335100;Rielasingen-Worblingen;gemeinde
+8115041;Renningen;gemeinde
+8115045;Sindelfingen;gemeinde
+8115050;Weil der Stadt;gemeinde
+8116029;Holzmaden;gemeinde
+8116035;Köngen;gemeinde
+8116037;Lichtenwald;gemeinde
+8116042;Neckartenzlingen;gemeinde
+8116047;Neuhausen auf den Fildern;gemeinde
+8116056;Plochingen;gemeinde
+8225113;Zwingenberg;gemeinde
+8225115;Schefflenz;gemeinde
+8225116;Schwarzach;gemeinde
+8225118;Waldbrunn;gemeinde
+8226006;Bammental;gemeinde
+8226012;Dossenheim;gemeinde
+8226018;Eppelheim;gemeinde
+8226022;Gaiberg;gemeinde
+8226029;Heiligkreuzsteinach;gemeinde
+8226037;Ketsch;gemeinde
+8226041;Leimen;gemeinde
+8226048;Mauer;gemeinde
+8226055;Neckarbischofsheim;gemeinde
+8226059;Neulußheim;gemeinde
+8226062;Oftersheim;gemeinde
+8226065;Rauenberg;gemeinde
+8226068;Reilingen;gemeinde
+8226076;Sandhausen;gemeinde
+8226081;Schönbrunn;gemeinde
+8226084;Schwetzingen;gemeinde
+8226085;Sinsheim;gemeinde
+8336008;Binzen;gemeinde
+8336019;Eimeldingen;gemeinde
+8336025;Fröhnd;gemeinde
+8336036;Hausen im Wiesental;gemeinde
+8336050;Lörrach;gemeinde
+8336078;Schliengen;gemeinde
+8336080;Schönenberg;gemeinde
+8337027;Dachsberg (Südschwarzwald);gemeinde
+8337045;Häusern;gemeinde
+8337053;Hohentengen am Hochrhein;gemeinde
+8337066;Laufenburg (Baden);gemeinde
+8337108;Todtmoos;gemeinde
+8337124;Eggingen;gemeinde
+8337126;Waldshut-Tiengen;gemeinde
+8415029;Grafenberg;gemeinde
+8415050;Metzingen;gemeinde
+8416011;Dußlingen;gemeinde
+8416018;Hirrlingen;gemeinde
+8416036;Rottenburg am Neckar;gemeinde
+8417008;Bisingen;gemeinde
+8417013;Burladingen;gemeinde
+8417023;Grosselfingen;gemeinde
+8337106;Stühlingen;gemeinde
+8337116;Wehr;gemeinde
+8337123;Wutöschingen;gemeinde
+8337125;Küssaberg;gemeinde
+8337127;Wutach;gemeinde
+8337128;Ühlingen-Birkendorf;gemeinde
+8415027;Gomadingen;gemeinde
+8415028;Grabenstetten;gemeinde
+8415048;Mehrstetten;gemeinde
+8415058;Pfronstetten;gemeinde
+8415060;Pliezhausen;gemeinde
+8415062;Riederich;gemeinde
+8415078;Bad Urach;gemeinde
+8415080;Wannweil;gemeinde
+8415971;Gutsbezirk Münsingen;gemeinde
+8415088;Römerstein;gemeinde
+8415089;Engstingen;gemeinde
+8415091;Sonnenbühl;gemeinde
+8415093;Sankt Johann;gemeinde
+8416009;Dettenhausen;gemeinde
+8416015;Gomaringen;gemeinde
+8416023;Kusterdingen;gemeinde
+8416031;Ofterdingen;gemeinde
+8116068;Unterensingen;gemeinde
+8119068;Schwaikheim;gemeinde
+8119069;Spiegelberg;gemeinde
+8119079;Waiblingen;gemeinde
+8119083;Weissach im Tal;gemeinde
+8119087;Aspach;gemeinde
+8119091;Weinstadt;gemeinde
+8125006;Bad Rappenau;gemeinde
+8125026;Eppingen;gemeinde
+8125027;Erlenbach;gemeinde
+8125038;Güglingen;gemeinde
+8125046;Ilsfeld;gemeinde
+8125048;Jagsthausen;gemeinde
+8125057;Lehrensteinsfeld;gemeinde
+8125059;Löwenstein;gemeinde
+8125065;Neckarsulm;gemeinde
+8125069;Neuenstadt am Kocher;gemeinde
+8125074;Nordheim;gemeinde
+8125084;Roigheim;gemeinde
+8125086;Schwaigern;gemeinde
+8125098;Untergruppenbach;gemeinde
+8125102;Weinsberg;gemeinde
+8226091;Waibstadt;gemeinde
+8226096;Weinheim;gemeinde
+8226099;Wilhelmsfeld;gemeinde
+8226102;Angelbachtal;gemeinde
+8226104;Lobbach;gemeinde
+8226105;Edingen-Neckarhausen;gemeinde
+8226107;Hirschberg an der Bergstraße;gemeinde
+8235006;Altensteig;gemeinde
+8235007;Althengstett;gemeinde
+8235018;Dobel;gemeinde
+8235022;Egenhausen;gemeinde
+8235025;Enzklösterle;gemeinde
+8235033;Bad Herrenalb;gemeinde
+8111000;Stuttgart;gemeinde
+8115001;Aidlingen;gemeinde
+8115002;Altdorf;gemeinde
+8115003;Böblingen;gemeinde
+8115004;Bondorf;gemeinde
+8115010;Deckenpfronn;gemeinde
+8115013;Ehningen;gemeinde
+8115015;Gärtringen;gemeinde
+8115016;Gäufelden;gemeinde
+8417044;Meßstetten;gemeinde
+8417051;Rangendingen;gemeinde
+8417057;Schömberg;gemeinde
+8417075;Winterlingen;gemeinde
+8417079;Albstadt;gemeinde
+8425035;Emeringen;gemeinde
+8425039;Erbach;gemeinde
+8425052;Grundsheim;gemeinde
+8425064;Hüttisheim;gemeinde
+8425071;Laichingen;gemeinde
+8425081;Munderkingen;gemeinde
+8425090;Obermarchtal;gemeinde
+8425098;Rechtenstein;gemeinde
+8425123;Untermarchtal;gemeinde
+8425130;Weidenstetten;gemeinde
+8425139;Heroldstatt;gemeinde
+8426005;Alleshausen;gemeinde
+8426058;Hochdorf;gemeinde
+8426066;Kirchdorf an der Iller;gemeinde
+8416048;Ammerbuch;gemeinde
+8416050;Starzach;gemeinde
+8417002;Balingen;gemeinde
+8417010;Bitz;gemeinde
+8417014;Dautmergen;gemeinde
+8417015;Dormettingen;gemeinde
+8417022;Geislingen;gemeinde
+8417025;Haigerloch;gemeinde
+8417029;Hausen am Tann;gemeinde
+8417045;Nusplingen;gemeinde
+8417052;Ratshausen;gemeinde
+8417063;Straßberg;gemeinde
+8417071;Weilen unter den Rinnen;gemeinde
+8421000;Ulm;gemeinde
+8425002;Allmendingen;gemeinde
+8425005;Altheim (Alb);gemeinde
+8425011;Asselfingen;gemeinde
+8425014;Beimerstetten;gemeinde
+8425019;Bernstadt;gemeinde
+8425022;Börslingen;gemeinde
+8125108;Zaberfeld;gemeinde
+8126020;Dörzbach;gemeinde
+8126045;Krautheim;gemeinde
+8127013;Bühlerzell;gemeinde
+8127014;Crailsheim;gemeinde
+8127025;Gaildorf;gemeinde
+8127046;Kirchberg an der Jagst;gemeinde
+8127056;Michelbach an der Bilz;gemeinde
+8127063;Obersontheim;gemeinde
+8127073;Satteldorf;gemeinde
+8127076;Schwäbisch Hall;gemeinde
+8127091;Wallhausen;gemeinde
+8127100;Rosengarten;gemeinde
+8127101;Kreßberg;gemeinde
+8128006;Assamstadt;gemeinde
+8128014;Boxberg;gemeinde
+8128045;Großrinderfeld;gemeinde
+8128058;Igersheim;gemeinde
+8128061;Königheim;gemeinde
+8128115;Tauberbischofsheim;gemeinde
+8128126;Weikersheim;gemeinde
+8115022;Hildrizhausen;gemeinde
+8115024;Holzgerlingen;gemeinde
+8115029;Magstadt;gemeinde
+8115034;Mötzingen;gemeinde
+8115037;Nufringen;gemeinde
+8115042;Rutesheim;gemeinde
+8115044;Schönaich;gemeinde
+8127052;Mainhardt;gemeinde
+8127059;Michelfeld;gemeinde
+8235047;Neubulach;gemeinde
+8235057;Ostelsheim;gemeinde
+8235066;Simmersfeld;gemeinde
+8235073;Unterreichenbach;gemeinde
+8235084;Bad Teinach-Zavelstein;gemeinde
+8236011;Eisingen;gemeinde
+8236019;Friolzheim;gemeinde
+8236025;Heimsheim;gemeinde
+8236030;Ispringen;gemeinde
+8236033;Knittlingen;gemeinde
+8236039;Mönsheim;gemeinde
+8236040;Mühlacker;gemeinde
+8236044;Neuhausen;gemeinde
+8426078;Moosburg;gemeinde
+8426100;Rot an der Rot;gemeinde
+8426120;Ummendorf;gemeinde
+8426124;Uttenweiler;gemeinde
+8435005;Bermatingen;gemeinde
+8435015;Frickingen;gemeinde
+8435029;Kressbronn am Bodensee;gemeinde
+8435045;Oberteuringen;gemeinde
+8436014;Bergatreute;gemeinde
+8436019;Boms;gemeinde
+8436027;Eichstegen;gemeinde
+8425024;Breitingen;gemeinde
+8425031;Dornstadt;gemeinde
+8425036;Emerkingen;gemeinde
+8425050;Griesingen;gemeinde
+8425062;Holzkirch;gemeinde
+8425066;Illerrieden;gemeinde
+8425073;Lauterach;gemeinde
+8425079;Merklingen;gemeinde
+8317026;Ettenheim;gemeinde
+8317031;Friesenheim;gemeinde
+8317034;Gengenbach;gemeinde
+8317041;Hausach;gemeinde
+8135016;Giengen an der Brenz;gemeinde
+8135031;Sontheim an der Brenz;gemeinde
+8136003;Adelmannsfelden;gemeinde
+8136009;Böbingen an der Rems;gemeinde
+8136018;Ellenberg;gemeinde
+8136020;Eschach;gemeinde
+8136024;Göggingen;gemeinde
+8136029;Heuchlingen;gemeinde
+8136034;Iggingen;gemeinde
+8136035;Jagstzell;gemeinde
+8136040;Leinzell;gemeinde
+8136043;Mögglingen;gemeinde
+8136044;Mutlangen;gemeinde
+8136049;Obergröningen;gemeinde
+8136050;Oberkochen;gemeinde
+8136065;Schwäbisch Gmünd;gemeinde
+8136071;Tannhausen;gemeinde
+8136075;Unterschneidheim;gemeinde
+8136084;Wört;gemeinde
+8136087;Riesbürg;gemeinde
+8212000;Karlsruhe;gemeinde
+8215040;Kürnbach;gemeinde
+8236046;Niefern-Öschelbronn;gemeinde
+8236065;Wiernsheim;gemeinde
+8236071;Remchingen;gemeinde
+8236073;Neulingen;gemeinde
+8236074;Kämpfelbach;gemeinde
+8236076;Königsbach-Stein;gemeinde
+8237004;Baiersbronn;gemeinde
+8237019;Dornstetten;gemeinde
+8237024;Empfingen;gemeinde
+8237028;Freudenstadt;gemeinde
+8237032;Grömbach;gemeinde
+8237040;Horb am Neckar;gemeinde
+8237061;Schopfloch;gemeinde
+8237074;Waldachtal;gemeinde
+8315003;Au;gemeinde
+8315006;Bad Krozingen;gemeinde
+8315013;Bötzingen;gemeinde
+8315020;Buchenbach;gemeinde
+8315028;Ebringen;gemeinde
+8315033;Eschbach;gemeinde
+8315039;Friedenweiler;gemeinde
+8436039;Grünkraut;gemeinde
+8436047;Hoßkirch;gemeinde
+8436052;Kißlegg;gemeinde
+8436064;Ravensburg;gemeinde
+8436069;Schlier;gemeinde
+8436081;Wangen im Allgäu;gemeinde
+8436094;Argenbühl;gemeinde
+8436096;Fronreute;gemeinde
+8437053;Hohentengen;gemeinde
+8437072;Leibertingen;gemeinde
+8115021;Herrenberg;gemeinde
+8115028;Leonberg;gemeinde
+8115052;Weissach;gemeinde
+8115054;Grafenau;gemeinde
+8116005;Altdorf;gemeinde
+8116007;Baltmannsweiler;gemeinde
+8116012;Bissingen an der Teck;gemeinde
+8116016;Dettingen unter Teck;gemeinde
+8116019;Esslingen am Neckar;gemeinde
+8116027;Hochdorf;gemeinde
+8116036;Kohlberg;gemeinde
+8116043;Neidlingen;gemeinde
+8317047;Hohberg;gemeinde
+8317057;Kehl;gemeinde
+8317059;Kippenheim;gemeinde
+8317067;Lautenbach;gemeinde
+8317073;Mahlberg;gemeinde
+8317078;Mühlenbach;gemeinde
+8317085;Nordrach;gemeinde
+8317089;Oberkirch;gemeinde
+8317096;Offenburg;gemeinde
+8317098;Oppenau;gemeinde
+8317100;Ortenberg;gemeinde
+8317113;Ringsheim;gemeinde
+8317121;Schuttertal;gemeinde
+8317122;Schutterwald;gemeinde
+8317141;Willstätt;gemeinde
+8317150;Schwanau;gemeinde
+8317152;Kappel-Grafenhausen;gemeinde
+8325001;Aichhalden;gemeinde
+8325011;Dietingen;gemeinde
+8325014;Dunningen;gemeinde
+8325015;Epfendorf;gemeinde
+8215064;Östringen;gemeinde
+8215066;Philippsburg;gemeinde
+8215090;Weingarten (Baden);gemeinde
+8215096;Karlsbad;gemeinde
+8215099;Graben-Neudorf;gemeinde
+8215102;Eggenstein-Leopoldshafen;gemeinde
+8215106;Waghäusel;gemeinde
+8215108;Rheinstetten;gemeinde
+8215110;Waldbronn;gemeinde
+8216007;Bühl;gemeinde
+8216013;Forbach;gemeinde
+8216022;Hügelsheim;gemeinde
+8216028;Lichtenau;gemeinde
+8216043;Rastatt;gemeinde
+8216049;Sinzheim;gemeinde
+8222000;Mannheim;gemeinde
+8225039;Höpfingen;gemeinde
+8225058;Mosbach;gemeinde
+8225060;Mudau;gemeinde
+8225068;Neunkirchen;gemeinde
+8225082;Rosenberg;gemeinde
+8315041;Glottertal;gemeinde
+8315047;Gundelfingen;gemeinde
+8315050;Heitersheim;gemeinde
+8315052;Hinterzarten;gemeinde
+8315056;Horben;gemeinde
+8315064;Kirchzarten;gemeinde
+8315070;Löffingen;gemeinde
+8315076;Neuenburg am Rhein;gemeinde
+8315089;Pfaffenweiler;gemeinde
+8315095;Sankt Peter;gemeinde
+8315098;Schallstadt;gemeinde
+8315107;Sölden;gemeinde
+8315109;Stegen;gemeinde
+8315111;Sulzburg;gemeinde
+8315115;Umkirch;gemeinde
+8315125;Wittnau;gemeinde
+8315131;Ehrenkirchen;gemeinde
+8315132;March;gemeinde
+8316003;Biederbach;gemeinde
+8316011;Emmendingen;gemeinde
+8116049;Nürtingen;gemeinde
+8116050;Oberboihingen;gemeinde
+8116054;Owen;gemeinde
+8116070;Weilheim an der Teck;gemeinde
+8337030;Dettighofen;gemeinde
+8337038;Görwihl;gemeinde
+8337039;Grafenhausen;gemeinde
+8337059;Ibach;gemeinde
+8337062;Klettgau;gemeinde
+8337065;Lauchringen;gemeinde
+8337096;Bad Säckingen;gemeinde
+8337118;Weilheim;gemeinde
+8415014;Dettingen an der Erms;gemeinde
+8415019;Eningen unter Achalm;gemeinde
+8415034;Hayingen;gemeinde
+8415039;Hülben;gemeinde
+8415053;Münsingen;gemeinde
+8415059;Pfullingen;gemeinde
+8415061;Reutlingen;gemeinde
+8415073;Trochtelfingen;gemeinde
+8415085;Zwiefalten;gemeinde
+8415087;Walddorfhäslach;gemeinde
+8325036;Lauterbach;gemeinde
+8325049;Rottweil;gemeinde
+8325050;Schenkenzell;gemeinde
+8325051;Schiltach;gemeinde
+8315068;Lenzkirch;gemeinde
+8315073;Merzhausen;gemeinde
+8315074;Müllheim;gemeinde
+8315084;Oberried;gemeinde
+8315094;Sankt Märgen;gemeinde
+8315102;Schluchsee;gemeinde
+8315108;Staufen im Breisgau;gemeinde
+8315113;Titisee-Neustadt;gemeinde
+8315130;Münstertal/ Schwarzwald;gemeinde
+8316002;Bahlingen;gemeinde
+8316009;Denzlingen;gemeinde
+8316012;Endingen am Kaiserstuhl;gemeinde
+8316013;Forchheim;gemeinde
+8316024;Malterdingen;gemeinde
+8316036;Reute;gemeinde
+8316039;Sexau;gemeinde
+8316042;Simonswald;gemeinde
+8225109;Walldürn;gemeinde
+8225114;Ravenstein;gemeinde
+8225117;Elztal;gemeinde
+8226003;Altlußheim;gemeinde
+8226009;Brühl;gemeinde
+8226010;Dielheim;gemeinde
+8226013;Eberbach;gemeinde
+8226020;Eschelbronn;gemeinde
+8226028;Heddesheim;gemeinde
+8226032;Hockenheim;gemeinde
+8226036;Ilvesheim;gemeinde
+8226040;Laudenbach;gemeinde
+8226046;Malsch;gemeinde
+8226054;Mühlhausen;gemeinde
+8226056;Neckargemünd;gemeinde
+8226058;Neidenstein;gemeinde
+8226066;Reichartshausen;gemeinde
+8226082;Schriesheim;gemeinde
+8226097;Wiesenbach;gemeinde
+8226098;Wiesloch;gemeinde
+8226101;Zuzenhausen;gemeinde
+8316014;Gutach im Breisgau;gemeinde
+8316020;Kenzingen;gemeinde
+8316037;Riegel;gemeinde
+8316043;Teningen;gemeinde
+8316053;Rheinhausen;gemeinde
+8316055;Winden im Elztal;gemeinde
+8317001;Achern;gemeinde
+8317005;Appenweier;gemeinde
+8317009;Berghaupten;gemeinde
+8317011;Biberach;gemeinde
+8115046;Steinenbronn;gemeinde
+8115048;Waldenbuch;gemeinde
+8115051;Weil im Schönbuch;gemeinde
+8115053;Jettingen;gemeinde
+8116004;Altbach;gemeinde
+8116006;Altenriet;gemeinde
+8116008;Bempflingen;gemeinde
+8116011;Beuren;gemeinde
+8116014;Deizisau;gemeinde
+8116015;Denkendorf;gemeinde
+8116018;Erkenbrechtsweiler;gemeinde
+8116020;Frickenhausen;gemeinde
+8415090;Hohenstein;gemeinde
+8415092;Lichtenstein;gemeinde
+8416006;Bodelshausen;gemeinde
+8416022;Kirchentellinsfurt;gemeinde
+8416025;Mössingen;gemeinde
+8416026;Nehren;gemeinde
+8416041;Tübingen;gemeinde
+8416049;Neustetten;gemeinde
+8417016;Dotternhausen;gemeinde
+8417031;Hechingen;gemeinde
+8417036;Jungingen;gemeinde
+8417047;Obernheim;gemeinde
+8417054;Rosenfeld;gemeinde
+8417078;Zimmern unter der Burg;gemeinde
+8425004;Altheim;gemeinde
+8425008;Amstetten;gemeinde
+8425013;Ballendorf;gemeinde
+8425017;Berghülen;gemeinde
+8425020;Blaubeuren;gemeinde
+8425028;Dietenheim;gemeinde
+8425033;Ehingen (Donau);gemeinde
+8316049;Weisweil;gemeinde
+8316051;Wyhl;gemeinde
+8316056;Waldkirch;gemeinde
+8317040;Haslach im Kinzigtal;gemeinde
+8317056;Kappelrodeck;gemeinde
+8317065;Lahr/ Schwarzwald;gemeinde
+8317068;Lauf;gemeinde
+8317075;Meißenheim;gemeinde
+8317088;Oberharmersbach;gemeinde
+8317093;Oberwolfach;gemeinde
+8317097;Ohlsbach;gemeinde
+8317102;Ottenhöfen im Schwarzwald;gemeinde
+8317116;Sasbach;gemeinde
+8317118;Sasbachwalden;gemeinde
+8317127;Seelbach;gemeinde
+8317129;Steinach;gemeinde
+8317146;Zell am Harmersbach;gemeinde
+8317151;Neuried;gemeinde
+8317971;Gemeindefreier Grundbesitz;gemeinde
+8325012;Dornhan;gemeinde
+8325045;Oberndorf am Neckar;gemeinde
+8226103;Sankt Leon-Rot;gemeinde
+8226106;Helmstadt-Bargen;gemeinde
+8231000;Pforzheim;gemeinde
+8235008;Bad Liebenzell;gemeinde
+8235020;Ebhausen;gemeinde
+8235029;Gechingen;gemeinde
+8235035;Höfen an der Enz;gemeinde
+8235046;Nagold;gemeinde
+8235050;Neuweiler;gemeinde
+8235060;Rohrdorf;gemeinde
+8235065;Schömberg;gemeinde
+8235080;Wildberg;gemeinde
+8235085;Calw;gemeinde
+8236061;Sternenfels;gemeinde
+8236067;Wimsheim;gemeinde
+8236068;Wurmberg;gemeinde
+8236072;Straubenhardt;gemeinde
+8236075;Ölbronn-Dürrn;gemeinde
+8237002;Alpirsbach;gemeinde
+8237027;Eutingen im Gäu;gemeinde
+8237030;Glatten;gemeinde
+8237045;Loßburg;gemeinde
+8116022;Großbettlingen;gemeinde
+8116033;Kirchheim unter Teck;gemeinde
+8116041;Neckartailfingen;gemeinde
+8116046;Neuffen;gemeinde
+8116048;Notzingen;gemeinde
+8116053;Ohmden;gemeinde
+8116058;Reichenbach an der Fils;gemeinde
+8116063;Schlaitdorf;gemeinde
+8116072;Wernau (Neckar);gemeinde
+8116076;Aichwald;gemeinde
+8116078;Leinfelden-Echterdingen;gemeinde
+8116079;Lenningen;gemeinde
+8116081;Aichtal;gemeinde
+8117001;Adelberg;gemeinde
+8117003;Albershausen;gemeinde
+8117007;Bad Überkingen;gemeinde
+8117009;Birenbach;gemeinde
+8117011;Börtlingen;gemeinde
+8117015;Donzdorf;gemeinde
+8117017;Dürnau;gemeinde
+8117019;Eislingen/ Fils;gemeinde
+8117020;Eschenbach;gemeinde
+8117024;Geislingen an der Steige;gemeinde
+8425055;Hausen am Bussen;gemeinde
+8425072;Langenau;gemeinde
+8425075;Lonsee;gemeinde
+8425085;Nerenstetten;gemeinde
+8425093;Öpfingen;gemeinde
+8425108;Schelklingen;gemeinde
+8425112;Setzingen;gemeinde
+8325064;Wellendingen;gemeinde
+8325069;Zimmern ob Rottweil;gemeinde
+8326003;Bad Dürrheim;gemeinde
+8326006;Bräunlingen;gemeinde
+8326017;Furtwangen im Schwarzwald;gemeinde
+8326031;Königsfeld im Schwarzwald;gemeinde
+8326052;Sankt Georgen im Schwarzwald;gemeinde
+8326060;Triberg im Schwarzwald;gemeinde
+8326068;Vöhrenbach;gemeinde
+8326074;Villingen-Schwenningen;gemeinde
+8327006;Böttingen;gemeinde
+8327007;Bubsheim;gemeinde
+8327010;Denkingen;gemeinde
+8327011;Dürbheim;gemeinde
+8327018;Geisingen;gemeinde
+8327030;Kolbingen;gemeinde
+8327040;Reichenbach am Heuberg;gemeinde
+8327046;Spaichingen;gemeinde
+8327049;Trossingen;gemeinde
+8327054;Wurmlingen;gemeinde
+8237054;Pfalzgrafenweiler;gemeinde
+8237073;Seewald;gemeinde
+8237075;Bad Rippoldsau-Schapbach;gemeinde
+8311000;Freiburg im Breisgau;gemeinde
+8315008;Ballrechten-Dottingen;gemeinde
+8315014;Bollschweil;gemeinde
+8315015;Breisach am Rhein;gemeinde
+8315022;Buggingen;gemeinde
+8315031;Eisenbach (Hochschwarzwald);gemeinde
+8315043;Gottenheim;gemeinde
+8315051;Heuweiler;gemeinde
+8425083;Neenstetten;gemeinde
+8425084;Nellingen;gemeinde
+8425088;Oberdischingen;gemeinde
+8425091;Oberstadion;gemeinde
+8425092;Öllingen;gemeinde
+8425097;Rammingen;gemeinde
+8425104;Rottenacker;gemeinde
+8425110;Schnürpflingen;gemeinde
+8425124;Unterstadion;gemeinde
+8425134;Westerheim;gemeinde
+8117025;Gingen an der Fils;gemeinde
+8117028;Gruibingen;gemeinde
+8117030;Heiningen;gemeinde
+8117035;Mühlhausen im Täle;gemeinde
+8117038;Rechberghausen;gemeinde
+8117049;Süßen;gemeinde
+8117058;Wiesensteig;gemeinde
+8118001;Affalterbach;gemeinde
+8118003;Asperg;gemeinde
+8118010;Bönnigheim;gemeinde
+8118015;Erligheim;gemeinde
+8118019;Gerlingen;gemeinde
+8118027;Hemmingen;gemeinde
+8118028;Hessigheim;gemeinde
+8118046;Kornwestheim;gemeinde
+8118047;Löchgau;gemeinde
+8118049;Marbach am Neckar;gemeinde
+8118050;Markgröningen;gemeinde
+8118053;Mundelsheim;gemeinde
+8118063;Pleidelsheim;gemeinde
+8118067;Schwieberdingen;gemeinde
+8118070;Steinheim an der Murr;gemeinde
+8425125;Unterwachingen;gemeinde
+8425135;Westerstetten;gemeinde
+8425138;Staig;gemeinde
+8425141;Blaustein;gemeinde
+8426001;Achstetten;gemeinde
+8426008;Altheim;gemeinde
+8426013;Bad Buchau;gemeinde
+8426020;Betzenweiler;gemeinde
+8426028;Burgrieden;gemeinde
+8426035;Dürmentingen;gemeinde
+8426043;Erlenmoos;gemeinde
+8426045;Ertingen;gemeinde
+8426064;Kanzach;gemeinde
+8426065;Kirchberg an der Iller;gemeinde
+8426071;Maselheim;gemeinde
+8327056;Rietheim-Weilheim;gemeinde
+8335001;Aach;gemeinde
+8335015;Büsingen am Hochrhein;gemeinde
+8335025;Gaienhofen;gemeinde
+8335028;Gottmadingen;gemeinde
+8335055;Moos;gemeinde
+8335061;Öhningen;gemeinde
+8335066;Reichenau;gemeinde
+8335079;Stockach;gemeinde
+8335097;Mühlhausen-Ehingen;gemeinde
+8335098;Bodman-Ludwigshafen;gemeinde
+8425137;Illerkirchberg;gemeinde
+8425140;Balzheim;gemeinde
+8426006;Allmannsweiler;gemeinde
+8426011;Attenweiler;gemeinde
+8426014;Bad Schussenried;gemeinde
+8426019;Berkheim;gemeinde
+8426021;Biberach an der Riß;gemeinde
+8426031;Dettingen an der Iller;gemeinde
+8426036;Dürnau;gemeinde
+8426038;Eberhardzell;gemeinde
+8426044;Erolzheim;gemeinde
+8426062;Ingoldingen;gemeinde
+8426067;Langenenslingen;gemeinde
+8426070;Laupheim;gemeinde
+8426074;Mittelbiberach;gemeinde
+8426097;Riedlingen;gemeinde
+8426108;Schwendi;gemeinde
+8426109;Seekirch;gemeinde
+8426117;Tannheim;gemeinde
+8426118;Tiefenbach;gemeinde
+8426121;Unlingen;gemeinde
+8426125;Wain;gemeinde
+8426128;Warthausen;gemeinde
+8118073;Vaihingen an der Enz;gemeinde
+8118076;Sachsenheim;gemeinde
+8118078;Freiberg am Neckar;gemeinde
+8118080;Korntal-Münchingen;gemeinde
+8118081;Remseck am Neckar;gemeinde
+8119003;Allmersbach im Tal;gemeinde
+8119006;Auenwald;gemeinde
+8119024;Großerlach;gemeinde
+8119037;Kaisersbach;gemeinde
+8119042;Leutenbach;gemeinde
+8119053;Oppenweiler;gemeinde
+8119067;Schorndorf;gemeinde
+8119075;Sulzbach an der Murr;gemeinde
+8119084;Welzheim;gemeinde
+8119086;Winterbach;gemeinde
+8119090;Remshalden;gemeinde
+8119093;Kernen im Remstal;gemeinde
+8121000;Heilbronn;gemeinde
+8125005;Bad Friedrichshall;gemeinde
+8125007;Bad Wimpfen;gemeinde
+8125008;Beilstein;gemeinde
+8125017;Cleebronn;gemeinde
+8426073;Mietingen;gemeinde
+8426087;Ochsenhausen;gemeinde
+8426090;Oggelshausen;gemeinde
+8426113;Steinhausen an der Rottum;gemeinde
+8426134;Schemmerhofen;gemeinde
+8426135;Gutenzell-Hürbel;gemeinde
+8435016;Friedrichshafen;gemeinde
+8435018;Hagnau am Bodensee;gemeinde
+8435030;Langenargen;gemeinde
+8435035;Meckenbeuren;gemeinde
+8435036;Meersburg;gemeinde
+8435047;Owingen;gemeinde
+8435054;Stetten;gemeinde
+8435059;Überlingen;gemeinde
+8435067;Deggenhausertal;gemeinde
+8436004;Aitrach;gemeinde
+8436006;Amtzell;gemeinde
+8436009;Bad Waldsee;gemeinde
+8436011;Baienfurt;gemeinde
+8436013;Berg;gemeinde
+8436024;Ebenweiler;gemeinde
+8336004;Aitern;gemeinde
+8336069;Rheinfelden (Baden);gemeinde
+8336073;Rümmingen;gemeinde
+8336075;Schallbach;gemeinde
+8336082;Schwörstadt;gemeinde
+8336084;Steinen;gemeinde
+8336087;Todtnau;gemeinde
+8336090;Utzenfeld;gemeinde
+8336094;Wembach;gemeinde
+8336103;Zell im Wiesental;gemeinde
+8336106;Häg-Ehrsberg;gemeinde
+8337013;Bernau;gemeinde
+8117060;Zell unter Aichelberg;gemeinde
+8118006;Benningen am Neckar;gemeinde
+8118011;Ditzingen;gemeinde
+8118014;Erdmannhausen;gemeinde
+8118021;Großbottwar;gemeinde
+8118048;Ludwigsburg;gemeinde
+8118051;Möglingen;gemeinde
+8118060;Oberstenfeld;gemeinde
+8119020;Fellbach;gemeinde
+8119044;Murrhardt;gemeinde
+8435010;Daisendorf;gemeinde
+8435013;Eriskirch;gemeinde
+8435020;Heiligenberg;gemeinde
+8435024;Immenstaad am Bodensee;gemeinde
+8435034;Markdorf;gemeinde
+8435042;Neukirch;gemeinde
+8435052;Salem;gemeinde
+8435053;Sipplingen;gemeinde
+8127062;Oberrot;gemeinde
+8127071;Rot am See;gemeinde
+8127075;Schrozberg;gemeinde
+8125021;Eberstadt;gemeinde
+8125030;Flein;gemeinde
+8125034;Gemmingen;gemeinde
+8125039;Gundelsheim;gemeinde
+8125047;Ittlingen;gemeinde
+8125049;Kirchardt;gemeinde
+8125056;Lauffen am Neckar;gemeinde
+8125058;Leingarten;gemeinde
+8125061;Massenbachhausen;gemeinde
+8125063;Möckmühl;gemeinde
+8125068;Neudenau;gemeinde
+8125078;Oedheim;gemeinde
+8125081;Pfaffenhofen;gemeinde
+8125094;Talheim;gemeinde
+8125096;Untereisesheim;gemeinde
+8125107;Wüstenrot;gemeinde
+8125111;Hardthausen am Kocher;gemeinde
+8126011;Bretzfeld;gemeinde
+8126039;Ingelfingen;gemeinde
+8126047;Kupferzell;gemeinde
+8126058;Neuenstein;gemeinde
+8126060;Niedernhall;gemeinde
+8436040;Guggenhausen;gemeinde
+8436078;Vogt;gemeinde
+8436087;Wolpertswende;gemeinde
+8436093;Ebersbach-Musbach;gemeinde
+8437008;Bingen;gemeinde
+8437031;Gammertingen;gemeinde
+8437047;Hettingen;gemeinde
+8437059;Inzigkofen;gemeinde
+8437065;Krauchenwies;gemeinde
+8437082;Neufra;gemeinde
+8437088;Pfullendorf;gemeinde
+8437101;Scheer;gemeinde
+8437105;Sigmaringendorf;gemeinde
+8437114;Veringenstadt;gemeinde
+8437124;Herdwangen-Schönach;gemeinde
+8336107;Kleines Wiesental;gemeinde
+8116077;Filderstadt;gemeinde
+8116080;Ostfildern;gemeinde
+8117006;Bad Ditzenbach;gemeinde
+8117012;Bad Boll;gemeinde
+8117037;Ottenbach;gemeinde
+8117042;Salach;gemeinde
+8119061;Rudersberg;gemeinde
+8119076;Urbach;gemeinde
+8119085;Winnenden;gemeinde
+8119089;Berglen;gemeinde
+8125001;Abstatt;gemeinde
+8125013;Brackenheim;gemeinde
+8125024;Ellhofen;gemeinde
+8125066;Neckarwestheim;gemeinde
+8125079;Offenau;gemeinde
+8125087;Siegelsbach;gemeinde
+8125103;Widdern;gemeinde
+8125110;Obersulm;gemeinde
+8125113;Langenbrettach;gemeinde
+8126028;Forchtenberg;gemeinde
+8126046;Künzelsau;gemeinde
+8126056;Mulfingen;gemeinde
+8126066;Öhringen;gemeinde
+8126072;Schöntal;gemeinde
+8126094;Zweiflingen;gemeinde
+8127009;Braunsbach;gemeinde
+8127089;Vellberg;gemeinde
+8127102;Fichtenau;gemeinde
+8127079;Sulzbach-Laufen;gemeinde
+8127086;Untermünkheim;gemeinde
+8127099;Wolpertshausen;gemeinde
+8127103;Frankenhardt;gemeinde
+8128007;Bad Mergentheim;gemeinde
+8128020;Creglingen;gemeinde
+8128047;Grünsfeld;gemeinde
+8128082;Niederstetten;gemeinde
+8128128;Werbach;gemeinde
+8128131;Wertheim;gemeinde
+8128138;Ahorn;gemeinde
+8128139;Lauda-Königshofen;gemeinde
+8135015;Gerstetten;gemeinde
+8135019;Heidenheim an der Brenz;gemeinde
+8135020;Herbrechtingen;gemeinde
+8135025;Königsbronn;gemeinde
+8135026;Nattheim;gemeinde
+8135032;Steinheim am Albuch;gemeinde
+8136002;Abtsgmünd;gemeinde
+8136007;Bartholomä;gemeinde
+8136010;Bopfingen;gemeinde
+8126069;Pfedelbach;gemeinde
+8126085;Waldenburg;gemeinde
+8126086;Weißbach;gemeinde
+8127008;Blaufelden;gemeinde
+8127012;Bühlertann;gemeinde
+8127023;Fichtenberg;gemeinde
+8127032;Gerabronn;gemeinde
+8127043;Ilshofen;gemeinde
+8127047;Langenburg;gemeinde
+8117044;Schlierbach;gemeinde
+8117051;Uhingen;gemeinde
+8117055;Wangen;gemeinde
+8116071;Wendlingen am Neckar;gemeinde
+8116073;Wolfschlugen;gemeinde
+8117002;Aichelberg;gemeinde
+8117010;Böhmenkirch;gemeinde
+8117014;Deggingen;gemeinde
+8117016;Drackenstein;gemeinde
+8117018;Ebersbach an der Fils;gemeinde
+8117023;Gammelshausen;gemeinde
+8117026;Göppingen;gemeinde
+8117029;Hattenhofen;gemeinde
+8117031;Hohenstadt;gemeinde
+8117033;Kuchen;gemeinde
+8117043;Schlat;gemeinde
+8117053;Wäschenbeuren;gemeinde
+8117061;Lauterstein;gemeinde
+8118007;Besigheim;gemeinde
+8118012;Eberdingen;gemeinde
+8118016;Freudental;gemeinde
+8118018;Gemmrigheim;gemeinde
+8118040;Kirchheim am Neckar;gemeinde
+8127104;Stimpfach;gemeinde
+8128039;Freudenberg;gemeinde
+8128064;Külsheim;gemeinde
+8128137;Wittighausen;gemeinde
+8135010;Dischingen;gemeinde
+8135021;Hermaringen;gemeinde
+8135027;Niederstotzingen;gemeinde
+8136038;Lauchheim;gemeinde
+8136045;Neresheim;gemeinde
+8136062;Schechingen;gemeinde
+8136066;Spraitbach;gemeinde
+8136079;Waldstetten;gemeinde
+8136088;Aalen;gemeinde
+8215009;Bruchsal;gemeinde
+8215025;Gondelsheim;gemeinde
+8215047;Marxzell;gemeinde
+8215084;Ubstadt-Weiher;gemeinde
+8215111;Dettenheim;gemeinde
+8216005;Bietigheim;gemeinde
+8216008;Bühlertal;gemeinde
+8216012;Elchesheim-Illingen;gemeinde
+8136015;Durlangen;gemeinde
+8136019;Ellwangen (Jagst);gemeinde
+8136021;Essingen;gemeinde
+8136027;Gschwend;gemeinde
+8136028;Heubach;gemeinde
+8136033;Hüttlingen;gemeinde
+8136037;Kirchheim am Ries;gemeinde
+8136042;Lorch;gemeinde
+8136046;Neuler;gemeinde
+8136060;Rosenberg;gemeinde
+8136061;Ruppertshofen;gemeinde
+8136068;Stödtlen;gemeinde
+8136070;Täferrot;gemeinde
+8136082;Westhausen;gemeinde
+8136089;Rainau;gemeinde
+8211000;Baden-Baden;gemeinde
+8215007;Bretten;gemeinde
+8215017;Ettlingen;gemeinde
+8215021;Forst;gemeinde
+8215029;Hambrücken;gemeinde
+8215039;Kronau;gemeinde
+8215046;Malsch;gemeinde
+8118054;Murr;gemeinde
+8118059;Oberriexingen;gemeinde
+8118068;Sersheim;gemeinde
+8118071;Tamm;gemeinde
+8118074;Walheim;gemeinde
+8118077;Ingersheim;gemeinde
+8118079;Bietigheim-Bissingen;gemeinde
+8119001;Alfdorf;gemeinde
+8119004;Althütte;gemeinde
+8119008;Backnang;gemeinde
+8119018;Burgstetten;gemeinde
+8119038;Kirchberg an der Murr;gemeinde
+8119041;Korb;gemeinde
+8119055;Plüderhausen;gemeinde
+8325057;Sulz am Neckar;gemeinde
+8325060;Villingendorf;gemeinde
+8325061;Vöhringen;gemeinde
+8325071;Eschbronn;gemeinde
+8325072;Deißlingen;gemeinde
+8326005;Blumberg;gemeinde
+8326010;Dauchingen;gemeinde
+8326012;Donaueschingen;gemeinde
+8216017;Gernsbach;gemeinde
+8216024;Kuppenheim;gemeinde
+8216033;Muggensturm;gemeinde
+8216041;Ottersweier;gemeinde
+8216063;Rheinmünster;gemeinde
+8225010;Binau;gemeinde
+8225014;Buchen (Odenwald);gemeinde
+8225052;Limbach;gemeinde
+8225067;Neckarzimmern;gemeinde
+8226017;Epfenbach;gemeinde
+8226027;Heddesbach;gemeinde
+8226031;Hemsbach;gemeinde
+8215059;Oberderdingen;gemeinde
+8215082;Sulzfeld;gemeinde
+8215089;Walzbachtal;gemeinde
+8215094;Zaisenhausen;gemeinde
+8215097;Kraichtal;gemeinde
+8215100;Bad Schönborn;gemeinde
+8215101;Pfinztal;gemeinde
+8215103;Karlsdorf-Neuthard;gemeinde
+8215105;Linkenheim-Hochstetten;gemeinde
+8215107;Oberhausen-Rheinhausen;gemeinde
+8435057;Tettnang;gemeinde
+8435066;Uhldingen-Mühlhofen;gemeinde
+8436001;Achberg;gemeinde
+8436003;Aichstetten;gemeinde
+8436005;Altshausen;gemeinde
+8436008;Aulendorf;gemeinde
+8436010;Bad Wurzach;gemeinde
+8436012;Baindt;gemeinde
+8436018;Bodnegg;gemeinde
+8436032;Fleischwangen;gemeinde
+8436049;Isny im Allgäu;gemeinde
+8326020;Gütenbach;gemeinde
+8326027;Hüfingen;gemeinde
+8326037;Mönchweiler;gemeinde
+8326041;Niedereschach;gemeinde
+8326054;Schönwald im Schwarzwald;gemeinde
+8326055;Schonach im Schwarzwald;gemeinde
+8326061;Tuningen;gemeinde
+8326065;Unterkirnach;gemeinde
+8327002;Aldingen;gemeinde
+8327004;Bärenthal;gemeinde
+8327008;Buchheim;gemeinde
+8327012;Durchhausen;gemeinde
+8327016;Fridingen an der Donau;gemeinde
+8327017;Frittlingen;gemeinde
+8327019;Gosheim;gemeinde
+8327023;Hausen ob Verena;gemeinde
+8327025;Immendingen;gemeinde
+8327029;Königsheim;gemeinde
+8327033;Mahlstetten;gemeinde
+8327038;Neuhausen ob Eck;gemeinde
+8226038;Ladenburg;gemeinde
+8226049;Meckesheim;gemeinde
+8226060;Nußloch;gemeinde
+8226063;Plankstadt;gemeinde
+8226080;Schönau;gemeinde
+8226086;Spechbach;gemeinde
+8226095;Walldorf;gemeinde
+8235032;Haiterbach;gemeinde
+8235055;Oberreichenbach;gemeinde
+8235067;Simmozheim;gemeinde
+8235079;Bad Wildbad im Schwarzwald;gemeinde
+8236004;Birkenfeld;gemeinde
+8236013;Engelsbrand;gemeinde
+8236028;Illingen;gemeinde
+8236031;Kieselbronn;gemeinde
+8236038;Maulbronn;gemeinde
+8236043;Neuenbürg;gemeinde
+8236050;Ötisheim;gemeinde
+8236062;Tiefenbronn;gemeinde
+8236070;Keltern;gemeinde
+8237072;Wörnersberg;gemeinde
+8315004;Auggen;gemeinde
+8111;Stuttgart, Landeshauptstadt;kreis
+8115;Böblingen;kreis
+8116;Esslingen;kreis
+8117;Göppingen;kreis
+8118;Ludwigsburg;kreis
+8119;Rems-Murr-Kreis;kreis
+8121;Heilbronn, Stadt;kreis
+8125;Heilbronn;kreis
+8126;Hohenlohekreis;kreis
+8127;Schwäbisch Hall;kreis
+8128;Main-Tauber-Kreis;kreis
+8135;Heidenheim;kreis
+8136;Ostalbkreis;kreis
+8211;Baden-Baden, Stadt;kreis
+8212;Karlsruhe, Stadt;kreis
+8215;Karlsruhe;kreis
+8216;Rastatt;kreis
+8221;Heidelberg, Stadt;kreis
+8222;Mannheim, Universitätsstadt;kreis
+8225;Neckar-Odenwald-Kreis;kreis
+8226;Rhein-Neckar-Kreis;kreis
+8231;Pforzheim, Stadt;kreis
+8235;Calw;kreis
+8236;Enzkreis;kreis
+8237;Freudenstadt;kreis
+8311;Freiburg im Breisgau, Stadt;kreis
+8315;Breisgau-Hochschwarzwald;kreis
+8316;Emmendingen;kreis
+8317;Ortenaukreis;kreis
+8325;Rottweil;kreis
+8326;Schwarzwald-Baar-Kreis;kreis
+8327;Tuttlingen;kreis
+8335;Konstanz;kreis
+8336;Lörrach;kreis
+8337;Waldshut;kreis
+8415;Reutlingen;kreis
+8416;Tübingen;kreis
+8417;Zollernalbkreis;kreis
+8421;Ulm, Universitätsstadt;kreis
+8425;Alb-Donau-Kreis;kreis
+8426;Biberach;kreis
+8435;Bodenseekreis;kreis
+8436;Ravensburg;kreis
+8437;Sigmaringen;kreis
+0;Baden-Württemberg;land
+22;Nördliches Oberrhein-Tiefland;naturraum
+20;Südliches Oberrhein-Tiefland;naturraum
+13;Mainfränkische Platten;naturraum
+14;Odenwald, Spessart und Südrhön;naturraum
+21;Mittleres Oberrhein-Tiefland;naturraum
+10;Schwäbisches Keuper-Lias-Land;naturraum
+9;Schwäbische Alb;naturraum
+4;Donau-Iller-Lech-Platte;naturraum
+11;Fränkisches Keuper-Lias-Land;naturraum
+12;Neckar- und Tauber-Gäuplatten;naturraum
+15;Schwarzwald;naturraum
+16;Hochrheingebiet;naturraum
+3;Voralpines Hügel- und Moorland;naturraum

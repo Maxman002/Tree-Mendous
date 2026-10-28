@@ -80,6 +80,10 @@
             <span aria-hidden="true">ⓘ</span>
             Temperatures are interpolated between bike routes, not citywide coverage. Noise remains illustrative.
           </p>
+          <button class="climate-explorer-button" id="climate-open" type="button">
+            <span class="climate-explorer-icon" aria-hidden="true">↗</span>
+            <span><strong>Explore historical climate</strong><small>Annual indicators · 1961–2025</small></span>
+          </button>
         </section>
 
         <section class="projects-section" aria-labelledby="projects-heading">
@@ -180,6 +184,53 @@
         <input id="idea-description" type="text" maxlength="90" placeholder="e.g. More shade by the bus stop" required>
         <button class="submit-button" type="submit">Add idea to map <span aria-hidden="true">↗</span></button>
       </form>
+    </dialog>
+
+    <dialog class="climate-dialog" id="climate-dialog" aria-labelledby="climate-title">
+      <form method="dialog" class="modal-close-form">
+        <button class="modal-close" aria-label="Close climate explorer">×</button>
+      </form>
+      <p class="eyebrow"><span class="eyebrow-dot"></span> Climate through time</p>
+      <h2 id="climate-title">A longer view of Heilbronn’s climate.</h2>
+      <p class="climate-intro">Explore annual climate indicators from the supplied regional datasets. These historical figures are separate from the bike-sensor readings on the map; they are not street-level measurements or forecasts. The profile PDFs also include modeled RCP 4.5 and RCP 8.5 projections to 2100; those scenarios are kept separate from this historical chart.</p>
+      <div class="climate-controls">
+        <label for="climate-region">Area
+          <select id="climate-region">
+            <option value="heilbronn">Heilbronn municipality</option>
+            <option value="heilbronnCityDistrict">Heilbronn city district</option>
+            <option value="county">Heilbronn county</option>
+            <option value="badenWuerttemberg">Baden-Württemberg</option>
+          </select>
+        </label>
+        <label for="climate-metric">Indicator
+          <select id="climate-metric">
+            <option value="temperatur_mittelwert">Mean temperature (°C)</option>
+            <option value="temperatur_sommertage">Summer days</option>
+            <option value="temperatur_heisse_tage">Hot days</option>
+            <option value="temperatur_tropennaechte">Tropical nights</option>
+            <option value="niederschlag_summe">Total precipitation (mm)</option>
+            <option value="niederschlag_trockentage">Dry days</option>
+            <option value="trockenperiode_tage_maximum">Longest dry period (days)</option>
+          </select>
+        </label>
+      </div>
+      <p class="climate-status" id="climate-status" role="status" aria-live="polite"></p>
+      <div class="climate-chart-wrap">
+        <svg id="climate-chart" role="img" aria-labelledby="climate-chart-title climate-chart-description"></svg>
+      </div>
+      <p class="climate-summary" id="climate-summary" aria-live="polite"></p>
+      <p class="climate-note">The selected indicator may vary substantially year to year. The displayed change compares the first and last available annual records, not a trend estimate.</p>
+      <aside class="climate-profile-summary" aria-label="Erlenbach climate profile summary">
+        <h3>Erlenbach profile at a glance</h3>
+        <p>The supplied LUBW profile reports a mean temperature of <strong>10.9 °C</strong> for 1996–2025, <strong>1.5 °C</strong> above its 1961–1990 reference mean (9.4 °C). Its 2025 mean is 11.2 °C. These period summaries are not an annual time series.</p>
+      </aside>
+      <div class="climate-reports">
+        <h3>Climate profiles and analysis</h3>
+        <a href="weather_data/klimaprofil_kreis_heilbronn_8125.pdf" target="_blank" rel="noopener noreferrer">Heilbronn county climate profile (PDF)</a>
+        <a href="weather_data/klimaprofil_kreis_heilbronn_stadt_8121.pdf" target="_blank" rel="noopener noreferrer">Heilbronn city district climate profile (PDF)</a>
+        <a href="weather_data/klimaprofil_land_baden-wuerttemberg_0.pdf" target="_blank" rel="noopener noreferrer">Baden-Württemberg climate profile (PDF)</a>
+        <a href="weather_data/landesweite_klimaanalyse_endbericht.pdf" target="_blank" rel="noopener noreferrer">Statewide climate analysis report (PDF)</a>
+      </div>
     </dialog>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>

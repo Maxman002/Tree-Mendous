@@ -9,6 +9,8 @@ This note explains which environmental datasets and analysis artifacts are in th
 | `data/alles.csv` | Downloaded from the Mobile Datalogger link on the GreenCity resources page (Nextcloud folder `Heat-Island-Summerschool 2026`). Device provenance remains uncertain. | One mobile temperature/humidity/GPS/speed reading. | Current map heat layer and exploratory mobile-logger analysis. |
 | `data/processed/osem_bike_data_heilbronn_2026-09-02.csv` | Snapshot from ATRAI API collection `osem_bike_data`, filtered for the `heilbronn` campaign tag and `createdAt` date 2026-09-02. | One raw bike sensor observation. | Explore mobile bike measurements, routes, sensor fields, and temperature by hour. |
 | `data/processed/osem_home_data_heilbronn_2026-09-02.csv` | Snapshot from ATRAI API collection `osem_home_data_heilbronn`, filtered to `createdAt` date 2026-09-02. | One observation from a stationary sensor. | Explore separate station time series and temperature by station/hour. |
+| `weather_data/klimadaten_*.csv` | Regional climate tables supplied with the climate profiles; the files identify an area, year, and season. | One annual or seasonal climate indicator record for an area. | Historical regional context in the climate explorer. These tables are separate from the 2026 bike-sensor measurements. |
+| `weather_data/klimaprofil_*.pdf` and `weather_data/landesweite_klimaanalyse_endbericht.pdf` | Regional profile PDFs and statewide climate-analysis report supplied alongside the climate tables. | A regional climate profile or analysis report. | Background reading; the Erlenbach profile currently has no matching climate-data CSV in this folder and is not linked in the explorer. |
 
 The two `data/processed` CSVs are intentional, dated snapshots and are staged for the next commit. The directory is otherwise ignored so that future generated API caches are not added accidentally. Do not treat other files created there as repository datasets without explicitly deciding to version them.
 
@@ -48,6 +50,12 @@ All three notebooks default to 2 September 2026, 10:00–14:00, with the end of 
 - Before comparing temperature values, confirm the API timestamp timezone, sensor location/placement, calibration, and exposure to sun/shade. Bike readings along a route and fixed home-station readings measure different sampling situations.
 
 The bike snapshot's `createdAt` values span 10:24–19:38 as recorded; the home snapshot covers 00:00–23:59. The local CSV has a different timestamp convention and should be aligned only after converting it to the API's confirmed time basis.
+
+## Regional climate tables and profiles
+
+The `weather_data` folder contains semicolon-delimited regional climate tables for Heilbronn municipality, Heilbronn city district, Heilbronn county, and Baden-Württemberg. Each table contains 65 annual records (1961–2025) as well as seasonal and monthly records. Numeric decimal values use a comma. The visualizer's climate explorer reads the annual records for all four areas; it offers annual temperature, heat-day, precipitation, and dry-period indicators. It does not interpolate these regional summaries onto the street map or combine them with mobile measurements.
+
+The folder also includes climate profile PDFs for Erlenbach, Heilbronn county, Heilbronn city district, and Baden-Württemberg, plus a statewide climate-analysis report. The Erlenbach PDF remains in the repository but is not linked in the explorer. The supplied profile is branded by LUBW's Kompetenzzentrum Klimawandel and reports a 10.9 °C mean for 1996–2025, 1.5 °C above its 1961–1990 reference mean of 9.4 °C; its reported 2025 mean is 11.2 °C. The profiles also include modeled RCP 4.5 and RCP 8.5 projections to 2100; these scenarios are not plotted with the historical series. Erlenbach has no corresponding `klimadaten` CSV here, so it is not plotted as a time series. The explorer displays the CSV series' first-to-last available annual difference as context only; it is not a trend estimate or forecast. Confirm the publisher, methodology, license, and indicator definitions from the original source before presenting the data as official or authoritative.
 
 ## Re-running the notebooks and API caches
 

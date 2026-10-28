@@ -189,6 +189,232 @@ loadHeatMeasurements().catch((error) => {
   document.getElementById("heat-max").textContent = "unavailable";
 });
 
+const climateRegions = {
+  heilbronn: {
+    label: "Heilbronn municipality",
+    file: "weather_data/klimadaten_gemeinde_heilbronn_8121000.csv"
+  },
+  heilbronnCityDistrict: {
+    label: "Heilbronn city district",
+    file: "weather_data/klimadaten_kreis_heilbronn_stadt_8121.csv"
+  },
+  county: {
+    label: "Heilbronn county",
+    file: "weather_data/klimadaten_kreis_heilbronn_8125.csv"
+  },
+  badenWuerttemberg: {
+    label: "Baden-Württemberg",
+    file: "weather_data/klimadaten_land_baden-wuerttemberg_0.csv"
+  }
+};
+
+const climateMetrics = {
+  temperatur_mittelwert: { label: "Mean temperature", unit: "°C" },
+  temperatur_sommertage: { label: "Summer days", unit: "days" },
+  temperatur_heisse_tage: { label: "Hot days", unit: "days" },
+  temperatur_tropennaechte: { label: "Tropical nights", unit: "nights" },
+  niederschlag_summe: { label: "Total precipitation", unit: "mm" },
+  niederschlag_trockentage: { label: "Dry days", unit: "days" },
+  trockenperiode_tage_maximum: { label: "Longest dry period", unit: "days" }
+};
+
+const climateDataCache = new Map();
+const climateDialog = document.getElementById("climate-dialog");
+const climateRegionSelect = document.getElementById("climate-region");
+const climateMetricSelect = document.getElementById("climate-metric");
+const climateChart = document.getElementById("climate-chart");
+const climateSummary = document.getElementById("climate-summary");
+const climateStatus = document.getElementById("climate-status");
+const climateNumberFormat = new Intl.NumberFormat("en", { maximumFractionDigits: 1 });
+const climateChangeFormat = new Intl.NumberFormat("en", { maximumFractionDigits: 2 });
+let climateUpdateId = 0;
+
+async function loadClimateSeries(regionKey) {
+  if (climateDataCache.has(regionKey)) {
+    return climateDataCache.get(regionKey);
+  }
+
+  const region = climateRegions[regionKey];
+  if (!region) {
+    throw new Error(`Unknown climate region: ${regionKey}.`);
+  }
+
+  const response = await fetch(region.file);
+  if (!response.ok) {
+    throw new Error(`Could not load ${region.file} (${response.status} ${response.statusText}).`);
+  }
+
+  const lines = (await response.text()).split(/\r?\n/);
+  const header = lines.shift()?.split(";");
+  if (!header) {
+    throw new Error(`The climate CSV for ${region.label} is empty.`);
+  }
+
+  const yearColumn = header.indexOf("jahr");
+  const seasonColumn = header.indexOf("saison");
+  if (yearColumn < 0 || seasonColumn < 0) {
+    throw new Error(`The climate CSV for ${region.label} must contain jahr and saison columns.`);
+  }
+
+  const metricColumns = Object.fromEntries(
+    Object.keys(climateMetrics).map((metric) => [metric, header.indexOf(metric)])
+  );
+  const rows = lines.flatMap((line) => {
+    if (!line.trim()) return [];
+    const columns = line.split(";");
+    if (columns[seasonColumn] !== "kalenderjahr") return [];
+    const year = Number(columns[yearColumn]);
+    if (!Number.isInteger(year)) return [];
+
+    return [{
+      year,
+      values: Object.fromEntries(
+        Object.entries(metricColumns).map(([metric, column]) => {
+          const value = column < 0 ? "" : columns[column]?.trim() ?? "";
+          const number = value ? Number(value.replace(",", ".")) : NaN;
+          return [metric, Number.isFinite(number) ? number : null];
+        })
+      )
+    }];
+  }).sort((first, second) => first.year - second.year);
+
+  if (rows.length === 0) {
+    throw new Error(`The climate CSV for ${region.label} has no annual records.`);
+  }
+
+  climateDataCache.set(regionKey, rows);
+  return rows;
+}
+
+function appendSvgElement(svg, name, attributes, text) {
+  const element = document.createElementNS("http://www.w3.org/2000/svg", name);
+  Object.entries(attributes).forEach(([attribute, value]) => {
+    element.setAttribute(attribute, String(value));
+  });
+  if (text !== undefined) element.textContent = text;
+  svg.append(element);
+  return element;
+}
+
+function renderClimateChart(rows, region, metricKey) {
+  const metric = climateMetrics[metricKey];
+  const points = rows.flatMap((row) => {
+    const value = row.values[metricKey];
+    return value === null ? [] : [{ year: row.year, value }];
+  });
+  climateChart.replaceChildren();
+
+  if (points.length === 0) {
+    climateSummary.textContent = `No annual ${metric.label.toLowerCase()} data is available for ${region.label}.`;
+    climateStatus.textContent = climateSummary.textContent;
+    return;
+  }
+
+  const width = 720;
+  const height = 320;
+  const plot = { left: 64, right: 18, top: 20, bottom: 42 };
+  const plotWidth = width - plot.left - plot.right;
+  const plotHeight = height - plot.top - plot.bottom;
+  const values = points.map((point) => point.value);
+  const range = Math.max(...values) - Math.min(...values);
+  const padding = range === 0 ? 1 : range * 0.1;
+  const minimum = Math.min(...values) - padding;
+  const maximum = Math.max(...values) + padding;
+  const x = (index) => plot.left + (index / Math.max(points.length - 1, 1)) * plotWidth;
+  const y = (value) => plot.top + ((maximum - value) / (maximum - minimum)) * plotHeight;
+
+  climateChart.setAttribute("viewBox", `0 0 ${width} ${height}`);
+  climateChart.setAttribute("aria-label", `${metric.label} in ${region.label}, ${points[0].year} to ${points.at(-1).year}`);
+  appendSvgElement(climateChart, "title", { id: "climate-chart-title" }, `${metric.label} in ${region.label}`);
+  appendSvgElement(
+    climateChart,
+    "desc",
+    { id: "climate-chart-description" },
+    `Annual climate indicators from ${points[0].year} to ${points.at(-1).year}.`
+  );
+  climateChart.setAttribute("aria-labelledby", "climate-chart-title climate-chart-description");
+  climateChart.setAttribute("role", "img");
+
+  for (let tick = 0; tick <= 4; tick += 1) {
+    const value = maximum - ((maximum - minimum) * tick) / 4;
+    const yPosition = y(value);
+    appendSvgElement(climateChart, "line", {
+      x1: plot.left,
+      x2: width - plot.right,
+      y1: yPosition,
+      y2: yPosition,
+      class: "climate-gridline"
+    });
+    appendSvgElement(climateChart, "text", {
+      x: plot.left - 10,
+      y: yPosition + 4,
+      "text-anchor": "end",
+      class: "climate-axis-label"
+    }, climateNumberFormat.format(value));
+  }
+
+  const yearTicks = new Set([0, Math.floor((points.length - 1) / 2), points.length - 1]);
+  yearTicks.forEach((index) => {
+    appendSvgElement(climateChart, "text", {
+      x: x(index),
+      y: height - 12,
+      "text-anchor": index === 0 ? "start" : index === points.length - 1 ? "end" : "middle",
+      class: "climate-axis-label"
+    }, String(points[index].year));
+  });
+
+  const path = points.map((point, index) =>
+    `${index === 0 ? "M" : "L"} ${x(index).toFixed(2)} ${y(point.value).toFixed(2)}`
+  ).join(" ");
+  appendSvgElement(climateChart, "path", { d: path, class: "climate-line" });
+  points.forEach((point, index) => {
+    const circle = appendSvgElement(climateChart, "circle", {
+      cx: x(index),
+      cy: y(point.value),
+      r: points.length > 40 ? 2 : 3,
+      class: "climate-point"
+    });
+    appendSvgElement(circle, "title", {}, `${point.year}: ${climateNumberFormat.format(point.value)} ${metric.unit}`);
+  });
+
+  const first = points[0];
+  const latest = points.at(-1);
+  const difference = latest.value - first.value;
+  const sign = difference > 0 ? "+" : "";
+  climateSummary.textContent =
+    `${first.year}: ${climateNumberFormat.format(first.value)} ${metric.unit} · `
+    + `${latest.year}: ${climateNumberFormat.format(latest.value)} ${metric.unit} · `
+    + `change: ${sign}${climateChangeFormat.format(difference)} ${metric.unit}`;
+  climateStatus.textContent = `${points.length} annual records · ${first.year}–${latest.year}`;
+}
+
+async function updateClimateExplorer() {
+  const updateId = ++climateUpdateId;
+  const regionKey = climateRegionSelect.value;
+  const metricKey = climateMetricSelect.value;
+  climateStatus.textContent = "Loading climate data…";
+  climateSummary.textContent = "";
+  climateChart.replaceChildren();
+  try {
+    const region = climateRegions[regionKey];
+    const rows = await loadClimateSeries(regionKey);
+    if (updateId !== climateUpdateId) return;
+    renderClimateChart(rows, region, metricKey);
+  } catch (error) {
+    if (updateId !== climateUpdateId) return;
+    console.error("Unable to load the annual climate data.", error);
+    climateStatus.textContent = "Climate data could not be loaded.";
+    climateSummary.textContent = error.message;
+  }
+}
+
+document.getElementById("climate-open").addEventListener("click", () => {
+  climateDialog.showModal();
+  updateClimateExplorer();
+});
+climateRegionSelect.addEventListener("change", updateClimateExplorer);
+climateMetricSelect.addEventListener("change", updateClimateExplorer);
+
 const noiseLayer = L.layerGroup([
   L.polyline([[49.1488, 9.2139], [49.1472, 9.2136], [49.1458, 9.2133]], {
     color: "#718ba2",
