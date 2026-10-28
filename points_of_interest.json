@@ -6,7 +6,7 @@
     "lng": 9.215480,
     "category": "Birdhouse",
     "description": "Part of  a smart bird houses network all over Heilbronn that log visits and conditions, giving a window into how urban wildlife responds to the changing climate.",
-    "link": ""
+    "link": "https://wiediversistmeingarten.org/view/station/699b7f2c-3855-4273-af7f-ed61a54541f9"
   },
   {
     "id": 2,
@@ -14,34 +14,34 @@
     "lat": 49.151805,
     "lng": 9.215302,
     "category": "Beehive",
-    "description": "Smart beehive: Sensor equipped beehive",
-    "link": ""
+    "description": "Smart beehive: Sensor equipped beehive. Outside, 2026 swung from about −5 °C in winter to more than 30 °C in summer. Inside three hives on the 42 campus, the story is very different. In January and February the sensors read only 10–15 °C. The colony sits in a tight cluster and the rest of the hive is cold. Then, from about March, there's a shift. The bees start raising young, and the hive warms to around 35 °C, the temperature the brood needs. From spring through summer the hive temperature stays there, even on days when the outside air jumps by 20 degrees. The bees heat on cold days and cool on hot ones, with no electronics, only thousands of small bodies working together. ",
+    "link": "https://beehive-grafana-production.up.railway.app/d/beehappy-monitor/beehappy-e28094-bienenstock-monitor?orgId=1&from=now-7d&to=now&timezone=browser&refresh=15m"
   },
   {
     "id": 3,
-    "name": "FILL IN: name of spot 3",
-    "lat": 0.0,
-    "lng": 0.0,
-    "category": "FILL IN: e.g. park",
-    "description": "FILL IN: short description",
+    "name": "BUGA spielplatz",
+    "lat": 49.150353,
+    "lng": 9.207446,
+    "category": "park",
+    "description": "Large green area developed in the urban environment with playground and sports facilities. Great example of how a city can create green spaces for recreation.",
     "link": ""
   },
   {
     "id": 4,
-    "name": "FILL IN: name of spot 4",
-    "lat": 0.0,
-    "lng": 0.0,
-    "category": "FILL IN: e.g. park",
-    "description": "FILL IN: short description",
+    "name": "Bleichinsel Bridge",
+    "lat": 49.147158,
+    "lng": 9.211756,
+    "category": "European Green Capital 2027",
+    "description": "As part of the European Green Capital 2027 initiative, Bleichinsel bridge is transforming into a central block of green. Green structures that promote biodiversity and improve the urban climate are placed. Cycle lanes on the bridge in both directions, connecting to the existing network.",
     "link": ""
   },
   {
     "id": 5,
-    "name": "FILL IN: name of spot 5",
-    "lat": 0.0,
-    "lng": 0.0,
-    "category": "FILL IN: e.g. park",
-    "description": "FILL IN: short description",
+    "name": "Friedrich-Ebert Bridge",
+    "lat": 49.142434,
+    "lng": 9.215012,
+    "category": "European Green Capital 2027",
+    "description": "As part of the European Green Capital 2027 initiative, Friedrich-Ebert bridge is redesigned for a trial period of 3 months. The bridge will be closed for motor vehicles except for buses.",
     "link": ""
   },
   {
