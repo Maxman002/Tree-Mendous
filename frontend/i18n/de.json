@@ -4,7 +4,7 @@
       "eyebrow": "Eine Stadt im Wandel",
       "titleStart": "Ein grüneres Heilbronn,",
       "titleEnd": "gemeinsam.",
-      "copy": "Sieh, wo die Stadt heute heiß ist und was Heilbronn als Grüne Hauptstadt Europas 2027 dagegen tut."
+      "copy": "Entdecke Hitze, Luftfeuchtigkeit und Luftqualität, gemessen in Heilbronn Anfang September 2026, und was die Stadt als Grüne Hauptstadt Europas 2027 dagegen tut."
     },
     "layers": {
       "base": "Datenebenen",
@@ -38,7 +38,13 @@
   "heatmap": {
     "kicker": "Gemessene Temperatur",
     "cell": "Mittelwert aus {count} Messwerten in dieser {size}-m-Rasterzelle, gemessen per Fahrrad am 1.–3. Sep. 2026.",
-    "range": "Über alle Fahrten liegen die Mittelwerte zwischen {min} °C und {max} °C."
+    "range": "Einzelne Messwerte aller Fahrten lagen zwischen {min} °C und {max} °C."
+  },
+  "humidity": {
+    "kicker": "Gemessene Luftfeuchtigkeit",
+    "cell": "Mittlere relative Luftfeuchtigkeit aus {count} Messwerten in dieser {size}-m-Rasterzelle, gemessen per Fahrrad am 1.–3. Sep. 2026.",
+    "range": "Die Zellmittel reichen von {min} % (am trockensten) bis {max} % (am feuchtesten).",
+    "note": "Warme Luft kann mehr Wasser aufnehmen, daher wirken heiße Straßen oft trockener. Vergleiche mit der Ebene Temperatur in der Stadt."
   },
   "air-quality": {
     "kicker": "Feinstaub, Radfahrten",

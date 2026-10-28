@@ -4,7 +4,7 @@
       "eyebrow": "A city in the making",
       "titleStart": "A greener Heilbronn,",
       "titleEnd": "together.",
-      "copy": "See where the city is hot today and what Heilbronn is doing about it as European Green Capital 2027."
+      "copy": "Explore heat, humidity and air quality measured in Heilbronn in early September 2026, and what the city is doing about it as European Green Capital 2027."
     },
     "layers": {
       "base": "Data layers",
@@ -38,7 +38,13 @@
   "heatmap": {
     "kicker": "Measured temperature",
     "cell": "Average of {count} readings in this {size} m grid cell, recorded by bike on 1–3 Sep 2026.",
-    "range": "Across all rides the averages range from {min} °C to {max} °C."
+    "range": "Single readings across all rides ranged from {min} °C to {max} °C."
+  },
+  "humidity": {
+    "kicker": "Measured humidity",
+    "cell": "Average relative humidity of {count} readings in this {size} m grid cell, recorded by bike on 1–3 Sep 2026.",
+    "range": "The cell averages range from {min} % (driest) to {max} % (most humid).",
+    "note": "Warm air holds more water, so hot streets often read drier. Compare with the Urban temperature layer."
   },
   "air-quality": {
     "kicker": "Particulate matter, bike rides",
