@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "Birdhouse",
+    "lat": 49.151995,
+    "lng": 9.215480,
+    "category": "Birdhouse",
+    "description": "Part of  a smart bird houses network all over Heilbronn that log visits and conditions, giving a window into how urban wildlife responds to the changing climate.",
+    "link": ""
+  },
+  {
+    "id": 2,
+    "name": "Beehive",
+    "lat": 49.151805,
+    "lng": 9.215302,
+    "category": "Beehive",
+    "description": "Smart beehive: Sensor equipped beehive",
+    "link": ""
+  },
+  {
+    "id": 3,
+    "name": "FILL IN: name of spot 3",
+    "lat": 0.0,
+    "lng": 0.0,
+    "category": "FILL IN: e.g. park",
+    "description": "FILL IN: short description",
+    "link": ""
+  },
+  {
+    "id": 4,
+    "name": "FILL IN: name of spot 4",
+    "lat": 0.0,
+    "lng": 0.0,
+    "category": "FILL IN: e.g. park",
+    "description": "FILL IN: short description",
+    "link": ""
+  },
+  {
+    "id": 5,
+    "name": "FILL IN: name of spot 5",
+    "lat": 0.0,
+    "lng": 0.0,
+    "category": "FILL IN: e.g. park",
+    "description": "FILL IN: short description",
+    "link": ""
+  },
+  {
+    "id": 6,
+    "name": "FILL IN: name of spot 6",
+    "lat": 0.0,
+    "lng": 0.0,
+    "category": "FILL IN: e.g. park",
+    "description": "FILL IN: short description",
+    "link": ""
+  },
+  {
+    "id": 7,
+    "name": "FILL IN: name of spot 7",
+    "lat": 0.0,
+    "lng": 0.0,
+    "category": "FILL IN: e.g. park",
+    "description": "FILL IN: short description",
+    "link": ""
+  },
+  {
+    "id": 8,
+    "name": "FILL IN: name of spot 8",
+    "lat": 0.0,
+    "lng": 0.0,
+    "category": "FILL IN: e.g. park",
+    "description": "FILL IN: short description",
+    "link": ""
+  },
+  {
+    "id": 9,
+    "name": "FILL IN: name of spot 9",
+    "lat": 0.0,
+    "lng": 0.0,
+    "category": "FILL IN: e.g. park",
+    "description": "FILL IN: short description",
+    "link": ""
+  },
+  {
+    "id": 10,
+    "name": "FILL IN: name of spot 10",
+    "lat": 0.0,
+    "lng": 0.0,
+    "category": "FILL IN: e.g. park",
+    "description": "FILL IN: short description",
+    "link": ""
+  }
+]
