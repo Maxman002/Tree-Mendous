@@ -1,0 +1,26 @@
+[
+  {
+    "id": "birdhouse-01",
+    "name": { "en": "Smart birdhouse at the 42 campus", "de": "Smartes Vogelhaus am 42-Campus" },
+    "coordinates": [49.151995, 9.21548],
+    "description": {
+      "en": "Part of a network of smart birdhouses all over Heilbronn that log visits and conditions, giving a window into how urban wildlife responds to the changing climate.",
+      "de": ""
+    },
+    "link": "https://wiediversistmeingarten.org/view/station/699b7f2c-3855-4273-af7f-ed61a54541f9",
+    "sample": false,
+    "birds": null
+  },
+  {
+    "id": "birdhouse-02",
+    "name": { "en": "Sample birdhouse (Pfühlpark)", "de": "Beispiel-Vogelhaus (Pfühlpark)" },
+    "coordinates": [49.1462, 9.237],
+    "description": {
+      "en": "Made-up location to show how a second birdhouse looks on the map.",
+      "de": "Erfundener Standort, um zu zeigen, wie ein zweites Vogelhaus auf der Karte aussieht."
+    },
+    "link": "",
+    "sample": true,
+    "birds": { "visitsLast7Days": 23, "species": ["Great tit", "Blue tit"], "lastVisit": "2026-10-27" }
+  }
+]

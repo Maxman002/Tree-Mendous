@@ -56,5 +56,14 @@
       "education": "Bildung",
       "participation": "Beteiligung"
     }
+  },
+  "birdhouses": {
+    "kicker": "Smartes Vogelhaus",
+    "sampleKicker": "Beispiel-Vogelhaus",
+    "visits": "Besuche (7 Tage)",
+    "species": "Arten",
+    "lastVisit": "Letzter Besuch",
+    "noData": "Vogeldaten sind noch nicht angebunden.",
+    "station": "Stationsseite"
   }
 }

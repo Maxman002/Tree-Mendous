@@ -1,0 +1,13 @@
+/* Birdhouses slot: brown pin markers. */
+.birdhouse-marker {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border: 2px solid white;
+  border-radius: 7px;
+  background: #8a5b3e;
+  box-shadow: 0 3px 10px rgb(30 55 38 / 30%);
+  color: white;
+  font-size: 15px;
+}

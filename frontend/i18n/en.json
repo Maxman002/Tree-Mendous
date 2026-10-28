@@ -56,5 +56,14 @@
       "education": "Education",
       "participation": "Participation"
     }
+  },
+  "birdhouses": {
+    "kicker": "Smart birdhouse",
+    "sampleKicker": "Sample birdhouse",
+    "visits": "Visits (7 days)",
+    "species": "Species",
+    "lastVisit": "Last visit",
+    "noData": "Bird data is not connected yet.",
+    "station": "Station page"
   }
 }
