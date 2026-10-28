@@ -1,0 +1,78 @@
+{
+  "core": {
+    "intro": {
+      "eyebrow": "Eine Stadt im Wandel",
+      "titleStart": "Ein grüneres Heilbronn,",
+      "titleEnd": "gemeinsam.",
+      "copy": "Sieh, wo die Stadt heute heiß ist und was Heilbronn als Grüne Hauptstadt Europas 2027 dagegen tut."
+    },
+    "layers": {
+      "base": "Datenebenen",
+      "baseHint": "EINE ZUR ZEIT",
+      "overlays": "Auf der Karte",
+      "overlaysHint": "FREI KOMBINIERBAR",
+      "failed": "Diese Ebene konnte nicht geladen werden"
+    },
+    "tools": {
+      "heading": "Werkzeuge"
+    },
+    "status": {
+      "placeholder": "BEISPIEL",
+      "sampleNote": "Beispieldaten, keine echten Messwerte"
+    },
+    "panel": {
+      "source": "Quelle",
+      "close": "Schließen"
+    },
+    "legend": {
+      "heading": "LEGENDE"
+    },
+    "map": {
+      "status": "GRÜNE HAUPTSTADT EUROPAS 2027"
+    },
+    "footer": {
+      "title": "Kleine Schritte. Gemeinsame Zukunft.",
+      "copy": "Prototyp vom Green City Hackathon Heilbronn 2026."
+    }
+  },
+  "heatmap": {
+    "kicker": "Gemessene Temperatur",
+    "cell": "Mittelwert aus {count} Messwerten in dieser {size}-m-Rasterzelle, gemessen per Fahrrad am 1.–3. Sep. 2026.",
+    "range": "Über alle Fahrten liegen die Mittelwerte zwischen {min} °C und {max} °C."
+  },
+  "air-quality": {
+    "kicker": "Feinstaub"
+  },
+  "points-of-interest": {
+    "environment": "Warum es wichtig ist",
+    "more": "Mehr erfahren",
+    "categories": {
+      "greening": "Begrünung",
+      "mobility": "Mobilität",
+      "nature": "Natur",
+      "energy": "Energie",
+      "circular": "Kreislaufwirtschaft",
+      "culture": "Kultur",
+      "education": "Bildung",
+      "participation": "Beteiligung"
+    }
+  },
+  "birdhouses": {
+    "kicker": "Smartes Vogelhaus",
+    "sampleKicker": "Beispiel-Vogelhaus",
+    "visits": "Besuche (7 Tage)",
+    "species": "Arten",
+    "lastVisit": "Letzter Besuch",
+    "noData": "Vogeldaten sind noch nicht angebunden.",
+    "station": "Stationsseite"
+  },
+  "routes": {
+    "add": "Halt hinzufügen",
+    "open": "In Google Maps öffnen",
+    "clear": "Leeren",
+    "remove": "Halt entfernen",
+    "hint": "Wähle mindestens zwei Halte, um eine Route zu zeichnen.",
+    "count": "{count} von höchstens {max} Halten",
+    "tooMany": "Eine Google-Maps-Route kann höchstens {max} Halte haben."
+  }
+}
