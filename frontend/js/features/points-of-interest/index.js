@@ -1,33 +1,24 @@
-// Points of interest: Green Capital city projects, events and places as markers with a detail card.
+// Points of interest: Eirini's places (smart sensors, a park, Green Capital 2027 projects) as markers
+// with a detail card. The birdhouse point opens the bird dashboard of the birdhouses slot.
 const KINDS = {
-  "city-project": { color: "#2c6849", label: { en: "Green Capital project", de: "Projekt Grüne Hauptstadt" } },
-  event: { color: "#e47f4e", label: { en: "Event", de: "Veranstaltung" } },
-  place: { color: "#3f8a99", label: { en: "Place", de: "Ort" } }
-};
-const CATEGORY_ICONS = {
-  greening: "✳",
-  mobility: "↗",
-  nature: "❋",
-  energy: "ϟ",
-  circular: "♻",
-  culture: "✦",
-  education: "✎",
-  participation: "✋"
+  "green-capital": { color: "#2c6849", icon: "✳", label: { en: "European Green Capital 2027", de: "Grüne Hauptstadt Europas 2027" } },
+  "smart-sensors": { color: "#3f8a99", icon: "◎", label: { en: "Smart sensors", de: "Smarte Sensoren" } },
+  park: { color: "#6d9b3a", icon: "❋", label: { en: "Park", de: "Park" } }
 };
 
 export default {
   id: "points-of-interest",
   kind: "overlay",
   title: { en: "Projects and places", de: "Projekte und Orte" },
-  status: "placeholder",
+  status: "ready",
   source: {
-    en: "City of Heilbronn, Green Capital 2027 fact sheets (10/2026); team research",
-    de: "Stadt Heilbronn, Steckbriefe Grüne Hauptstadt 2027 (10/2026); Recherche des Teams"
+    en: "Team research (Eirini); City of Heilbronn, Green Capital 2027 fact sheets (10/2026)",
+    de: "Recherche des Teams (Eirini); Stadt Heilbronn, Steckbriefe Grüne Hauptstadt 2027 (10/2026)"
   },
   icon: "✳",
   style: "style.css",
   visible: true,
-  legend: Object.values(KINDS),
+  legend: Object.values(KINDS).map(({ color, label }) => ({ color, label })),
 
   async init(ctx) {
     const { L } = ctx;
@@ -35,10 +26,10 @@ export default {
     const layer = L.layerGroup();
 
     points.forEach((point) => {
-      const kind = KINDS[point.kind] ?? KINDS.place;
+      const kind = KINDS[point.kind] ?? KINDS["green-capital"];
       const icon = L.divIcon({
         className: "",
-        html: `<span class="poi-marker" style="background:${kind.color}">${CATEGORY_ICONS[point.category] ?? "●"}</span>`,
+        html: `<span class="poi-marker" style="background:${kind.color}">${kind.icon}</span>`,
         iconSize: [30, 30],
         iconAnchor: [15, 15]
       });
@@ -48,13 +39,14 @@ export default {
     });
 
     function card(point, kind) {
-      const environment = ctx.pick(point.environment);
-      const kicker = [ctx.pick(kind.label), ctx.t(`categories.${point.category}`), point.when].filter(Boolean).join(" · ");
+      // The birdhouses slot listens for clicks on [data-bird-dashboard] and opens that feeder's dashboard.
+      const birds = point.birdhouse
+        ? `<button type="button" class="button poi-action" data-bird-dashboard="${ctx.escapeHtml(point.birdhouse)}">${ctx.escapeHtml(ctx.t("birds"))}</button>`
+        : "";
       return {
-        kicker,
+        kicker: ctx.pick(kind.label),
         title: ctx.pick(point.title),
-        html: `<p>${ctx.escapeHtml(ctx.pick(point.description))}</p>`
-          + (environment ? `<p><strong>${ctx.escapeHtml(ctx.t("environment"))}:</strong> ${ctx.escapeHtml(environment)}</p>` : "")
+        html: `<p>${ctx.escapeHtml(ctx.pick(point.description))}</p>${birds}`
           + (point.link ? `<p><a href="${ctx.escapeHtml(point.link)}" target="_blank" rel="noopener noreferrer">${ctx.escapeHtml(ctx.t("more"))} ↗</a></p>` : "")
       };
     }

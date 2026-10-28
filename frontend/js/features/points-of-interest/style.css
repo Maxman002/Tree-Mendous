@@ -12,3 +12,4 @@
   transition: transform 150ms ease;
 }
 .poi-marker:hover { transform: scale(1.15); }
+.poi-action { width: 100%; margin-bottom: 8px; }
