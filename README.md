@@ -36,11 +36,11 @@ legend and texts automatically.
 | Slot | Kind | Status | What it does now |
 |---|---|---|---|
 | [`heatmap`](frontend/js/features/heatmap/README.md) | base layer | ready | Bike-sensor temperatures (1–3 Sep 2026, 61,546 readings), averaged into 25 m cells; click for the cell's temperature |
-| [`air-quality`](frontend/js/features/air-quality/README.md) | base layer | placeholder | Six made-up PM2.5/PM10 points with WHO-based colours |
-| [`points-of-interest`](frontend/js/features/points-of-interest/README.md) | overlay | placeholder | Six city projects and places (from the `eirini` branch) with a detail card |
+| [`air-quality`](frontend/js/features/air-quality/README.md) | base layer | ready | PM2.5 on 2 Sep 2026: 6,175 senseBox:bike readings in 50 m cells plus four senseBox:home sensors, WHO-based colours |
+| [`points-of-interest`](frontend/js/features/points-of-interest/README.md) | overlay | ready | Eirini's seven points (smart sensors, a park, Green Capital 2027 projects) with a detail card; the birdhouse opens the bird dashboard |
+| [`weather-stations`](frontend/js/features/weather-stations/README.md) | overlay | ready | The five senseBox:home stations with their mean temperature on 2 Sep 2026; card with min/max, humidity, PM2.5 and an hourly chart |
 | [`birdhouses`](frontend/js/features/birdhouses/README.md) | overlay | ready | The bird feeder at the 42 campus (Birdiary); card with its top birds and a full-screen bird dashboard (ring chart, photos, 30 days / since April) |
-| [`routes`](frontend/js/features/routes/README.md) | tool | placeholder | Pick stops, draw the route, open it in Google Maps (max. 11 stops) |
-
+| [`tour`](frontend/js/features/tour/README.md) | tool | ready | A fixed walking tour from the Wollhaus past every point and back, with a "Start the tour on Google Maps" button |
 Base layers are shown one at a time (radio buttons); overlays can be combined (checkboxes); tools get
 a card in the sidebar. The language switch (EN/DE) changes every text; German falls back to English
 where a text is missing.
@@ -59,31 +59,40 @@ source .tree-mendous/bin/activate      # Windows: .tree-mendous\Scripts\activate
 pip install -r backend/requirements.txt
 
 python3 backend/scripts/heatmap/prepare_heatmap.py
+python3 backend/scripts/air-quality/prepare_air_quality.py
+python3 backend/scripts/weather-stations/prepare_weather_stations.py
 python3 backend/scripts/birdhouses/prepare_birdhouses.py   # needs internet
 ```
 
 | Script | Input | Output |
 |---|---|---|
 | `backend/scripts/heatmap/prepare_heatmap.py` | `backend/data/heatmap/alles.csv` (raw bike readings) | `frontend/data/heatmap/temperature-cells.json` (about 20 KB) |
+| `backend/scripts/air-quality/prepare_air_quality.py` | `backend/data/air-quality/osem_bike_data_heilbronn_2026-09-02.csv` and the senseBox:home snapshot below | `frontend/data/air-quality/pm.json` (about 30 KB) |
+| `backend/scripts/weather-stations/prepare_weather_stations.py` | `backend/data/weather-stations/osem_home_data_heilbronn_2026-09-02.csv` | `frontend/data/weather-stations/stations.json` (about 4 KB) |
 | `backend/scripts/birdhouses/prepare_birdhouses.py` | Birdiary API + `backend/data/birdhouses/species.json` (stations, species whitelist, AI fixes) | `frontend/data/birdhouses/birdhouses.json`, `species.json` (a few KB) |
 
-The other slots still use hand-written sample files.
+`points-of-interest` and `tour` read the hand-written `frontend/data/points-of-interest/poi.json`.
 
-### Datasets the slots will use
+### Datasets
 
-Checked on 2026-10-27:
+The two ATRAI snapshots of 2 Sep 2026 come from `vibin-branch` (`data/processed/`); its `DATASETS.md`
+explains them in detail, with notebooks. In short:
 
-- **senseBox:home Heilbronn** (temperature, humidity, particulate matter PM1–PM10):
-  `https://api.atrai.bike/collections/osem_home_data_heilbronn/items?f=json`. GeoJSON points, about
-  2 million rows. The time filters didn't work in a test, so prepare it once with a script.
-  → `air-quality`
-- **senseBox:bike particulate-matter danger zones**:
-  `https://api.atrai.bike/collections/danger_zones_PM_heilbronn/items?f=json&limit=0`. About 183,000
-  points with a risk index. → `air-quality`
-- **Mobile heat-walk loggers** (Heat-Island Summer School 2026) and the **smart birdhouses**
-  (Birdiary): links on https://hackathon.greencity.hn/resources. → `heatmap`, `birdhouses`
+- **senseBox:bike** (`osem_bike_data`, tag `heilbronn`): 13,275 mobile readings from six bikes;
+  PM2.5/PM10 on 6,175 of them. → `air-quality`
+- **senseBox:home** (`osem_home_data_heilbronn`): 8,781 readings from five stationary sensors
+  (temperature, humidity, PM). Two of them are outside Heilbronn (Beilstein, about 13 km;
+  Wolf-von-Gemmingen-Schule, about 17 km), and three only recorded part of the day.
+  → `weather-stations`, `air-quality`
+- The `createdAt` times of both have no time zone; they are shown as recorded.
+- **Mobile Datalogger** (`alles.csv`, 1–3 Sep 2026): its provenance (walking logger or bike) is
+  still open, see `DATASETS.md`. → `heatmap`
+- **Smart birdhouses** (Birdiary) and the **beehive** (Grafana link in the points of interest).
+  → `birdhouses`, `points-of-interest`
 - **Green Capital 2027 projects**: the city's fact sheets `Steckbriefe_10-2026.pdf` (German) and
   `Steckbriefe_10-2026_EN.pdf`, with our notes in `Steckbriefe_Notes.md`. → `points-of-interest`
+- Not used yet: senseBox:bike particulate-matter danger zones,
+  `https://api.atrai.bike/collections/danger_zones_PM_heilbronn/items?f=json&limit=0`.
 
 ## Project structure
 

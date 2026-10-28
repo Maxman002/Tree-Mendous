@@ -41,21 +41,22 @@
     "range": "Across all rides the averages range from {min} °C to {max} °C."
   },
   "air-quality": {
-    "kicker": "Particulate matter"
+    "kicker": "Particulate matter, bike rides",
+    "stationKicker": "Particulate matter, fixed sensor",
+    "cell": "Average of {count} bike readings in this {size} m grid cell on 2 Sep 2026.",
+    "station": "Daily average of {count} readings on 2 Sep 2026."
   },
   "points-of-interest": {
-    "environment": "Why it matters",
     "more": "More information",
-    "categories": {
-      "greening": "Greening",
-      "mobility": "Mobility",
-      "nature": "Nature",
-      "energy": "Energy",
-      "circular": "Circular economy",
-      "culture": "Culture",
-      "education": "Education",
-      "participation": "Participation"
-    }
+    "birds": "Open bird dashboard"
+  },
+  "weather-stations": {
+    "kicker": "Weather station, 2 Sep 2026",
+    "mean": "Mean temperature",
+    "range": "Lowest – highest",
+    "humidity": "Humidity",
+    "recorded": "{count} readings between {from} and {to} (times as recorded by the sensor).",
+    "distance": "{km} km from the Marktplatz."
   },
   "birdhouses": {
     "kicker": "Smart bird feeder",
@@ -95,13 +96,7 @@
     "qr": "Scan for the live camera",
     "footer": "The feeder's AI often confuses European birds with similar-looking species from other continents. Visits were checked against the videos and the perch weight; implausible identifications are grouped as “Uncertain”."
   },
-  "routes": {
-    "add": "Add stop",
-    "open": "Open in Google Maps",
-    "clear": "Clear",
-    "remove": "Remove stop",
-    "hint": "Pick at least two stops to draw a route.",
-    "count": "{count} of at most {max} stops",
-    "tooMany": "A Google Maps route can have at most {max} stops."
+  "tour": {
+    "start": "Start the tour on Google Maps"
   }
 }
