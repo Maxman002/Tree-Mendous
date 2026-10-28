@@ -65,5 +65,14 @@
     "lastVisit": "Letzter Besuch",
     "noData": "Vogeldaten sind noch nicht angebunden.",
     "station": "Stationsseite"
+  },
+  "routes": {
+    "add": "Halt hinzufügen",
+    "open": "In Google Maps öffnen",
+    "clear": "Leeren",
+    "remove": "Halt entfernen",
+    "hint": "Wähle mindestens zwei Halte, um eine Route zu zeichnen.",
+    "count": "{count} von höchstens {max} Halten",
+    "tooMany": "Eine Google-Maps-Route kann höchstens {max} Halte haben."
   }
 }

@@ -4,10 +4,12 @@ import heatmap from "./heatmap/index.js";
 import airQuality from "./air-quality/index.js";
 import pointsOfInterest from "./points-of-interest/index.js";
 import birdhouses from "./birdhouses/index.js";
+import routes from "./routes/index.js";
 
 export default [
   heatmap,
   airQuality,
   pointsOfInterest,
-  birdhouses
+  birdhouses,
+  routes
 ];

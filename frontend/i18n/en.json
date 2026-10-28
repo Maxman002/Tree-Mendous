@@ -65,5 +65,14 @@
     "lastVisit": "Last visit",
     "noData": "Bird data is not connected yet.",
     "station": "Station page"
+  },
+  "routes": {
+    "add": "Add stop",
+    "open": "Open in Google Maps",
+    "clear": "Clear",
+    "remove": "Remove stop",
+    "hint": "Pick at least two stops to draw a route.",
+    "count": "{count} of at most {max} stops",
+    "tooMany": "A Google Maps route can have at most {max} stops."
   }
 }
