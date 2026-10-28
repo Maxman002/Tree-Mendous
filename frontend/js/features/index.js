@@ -2,8 +2,10 @@
 // To add a slot: import its folder's index.js here and add it to the list.
 import heatmap from "./heatmap/index.js";
 import airQuality from "./air-quality/index.js";
+import pointsOfInterest from "./points-of-interest/index.js";
 
 export default [
   heatmap,
-  airQuality
+  airQuality,
+  pointsOfInterest
 ];

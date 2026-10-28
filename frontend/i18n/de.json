@@ -42,5 +42,19 @@
   },
   "air-quality": {
     "kicker": "Feinstaub"
+  },
+  "points-of-interest": {
+    "environment": "Warum es wichtig ist",
+    "more": "Mehr erfahren",
+    "categories": {
+      "greening": "Begrünung",
+      "mobility": "Mobilität",
+      "nature": "Natur",
+      "energy": "Energie",
+      "circular": "Kreislaufwirtschaft",
+      "culture": "Kultur",
+      "education": "Bildung",
+      "participation": "Beteiligung"
+    }
   }
 }

@@ -42,5 +42,19 @@
   },
   "air-quality": {
     "kicker": "Particulate matter"
+  },
+  "points-of-interest": {
+    "environment": "Why it matters",
+    "more": "More information",
+    "categories": {
+      "greening": "Greening",
+      "mobility": "Mobility",
+      "nature": "Nature",
+      "energy": "Energy",
+      "circular": "Circular economy",
+      "culture": "Culture",
+      "education": "Education",
+      "participation": "Participation"
+    }
   }
 }

@@ -1,0 +1,86 @@
+[
+  {
+    "id": "02",
+    "title": { "en": "Smart beehive", "de": "Smarter Bienenstock" },
+    "description": {
+      "en": "Sensor-equipped beehives on the 42 campus. Outside, 2026 swung from about −5 °C in winter to more than 30 °C in summer. Inside, from spring on, the colony keeps the brood at around 35 °C, heating on cold days and cooling on hot ones, with no electronics.",
+      "de": ""
+    },
+    "category": "nature",
+    "kind": "place",
+    "coordinates": [49.151805, 9.215302],
+    "when": "",
+    "environment": { "en": "Shows how a colony buffers heat that the city around it cannot.", "de": "" },
+    "link": "https://beehive-grafana-production.up.railway.app/d/beehappy-monitor/beehappy-e28094-bienenstock-monitor?orgId=1&from=now-7d&to=now&timezone=browser&refresh=15m"
+  },
+  {
+    "id": "03",
+    "title": { "en": "BUGA playground", "de": "BUGA-Spielplatz" },
+    "description": {
+      "en": "Large green area in the urban environment with a playground and sports facilities. A good example of how a city can create green space for recreation.",
+      "de": ""
+    },
+    "category": "nature",
+    "kind": "place",
+    "coordinates": [49.150353, 9.207446],
+    "when": "",
+    "environment": { "en": "", "de": "" },
+    "link": ""
+  },
+  {
+    "id": "04",
+    "title": { "en": "Bleichinsel Bridge", "de": "Bleichinselbrücke" },
+    "description": {
+      "en": "The bridge becomes a central block of green, with planting that promotes biodiversity and cycle lanes in both directions that connect to the existing network.",
+      "de": ""
+    },
+    "category": "greening",
+    "kind": "city-project",
+    "coordinates": [49.147158, 9.211756],
+    "when": "2027",
+    "environment": { "en": "Green structures improve the urban climate on the bridge.", "de": "" },
+    "link": ""
+  },
+  {
+    "id": "05",
+    "title": { "en": "Friedrich-Ebert Bridge trial", "de": "Verkehrsversuch Friedrich-Ebert-Brücke" },
+    "description": {
+      "en": "For a trial period of three months the bridge is closed to motor vehicles, except for buses.",
+      "de": ""
+    },
+    "category": "mobility",
+    "kind": "city-project",
+    "coordinates": [49.142434, 9.215012],
+    "when": "2027",
+    "environment": { "en": "Less car traffic means less noise and fewer emissions on the bridge.", "de": "" },
+    "link": ""
+  },
+  {
+    "id": "06",
+    "title": { "en": "Wellbeing Oasis at the Robert Mayer Monument", "de": "Wohlfühloase am Robert-Mayer-Denkmal" },
+    "description": {
+      "en": "The area around the monument is upgraded with new trees, shrubs and perennials, creating two green zones in the urban space.",
+      "de": ""
+    },
+    "category": "greening",
+    "kind": "city-project",
+    "coordinates": [49.142452, 9.218943],
+    "when": "2027",
+    "environment": { "en": "Provides shade and improves the microclimate on the market square, one of the city's heat hotspots.", "de": "" },
+    "link": ""
+  },
+  {
+    "id": "07",
+    "title": { "en": "WOW-haus (Wollhaus)", "de": "WOW-haus (Wollhaus)" },
+    "description": {
+      "en": "The Wollhaus rooftop becomes the WOW-haus, showcasing greening, water retention and energy generation. The exhibition \"Heilbronn – European Green Capital\" takes place on the ground floor.",
+      "de": ""
+    },
+    "category": "education",
+    "kind": "city-project",
+    "coordinates": [49.139597, 9.21981],
+    "when": "2027",
+    "environment": { "en": "Shows sustainable urban development on a real rooftop.", "de": "" },
+    "link": ""
+  }
+]
