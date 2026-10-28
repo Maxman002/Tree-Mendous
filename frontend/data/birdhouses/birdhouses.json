@@ -1,26 +1,119 @@
 [
   {
     "id": "birdhouse-01",
-    "name": { "en": "Smart birdhouse at the 42 campus", "de": "Smartes Vogelhaus am 42-Campus" },
-    "coordinates": [49.151995, 9.21548],
+    "name": {
+      "en": "Smart bird feeder at the 42 campus",
+      "de": "Smartes Futterhaus am 42-Campus"
+    },
+    "coordinates": [
+      49.151995,
+      9.21548
+    ],
     "description": {
-      "en": "Part of a network of smart birdhouses all over Heilbronn that log visits and conditions, giving a window into how urban wildlife responds to the changing climate.",
-      "de": ""
+      "en": "A Birdiary feeder that films every visit, weighs the bird on its perch and lets an AI guess the species. Part of a network of smart feeders all over Heilbronn.",
+      "de": "Ein Birdiary-Futterhaus, das jeden Besuch filmt, den Vogel auf der Sitzstange wiegt und die Art von einer KI bestimmen lässt. Teil eines Netzes smarter Futterhäuser in ganz Heilbronn."
     },
     "link": "https://wiediversistmeingarten.org/view/station/699b7f2c-3855-4273-af7f-ed61a54541f9",
     "sample": false,
-    "birds": null
-  },
-  {
-    "id": "birdhouse-02",
-    "name": { "en": "Sample birdhouse (Pfühlpark)", "de": "Beispiel-Vogelhaus (Pfühlpark)" },
-    "coordinates": [49.1462, 9.237],
-    "description": {
-      "en": "Made-up location to show how a second birdhouse looks on the map.",
-      "de": "Erfundener Standort, um zu zeigen, wie ein zweites Vogelhaus auf der Karte aussieht."
-    },
-    "link": "",
-    "sample": true,
-    "birds": { "visitsLast7Days": 23, "species": ["Great tit", "Blue tit"], "lastVisit": "2026-10-27" }
+    "birds": {
+      "updated": "2026-10-28",
+      "lastVisit": "2026-10-28",
+      "ranges": {
+        "recent": {
+          "from": "2026-09-28",
+          "to": "2026-10-28",
+          "total": 78,
+          "species": [
+            {
+              "latin": "Parus major",
+              "count": 25,
+              "corrected": 16,
+              "firstSeen": "2026-09-29",
+              "lastSeen": "2026-10-28",
+              "avgWeight": 14.6
+            },
+            {
+              "latin": "Cyanistes caeruleus",
+              "count": 25,
+              "corrected": 0,
+              "firstSeen": "2026-09-29",
+              "lastSeen": "2026-10-28",
+              "avgWeight": 11.5
+            },
+            {
+              "latin": "Passer domesticus",
+              "count": 22,
+              "corrected": 0,
+              "firstSeen": "2026-10-04",
+              "lastSeen": "2026-10-19",
+              "avgWeight": 27.2
+            },
+            {
+              "latin": "Periparus ater",
+              "count": 2,
+              "corrected": 0,
+              "firstSeen": "2026-10-22",
+              "lastSeen": "2026-10-28",
+              "avgWeight": 18.3
+            }
+          ]
+        },
+        "all": {
+          "from": "2026-04-03",
+          "to": "2026-10-28",
+          "total": 2989,
+          "species": [
+            {
+              "latin": "Parus major",
+              "count": 1215,
+              "corrected": 883,
+              "firstSeen": "2026-04-03",
+              "lastSeen": "2026-10-28",
+              "avgWeight": 16.1
+            },
+            {
+              "latin": "Cyanistes caeruleus",
+              "count": 695,
+              "corrected": 0,
+              "firstSeen": "2026-04-03",
+              "lastSeen": "2026-10-28",
+              "avgWeight": 11.2
+            },
+            {
+              "latin": "Passer domesticus",
+              "count": 479,
+              "corrected": 0,
+              "firstSeen": "2026-05-05",
+              "lastSeen": "2026-10-19",
+              "avgWeight": 27.5
+            },
+            {
+              "latin": "Periparus ater",
+              "count": 22,
+              "corrected": 0,
+              "firstSeen": "2026-04-10",
+              "lastSeen": "2026-10-28",
+              "avgWeight": 18.2
+            },
+            {
+              "latin": "Motacilla alba",
+              "count": 6,
+              "corrected": 0,
+              "firstSeen": "2026-04-15",
+              "lastSeen": "2026-08-25",
+              "avgWeight": 16.2
+            },
+            {
+              "latin": "Phoenicurus ochruros",
+              "count": 2,
+              "corrected": 0,
+              "firstSeen": "2026-08-25",
+              "lastSeen": "2026-08-25",
+              "avgWeight": 12.2
+            }
+          ]
+        }
+      }
+    }
   }
 ]

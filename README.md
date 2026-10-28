@@ -38,7 +38,7 @@ legend and texts automatically.
 | [`heatmap`](frontend/js/features/heatmap/README.md) | base layer | ready | Bike-sensor temperatures (1–3 Sep 2026, 61,546 readings), averaged into 25 m cells; click for the cell's temperature |
 | [`air-quality`](frontend/js/features/air-quality/README.md) | base layer | placeholder | Six made-up PM2.5/PM10 points with WHO-based colours |
 | [`points-of-interest`](frontend/js/features/points-of-interest/README.md) | overlay | placeholder | Six city projects and places (from the `eirini` branch) with a detail card |
-| [`birdhouses`](frontend/js/features/birdhouses/README.md) | overlay | placeholder | One real birdhouse station and one sample with bird data |
+| [`birdhouses`](frontend/js/features/birdhouses/README.md) | overlay | ready | The bird feeder at the 42 campus (Birdiary); card with its top birds and a full-screen bird dashboard (ring chart, photos, 30 days / since April) |
 | [`routes`](frontend/js/features/routes/README.md) | tool | placeholder | Pick stops, draw the route, open it in Google Maps (max. 11 stops) |
 
 Base layers are shown one at a time (radio buttons); overlays can be combined (checkboxes); tools get
@@ -59,11 +59,13 @@ source .tree-mendous/bin/activate      # Windows: .tree-mendous\Scripts\activate
 pip install -r backend/requirements.txt
 
 python3 backend/scripts/heatmap/prepare_heatmap.py
+python3 backend/scripts/birdhouses/prepare_birdhouses.py   # needs internet
 ```
 
 | Script | Input | Output |
 |---|---|---|
 | `backend/scripts/heatmap/prepare_heatmap.py` | `backend/data/heatmap/alles.csv` (raw bike readings) | `frontend/data/heatmap/temperature-cells.json` (about 20 KB) |
+| `backend/scripts/birdhouses/prepare_birdhouses.py` | Birdiary API + `backend/data/birdhouses/species.json` (stations, species whitelist, AI fixes) | `frontend/data/birdhouses/birdhouses.json`, `species.json` (a few KB) |
 
 The other slots still use hand-written sample files.
 
