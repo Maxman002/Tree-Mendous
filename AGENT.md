@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Tree-Mendous is the team's prototype for the Green City Hackathon Heilbronn (27–29 October 2026): a map of Heilbronn that shows environmental data (heat, air quality) next to the city's European Green Capital 2027 projects, points of interest, weather stations, birdhouses and a walking tour. The website is built as a **foundation with "blank spaces"**: one slot per feature. Each team member works on one feature and their agent fills that feature's slot.
+Tree-Mendous is the team's prototype for the Green City Hackathon Heilbronn (27–29 October 2026): a map of Heilbronn that shows environmental data (heat, humidity, air quality) next to the city's European Green Capital 2027 projects, points of interest, weather stations, birdhouses and a walking tour. The website is built as a **foundation with "blank spaces"**: one slot per feature. Each team member works on one feature and their agent fills that feature's slot.
 
 You are the agent of a team member. Your job: put your person's feature into the website **without breaking the other slots**. Mo and the team decide; when in doubt, ask your person.
 
@@ -137,6 +137,7 @@ All but the heat map begin as placeholders with sample data:
 | Slot | Kind | What goes in |
 |---|---|---|
 | `heatmap` | base-layer | the team's heat map from the bike temperature loggers (ready) |
+| `humidity` | base-layer | relative humidity from the same bike rides (added later, ready) |
 | `air-quality` | base-layer | particulate matter, chosen in the same switcher as the heat map |
 | `points-of-interest` | overlay | a JSON file with location and description per point (city projects included) |
 | `birdhouses` | overlay | birdhouse locations with their bird data |

@@ -20,9 +20,11 @@ export default {
     const stops = STOPS.map((id) => points.find((point) => point.id === id)).filter(Boolean);
     const layer = L.layerGroup();
 
-    L.polyline([...stops, stops[0]].map((stop) => stop.coordinates), {
+    // The line is only drawn while the points of interest are on the map, so it never leads nowhere.
+    const line = L.polyline([...stops, stops[0]].map((stop) => stop.coordinates), {
       color: "#214e38", weight: 4, opacity: 0.7, dashArray: "8 7", interactive: false
-    }).addTo(layer);
+    });
+    ctx.map.on("points-of-interest:toggle", ({ visible }) => (visible ? line.addTo(layer) : layer.removeLayer(line)));
 
     ctx.el.innerHTML = `
       <ol class="tour-stops" data-part="stops"></ol>

@@ -24,6 +24,9 @@ export default {
     const { L } = ctx;
     const points = await ctx.loadData("points-of-interest/poi.json");
     const layer = L.layerGroup();
+    // Tells other slots (the tour) whether the points are on the map.
+    layer.on("add", () => ctx.map.fire("points-of-interest:toggle", { visible: true }));
+    layer.on("remove", () => ctx.map.fire("points-of-interest:toggle", { visible: false }));
 
     points.forEach((point) => {
       const kind = KINDS[point.kind] ?? KINDS["green-capital"];

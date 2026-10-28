@@ -5,7 +5,7 @@ This repository holds the Tree-Mendous team's project for the Green City Hackath
 Hackathon website: https://hackathon.greencity.hn
 
 **Tree-Mendous** is an interactive map of Heilbronn for residents and tourists. It shows environmental
-data (heat, air quality) as the *problem* and the city's European Green Capital 2027 projects as the
+data (heat, humidity, air quality) as the *problem* and the city's European Green Capital 2027 projects as the
 *solution*, in the same place. The pitch story is "from hot spot to oasis": the measured heat on the
 Marktplatz next to the wellbeing oasis the city is planning there.
 
@@ -36,11 +36,13 @@ legend and texts automatically.
 | Slot | Kind | Status | What it does now |
 |---|---|---|---|
 | [`heatmap`](frontend/js/features/heatmap/README.md) | base layer | ready | Bike-sensor temperatures (1–3 Sep 2026, 61,546 readings), averaged into 25 m cells; click for the cell's temperature |
+| [`humidity`](frontend/js/features/humidity/README.md) | base layer | ready | Relative humidity from the same bike rides (1–3 Sep 2026, 61,543 readings) in 25 m cells; click for the cell's humidity |
 | [`air-quality`](frontend/js/features/air-quality/README.md) | base layer | ready | PM2.5 on 2 Sep 2026: 6,175 senseBox:bike readings in 50 m cells plus four senseBox:home sensors, WHO-based colours |
 | [`points-of-interest`](frontend/js/features/points-of-interest/README.md) | overlay | ready | Eirini's seven points (smart sensors, a park, Green Capital 2027 projects) with a detail card; the birdhouse opens the bird dashboard |
 | [`weather-stations`](frontend/js/features/weather-stations/README.md) | overlay | ready | The five senseBox:home stations with their mean temperature on 2 Sep 2026; card with min/max, humidity, PM2.5 and an hourly chart |
 | [`birdhouses`](frontend/js/features/birdhouses/README.md) | overlay | ready | The bird feeder at the 42 campus (Birdiary); card with its top birds and a full-screen bird dashboard (ring chart, photos, 30 days / since April) |
-| [`tour`](frontend/js/features/tour/README.md) | tool | ready | A fixed walking tour from the Wollhaus past every point and back, with a "Start the tour on Google Maps" button |
+| [`tour`](frontend/js/features/tour/README.md) | tool | ready | A fixed walking tour from the Wollhaus past every point and back, with a "Start the tour on Google Maps" button; the line is drawn while "Projects and places" is on |
+
 Base layers are shown one at a time (radio buttons); overlays can be combined (checkboxes); tools get
 a card in the sidebar. The language switch (EN/DE) changes every text; German falls back to English
 where a text is missing.
@@ -59,6 +61,7 @@ source .tree-mendous/bin/activate      # Windows: .tree-mendous\Scripts\activate
 pip install -r backend/requirements.txt
 
 python3 backend/scripts/heatmap/prepare_heatmap.py
+python3 backend/scripts/humidity/prepare_humidity.py
 python3 backend/scripts/air-quality/prepare_air_quality.py
 python3 backend/scripts/weather-stations/prepare_weather_stations.py
 python3 backend/scripts/birdhouses/prepare_birdhouses.py   # needs internet
@@ -67,6 +70,7 @@ python3 backend/scripts/birdhouses/prepare_birdhouses.py   # needs internet
 | Script | Input | Output |
 |---|---|---|
 | `backend/scripts/heatmap/prepare_heatmap.py` | `backend/data/heatmap/alles.csv` (raw bike readings) | `frontend/data/heatmap/temperature-cells.json` (about 20 KB) |
+| `backend/scripts/humidity/prepare_humidity.py` | `backend/data/heatmap/alles.csv` (its `humidity` column) | `frontend/data/humidity/humidity-cells.json` (about 20 KB) |
 | `backend/scripts/air-quality/prepare_air_quality.py` | `backend/data/air-quality/osem_bike_data_heilbronn_2026-09-02.csv` and the senseBox:home snapshot below | `frontend/data/air-quality/pm.json` (about 30 KB) |
 | `backend/scripts/weather-stations/prepare_weather_stations.py` | `backend/data/weather-stations/osem_home_data_heilbronn_2026-09-02.csv` | `frontend/data/weather-stations/stations.json` (about 4 KB) |
 | `backend/scripts/birdhouses/prepare_birdhouses.py` | Birdiary API + `backend/data/birdhouses/species.json` (stations, species whitelist, AI fixes) | `frontend/data/birdhouses/birdhouses.json`, `species.json` (a few KB) |
@@ -86,13 +90,14 @@ explains them in detail, with notebooks. In short:
   → `weather-stations`, `air-quality`
 - The `createdAt` times of both have no time zone; they are shown as recorded.
 - **Mobile Datalogger** (`alles.csv`, 1–3 Sep 2026): its provenance (walking logger or bike) is
-  still open, see `DATASETS.md`. → `heatmap`
+  still open, see `DATASETS.md`. → `heatmap`, `humidity`
 - **Smart birdhouses** (Birdiary) and the **beehive** (Grafana link in the points of interest).
   → `birdhouses`, `points-of-interest`
-- **Green Capital 2027 projects**: the city's fact sheets `Steckbriefe_10-2026.pdf` (German) and
-  `Steckbriefe_10-2026_EN.pdf`, with our notes in `Steckbriefe_Notes.md`. → `points-of-interest`
+- **Green Capital 2027 projects**: the city's fact sheets `resources/Steckbriefe_10-2026.pdf` (German)
+  and `resources/Steckbriefe_10-2026_EN.pdf`, with our notes in `resources/Steckbriefe_Notes.md`. → `points-of-interest`
 - Not used yet: senseBox:bike particulate-matter danger zones,
-  `https://api.atrai.bike/collections/danger_zones_PM_heilbronn/items?f=json&limit=0`.
+  `https://api.atrai.bike/collections/danger_zones_PM_heilbronn/items?f=json&limit=0`, and the live
+  UBA (Umweltbundesamt) air-quality stations of the `humidity` branch, which need a small proxy server.
 
 ## Project structure
 
@@ -100,6 +105,7 @@ explains them in detail, with notebooks. In short:
 backend/      Python data preparation (scripts and raw data), no server
 frontend/     the static website (index.html, css/, js/core/, js/features/, data/, i18n/)
 AGENT.md      how to add a feature (for team members and their coding agents)
+resources/    the city's fact sheets (PDF), notes and the project overview
 ```
 
 The full file tree is in [`AGENT.md`](AGENT.md#how-it-is-built).

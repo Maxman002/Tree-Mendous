@@ -6,6 +6,8 @@ Shows Eirini's seven points as round markers. The colour and symbol show the kin
 Capital 2027 project, smart sensors, park). Clicking a marker opens a detail card in the info panel:
 kind, name, description and an optional link. The **Birdhouse** card has an **Open bird dashboard**
 button that opens the dashboard of the `birdhouses` slot (it works even when that layer is off).
+When the layer is switched on or off it fires `points-of-interest:toggle` (`{ visible }`) on the
+map, so the `tour` slot can show or hide its line.
 
 ## Data
 
@@ -35,5 +37,5 @@ Eirini's (one missing full stop added in the Wollhaus text), German texts were a
 
 ## To do
 
-- More city projects from the fact sheets (`Steckbriefe_10-2026_EN.pdf`).
+- More city projects from the fact sheets (`resources/Steckbriefe_10-2026_EN.pdf`).
 - The beehive and the birdhouse are about 25 m apart, so their markers overlap until you zoom in.

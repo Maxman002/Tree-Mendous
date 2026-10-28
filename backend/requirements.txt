@@ -1,2 +1,2 @@
 # Python packages for the data-preparation scripts in backend/scripts/.
-# The heatmap script only uses the standard library. Add a package here when a script needs one.
+# All scripts so far only use the standard library. Add a package here when a script needs one.
