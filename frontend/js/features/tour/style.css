@@ -1,0 +1,4 @@
+/* Tour slot: the list of stops and the Google Maps button in the tools card. */
+.tour-stops { margin: 0 0 10px; padding-left: 18px; font-size: 10px; }
+.tour-stops li { padding: 2px 0; }
+.tour-start { width: 100%; text-decoration: none; }
