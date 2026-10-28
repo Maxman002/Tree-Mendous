@@ -11,7 +11,10 @@ export default {
   kind: "overlay",
   title: { en: "Smart birdhouses", de: "Smarte Vogelhäuser" },
   status: "ready",
-  source: "Birdiary smart bird feeders (wiediversistmeingarten.org), AI identifications checked by hand",
+  source: {
+    en: "Birdiary smart bird feeders (wiediversistmeingarten.org), AI identifications checked by hand",
+    de: "Smarte Futterhäuser von Birdiary (wiediversistmeingarten.org), KI-Bestimmungen von Hand geprüft"
+  },
   icon: "⌂",
   style: "style.css",
   legend: [{ color: "#8a5b3e", label: { en: "Bird feeder", de: "Futterhaus" } }],
@@ -43,6 +46,10 @@ export default {
     });
     layer.on("remove", () => dashboard.close());
 
+    const lastVisit = (iso) => (iso
+      ? new Date(iso).toLocaleDateString(ctx.language === "de" ? "de-DE" : "en-GB", { day: "numeric", month: "short", year: "numeric" })
+      : "–");
+
     function card(birdhouse) {
       const recent = birdhouse.birds?.ranges?.recent;
       const top = (recent?.species ?? []).filter((bird) => species[bird.latin]).slice(0, TOP_BIRDS_IN_CARD);
@@ -57,7 +64,7 @@ export default {
 
       const data = recent
         ? `<dl><dt>${ctx.escapeHtml(ctx.t("visitsRecent"))}</dt><dd>${ctx.escapeHtml(recent.total)}</dd>`
-          + `<dt>${ctx.escapeHtml(ctx.t("lastVisit"))}</dt><dd>${ctx.escapeHtml(birdhouse.birds.lastVisit ?? "–")}</dd></dl>`
+          + `<dt>${ctx.escapeHtml(ctx.t("lastVisit"))}</dt><dd>${ctx.escapeHtml(lastVisit(birdhouse.birds.lastVisit))}</dd></dl>`
           + `<p class="birdhouse-card-heading">${ctx.escapeHtml(ctx.t("topBirds"))}</p><ul class="birdhouse-top">${rows}</ul>`
           + `<button type="button" class="button birdhouse-open" data-bird-dashboard="${ctx.escapeHtml(birdhouse.id)}">${ctx.escapeHtml(ctx.t("openDashboard"))}</button>`
         : `<p><em>${ctx.escapeHtml(ctx.t("noData"))}</em></p>`;
