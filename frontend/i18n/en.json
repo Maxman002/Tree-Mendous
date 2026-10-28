@@ -13,14 +13,31 @@
       "overlaysHint": "COMBINE FREELY",
       "failed": "Could not load this layer"
     },
-    "tools": { "heading": "Tools" },
-    "status": { "placeholder": "SAMPLE", "sampleNote": "sample data, not real measurements" },
-    "panel": { "source": "Source", "close": "Close" },
-    "legend": { "heading": "MAP KEY" },
-    "map": { "status": "EUROPEAN GREEN CAPITAL 2027" },
+    "tools": {
+      "heading": "Tools"
+    },
+    "status": {
+      "placeholder": "SAMPLE",
+      "sampleNote": "sample data, not real measurements"
+    },
+    "panel": {
+      "source": "Source",
+      "close": "Close"
+    },
+    "legend": {
+      "heading": "MAP KEY"
+    },
+    "map": {
+      "status": "EUROPEAN GREEN CAPITAL 2027"
+    },
     "footer": {
       "title": "Small changes. Shared future.",
       "copy": "Green City Hackathon Heilbronn 2026 prototype."
     }
+  },
+  "heatmap": {
+    "kicker": "Measured temperature",
+    "cell": "Average of {count} readings in this {size} m grid cell, recorded by bike on 1–3 Sep 2026.",
+    "range": "Across all rides the averages range from {min} °C to {max} °C."
   }
 }

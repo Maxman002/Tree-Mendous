@@ -13,14 +13,31 @@
       "overlaysHint": "FREI KOMBINIERBAR",
       "failed": "Diese Ebene konnte nicht geladen werden"
     },
-    "tools": { "heading": "Werkzeuge" },
-    "status": { "placeholder": "BEISPIEL", "sampleNote": "Beispieldaten, keine echten Messwerte" },
-    "panel": { "source": "Quelle", "close": "Schließen" },
-    "legend": { "heading": "LEGENDE" },
-    "map": { "status": "GRÜNE HAUPTSTADT EUROPAS 2027" },
+    "tools": {
+      "heading": "Werkzeuge"
+    },
+    "status": {
+      "placeholder": "BEISPIEL",
+      "sampleNote": "Beispieldaten, keine echten Messwerte"
+    },
+    "panel": {
+      "source": "Quelle",
+      "close": "Schließen"
+    },
+    "legend": {
+      "heading": "LEGENDE"
+    },
+    "map": {
+      "status": "GRÜNE HAUPTSTADT EUROPAS 2027"
+    },
     "footer": {
       "title": "Kleine Schritte. Gemeinsame Zukunft.",
       "copy": "Prototyp vom Green City Hackathon Heilbronn 2026."
     }
+  },
+  "heatmap": {
+    "kicker": "Gemessene Temperatur",
+    "cell": "Mittelwert aus {count} Messwerten in dieser {size}-m-Rasterzelle, gemessen per Fahrrad am 1.–3. Sep. 2026.",
+    "range": "Über alle Fahrten liegen die Mittelwerte zwischen {min} °C und {max} °C."
   }
 }
