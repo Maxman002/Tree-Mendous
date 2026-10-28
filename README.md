@@ -61,3 +61,6 @@ Target Audience
 - backend: stores statically processed data to create visualisation of on a map (heatmap, ...)
 - frontend: website to interact with
 - the view which is relevant shows up when clicking on a specific point of interest
+
+## Route google maps link
+https://www.google.com/maps/dir/?api=1&origin=49.139597,9.21981&destination=49.139597,9.21981&waypoints=49.142452,9.218943%7C49.142434,9.215012%7C49.147158,9.211756%7C49.150353,9.207446%7C49.151805,9.215302%7C49.151995,9.21548&travelmode=walking
