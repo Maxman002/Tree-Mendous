@@ -150,6 +150,8 @@ activemq-data/
 *.sage.py
 
 # Environments
+# Locally cached API slices
+data/processed/
 .env
 .envrc
 .venv
