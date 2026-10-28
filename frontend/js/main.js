@@ -34,6 +34,7 @@ const switcher = createLayerSwitcher({
   map,
   i18n,
   legend,
+  panel,
   baseList: document.getElementById("base-layers"),
   overlayList: document.getElementById("overlay-layers")
 });

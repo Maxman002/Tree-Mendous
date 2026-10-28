@@ -39,5 +39,8 @@
     "kicker": "Gemessene Temperatur",
     "cell": "Mittelwert aus {count} Messwerten in dieser {size}-m-Rasterzelle, gemessen per Fahrrad am 1.–3. Sep. 2026.",
     "range": "Über alle Fahrten liegen die Mittelwerte zwischen {min} °C und {max} °C."
+  },
+  "air-quality": {
+    "kicker": "Feinstaub"
   }
 }

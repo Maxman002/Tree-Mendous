@@ -1,6 +1,7 @@
 // The layer switcher in the sidebar. Base layers are radio buttons (only one on the map at a time),
-// overlays are checkboxes. A slot's legend is shown while its layer is on the map.
-export function createLayerSwitcher({ map, i18n, legend, baseList, overlayList }) {
+// overlays are checkboxes. A slot's legend is shown while its layer is on the map, and its info panel
+// closes when the layer is switched off.
+export function createLayerSwitcher({ map, i18n, legend, panel, baseList, overlayList }) {
   const rows = [];
 
   function addRow(slot, layer, error) {
@@ -27,7 +28,10 @@ export function createLayerSwitcher({ map, i18n, legend, baseList, overlayList }
       input.disabled = true;
     } else {
       layer.on("add", () => legend.setVisible(slot, true));
-      layer.on("remove", () => legend.setVisible(slot, false));
+      layer.on("remove", () => {
+        legend.setVisible(slot, false);
+        panel.close(slot);
+      });
       input.addEventListener("change", () => (isBase ? showBase(slot.id) : toggle(layer, input.checked)));
     }
 

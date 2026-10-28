@@ -41,7 +41,6 @@ export default {
     layer.on("remove", () => {
       map.getContainer().classList.remove("heatmap-active");
       map.off("click", showNearestCell);
-      ctx.panel.close();
     });
     layer.on("add", () => map.on("click", showNearestCell));
 

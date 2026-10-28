@@ -39,5 +39,8 @@
     "kicker": "Measured temperature",
     "cell": "Average of {count} readings in this {size} m grid cell, recorded by bike on 1–3 Sep 2026.",
     "range": "Across all rides the averages range from {min} °C to {max} °C."
+  },
+  "air-quality": {
+    "kicker": "Particulate matter"
   }
 }
