@@ -1,0 +1,3 @@
+/* Humidity slot: grey tiles and a fade while the humidity layer is on (same look as the heat map). */
+#map.humidity-active .leaflet-tile-pane img { filter: grayscale(1); }
+#map.humidity-active .leaflet-heatmap-layer { opacity: 1; }
