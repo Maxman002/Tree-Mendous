@@ -74,6 +74,9 @@ const map = L.map("map", {
   scrollWheelZoom: true
 }).setView(heilbronn, 14);
 
+const temperatureToggle = document.querySelector('[data-layer="heat"]');
+map.getContainer().classList.toggle("heatmap-active", temperatureToggle.checked);
+
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 19,
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -92,7 +95,10 @@ const heatLayer = L.heatLayer([], {
     0.8: "#f28e45",
     1: "#d73027"
   }
-}).addTo(map);
+});
+if (temperatureToggle.checked) {
+  heatLayer.addTo(map);
+}
 
 async function loadHeatMeasurements() {
   const response = await fetch("data/alles.csv");
@@ -346,6 +352,14 @@ const layerControls = {
 document.querySelectorAll("[data-layer]").forEach((input) => {
   input.addEventListener("change", () => {
     const layer = layerControls[input.dataset.layer];
+    if (input.dataset.layer === "heat") {
+      if (input.checked) {
+        layer.addTo(map);
+      }
+      map.getContainer().classList.toggle("heatmap-active", input.checked);
+      return;
+    }
+
     if (input.checked) {
       layer.addTo(map);
     } else {

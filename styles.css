@@ -322,7 +322,19 @@ h1, h2, h3, p { margin-top: 0; }
 .map-stage { position: relative; min-height: 0; overflow: hidden; background: #dfe7df; }
 #map { position: absolute; inset: 0; background: #dfe7df; }
 .leaflet-container { font-family: "DM Sans", sans-serif; }
-.leaflet-tile-pane img { filter: grayscale(1); }
+#map .leaflet-tile-pane img {
+  filter: grayscale(0);
+  transition: filter 600ms ease;
+}
+
+#map.heatmap-active .leaflet-tile-pane img { filter: grayscale(1); }
+#map .leaflet-heatmap-layer {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 600ms ease;
+}
+
+#map.heatmap-active .leaflet-heatmap-layer { opacity: 1; }
 .leaflet-control-attribution { display: none; }
 .leaflet-control-zoom {
   overflow: hidden;
@@ -521,6 +533,13 @@ h1, h2, h3, p { margin-top: 0; }
 
 .toast.is-visible { opacity: 1; transform: translateY(0); }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  #map .leaflet-tile-pane img,
+  #map .leaflet-heatmap-layer {
+    transition: none;
+  }
+}
 
 @media (min-width: 1400px) {
   .app-shell { grid-template-columns: 420px minmax(0, 1fr); }
