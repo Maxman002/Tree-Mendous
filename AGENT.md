@@ -132,13 +132,15 @@ tour line. For a slot with a backend script and a plugin, see `heatmap/`.
 
 ### Slots that exist from the start
 
-All but the heat map begin as placeholders with sample data:
+The temperature slot allows multiple Reedu, DWD and Open-Meteo datasets to be selected together on
+the map; DWD and Open-Meteo are averaged over the Mobile Datalogger's recording window. The other slots begin as
+placeholders with sample data:
 
 | Slot | Kind | What goes in |
 |---|---|---|
-| `heatmap` | base-layer | the team's heat map from the bike temperature loggers (ready) |
+| `heatmap` | base-layer | Reedu temperature cells plus DWD and Open-Meteo points for 2 Sep 2026; choose any combination on the map |
 | `humidity` | base-layer | relative humidity from the same bike rides (added later, ready) |
-| `air-quality` | base-layer | particulate matter, chosen in the same switcher as the heat map |
+| `air-quality` | base-layer | particulate matter, chosen in the sidebar switcher |
 | `points-of-interest` | overlay | a JSON file with location and description per point (city projects included) |
 | `birdhouses` | overlay | birdhouse locations with their bird data |
 | `weather-stations` | overlay | the stationary senseBox:home sensors with their temperature (added later) |

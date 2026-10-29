@@ -36,9 +36,48 @@
     }
   },
   "heatmap": {
+    "selectorLabel": "Temperaturdatenquellen",
+    "groups": {
+      "reedu": "Reedu",
+      "dwd": "DWD",
+      "openMeteo": "Open-Meteo"
+    },
+    "locationNote": "Die Markierungen von DWD und Open-Meteo zeigen den Mittelwert von 10:29 bis 13:07 Ortszeit, passend zum Aufzeichnungszeitraum des mobilen Datenloggers am 2. Sep. Die DWD-Station liegt etwa 10 km östlich von Heilbronn; Open-Meteo zeigt eine regionale Rasterzelle.",
+    "panel": {
+      "kicker": "Ausgewählte Temperaturdaten",
+      "sourcesCount": "Messwerte aus {count} Quellen in der Nähe"
+    },
     "kicker": "Gemessene Temperatur",
     "cell": "Mittelwert aus {count} Messwerten in dieser {size}-m-Rasterzelle, gemessen per Fahrrad am 1.–3. Sep. 2026.",
-    "range": "Einzelne Messwerte aller Fahrten lagen zwischen {min} °C und {max} °C."
+    "range": "Über alle Fahrten liegen die Mittelwerte zwischen {min} °C und {max} °C.",
+    "sources": {
+      "senseboxBike": {
+        "title": "senseBox:bike",
+        "kicker": "Gemessene Temperatur · senseBox:bike",
+        "cell": "Mittelwert aus {count} senseBox:bike-Messungen in dieser {size}-m-Rasterzelle am 2. Sep. 2026.",
+        "range": "Die Zellmittelwerte aller Fahrten liegen zwischen {min} °C und {max} °C."
+      },
+      "mobileDatalogger": {
+        "title": "Mobiler Datenlogger",
+        "kicker": "Temperatur des mobilen Datenloggers",
+        "cell": "Mittelwert aus {count} Messungen des mobilen Datenloggers in dieser {size}-m-Rasterzelle am 2. Sep. 2026.",
+        "range": "Die Zellmittelwerte dieser Quelle liegen zwischen {min} °C und {max} °C."
+      },
+      "senseboxHome": {
+        "title": "senseBox:home",
+        "kicker": "senseBox:home-Temperatur",
+        "cell": "Mittelwert aus {count} Messungen einer senseBox:home in dieser {size}-m-Rasterzelle am 2. Sep. 2026.",
+        "range": "Die Zellmittelwerte der Stationen liegen zwischen {min} °C und {max} °C."
+      },
+      "dwd": {
+        "reading": "Mittelwert aus {count} stündlichen Messungen von {from} bis {to} Ortszeit.",
+        "humidity": "Relative Luftfeuchtigkeit: {humidity}%"
+      },
+      "openMeteo": {
+        "reading": "Mittelwert aus {count} stündlichen ERA5-Land-Modellwerten von {from} bis {to} Ortszeit; keine Stationsbeobachtung.",
+        "humidity": "Relative Luftfeuchtigkeit: {humidity}%"
+      }
+    }
   },
   "humidity": {
     "kicker": "Gemessene Luftfeuchtigkeit",

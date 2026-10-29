@@ -12,6 +12,19 @@
 }
 #map.heatmap-active .leaflet-heatmap-layer { opacity: 1; }
 
+#map .heatmap-point-label {
+  padding: 3px 6px;
+  border: 0;
+  border-radius: 4px;
+  background: rgb(255 255 255 / 96%);
+  box-shadow: 0 1px 5px rgb(22 37 28 / 25%);
+  color: #23332a;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+#map .heatmap-point-label::before { display: none; }
+
 @media (prefers-reduced-motion: reduce) {
   #map .leaflet-tile-pane img,
   #map .leaflet-heatmap-layer { transition: none; }
