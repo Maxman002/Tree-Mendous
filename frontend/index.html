@@ -80,6 +80,42 @@
           <span class="map-status"><span></span> <span data-i18n="core.map.status">EUROPEAN GREEN CAPITAL 2027</span></span>
         </div>
 
+        <div class="map-source-control" id="temperature-source-control" hidden>
+          <div class="map-source-heading" data-i18n="heatmap.selectorLabel">Temperature data</div>
+          <fieldset class="map-source-group">
+            <legend data-i18n="heatmap.groups.reedu">Reedu</legend>
+            <label class="map-source-option">
+              <input type="checkbox" data-temperature-source="senseboxBike">
+              <span data-i18n="heatmap.sources.senseboxBike.title">senseBox:bike</span>
+            </label>
+            <label class="map-source-option">
+              <input type="checkbox" data-temperature-source="mobileDatalogger" checked>
+              <span data-i18n="heatmap.sources.mobileDatalogger.title">Mobile Datalogger</span>
+            </label>
+            <label class="map-source-option">
+              <input type="checkbox" data-temperature-source="senseboxHome">
+              <span data-i18n="heatmap.sources.senseboxHome.title">senseBox:home</span>
+            </label>
+          </fieldset>
+          <fieldset class="map-source-group map-source-group-single">
+            <legend data-i18n="heatmap.groups.dwd">DWD</legend>
+            <label class="map-source-option">
+              <input type="checkbox" data-temperature-source="dwd">
+              <span>DWD</span>
+            </label>
+          </fieldset>
+          <fieldset class="map-source-group map-source-group-single">
+            <legend data-i18n="heatmap.groups.openMeteo">Open-Meteo</legend>
+            <label class="map-source-option">
+              <input type="checkbox" data-temperature-source="openMeteo">
+              <span>Open-Meteo</span>
+            </label>
+          </fieldset>
+          <p class="map-source-note" data-i18n="heatmap.locationNote">
+            DWD and Open-Meteo show the average for 10:29–13:07 local time, matching the Mobile Datalogger recording window.
+          </p>
+        </div>
+
         <aside class="info-panel" id="info-panel" aria-live="polite" hidden>
           <button class="info-close" type="button" data-i18n-label="core.panel.close" aria-label="Close">×</button>
           <div class="info-kicker" data-role="kicker"></div>

@@ -35,7 +35,7 @@ legend and texts automatically.
 
 | Slot | Kind | Status | What it does now |
 |---|---|---|---|
-| [`heatmap`](frontend/js/features/heatmap/README.md) | base layer | ready | Bike-sensor temperatures (1–3 Sep 2026, 61,546 readings), averaged into 25 m cells; click for the cell's temperature |
+| [`heatmap`](frontend/js/features/heatmap/README.md) | base layer | ready | Combine any of five temperature sources for 2 Sep 2026: three Reedu cell datasets, plus DWD and Open-Meteo averaged over the Mobile Datalogger's recording window |
 | [`humidity`](frontend/js/features/humidity/README.md) | base layer | ready | Relative humidity from the same bike rides (1–3 Sep 2026, 61,543 readings) in 25 m cells; click for the cell's humidity |
 | [`air-quality`](frontend/js/features/air-quality/README.md) | base layer | ready | PM2.5 on 2 Sep 2026: 6,175 senseBox:bike readings in 50 m cells plus four senseBox:home sensors, WHO-based colours |
 | [`points-of-interest`](frontend/js/features/points-of-interest/README.md) | overlay | ready | Eirini's seven points (smart sensors, a park, Green Capital 2027 projects) with a detail card; the birdhouse opens the bird dashboard |
@@ -61,6 +61,10 @@ source .tree-mendous/bin/activate      # Windows: .tree-mendous\Scripts\activate
 pip install -r backend/requirements.txt
 
 python3 backend/scripts/heatmap/prepare_heatmap.py
+python3 backend/scripts/heatmap/prepare_sensebox_bike_heatmap.py
+python3 backend/scripts/heatmap/prepare_sensebox_home_heatmap.py
+python3 backend/scripts/heatmap/prepare_dwd_heatmap.py       # needs internet
+python3 backend/scripts/heatmap/prepare_open_meteo_heatmap.py # needs internet
 python3 backend/scripts/humidity/prepare_humidity.py
 python3 backend/scripts/air-quality/prepare_air_quality.py
 python3 backend/scripts/weather-stations/prepare_weather_stations.py
@@ -69,7 +73,11 @@ python3 backend/scripts/birdhouses/prepare_birdhouses.py   # needs internet
 
 | Script | Input | Output |
 |---|---|---|
-| `backend/scripts/heatmap/prepare_heatmap.py` | `backend/data/heatmap/alles.csv` (raw bike readings) | `frontend/data/heatmap/temperature-cells.json` (about 20 KB) |
+| `backend/scripts/heatmap/prepare_heatmap.py` | `backend/data/heatmap/alles.csv` (Mobile Datalogger export; recording names contain `senseBox_bike`) | `frontend/data/heatmap/reedu/mobile-datalogger-cells.csv` |
+| `backend/scripts/heatmap/prepare_sensebox_bike_heatmap.py` | `backend/data/air-quality/osem_bike_data_heilbronn_2026-09-02.csv` | `frontend/data/heatmap/reedu/sensebox-bike-cells.csv` |
+| `backend/scripts/heatmap/prepare_sensebox_home_heatmap.py` | `backend/data/weather-stations/osem_home_data_heilbronn_2026-09-02.csv` | `frontend/data/heatmap/reedu/sensebox-home-cells.csv` |
+| `backend/scripts/heatmap/prepare_dwd_heatmap.py` | Bright Sky API (DWD station 03734, Obersulm-Willsbach) | `frontend/data/heatmap/dwd/temperature.csv` |
+| `backend/scripts/heatmap/prepare_open_meteo_heatmap.py` | Open-Meteo ERA5-Land archive API | `frontend/data/heatmap/open-meteo/temperature.csv` |
 | `backend/scripts/humidity/prepare_humidity.py` | `backend/data/heatmap/alles.csv` (its `humidity` column) | `frontend/data/humidity/humidity-cells.json` (about 20 KB) |
 | `backend/scripts/air-quality/prepare_air_quality.py` | `backend/data/air-quality/osem_bike_data_heilbronn_2026-09-02.csv` and the senseBox:home snapshot below | `frontend/data/air-quality/pm.json` (about 30 KB) |
 | `backend/scripts/weather-stations/prepare_weather_stations.py` | `backend/data/weather-stations/osem_home_data_heilbronn_2026-09-02.csv` | `frontend/data/weather-stations/stations.json` (about 4 KB) |
@@ -88,9 +96,18 @@ explains them in detail, with notebooks. In short:
   (temperature, humidity, PM). Two of them are outside Heilbronn (Beilstein, about 13 km;
   Wolf-von-Gemmingen-Schule, about 17 km), and three only recorded part of the day.
   → `weather-stations`, `air-quality`
-- The `createdAt` times of both have no time zone; they are shown as recorded.
-- **Mobile Datalogger** (`alles.csv`, 1–3 Sep 2026): its provenance (walking logger or bike) is
-  still open, see `DATASETS.md`. → `heatmap`, `humidity`
+- **Mobile Datalogger** (`alles.csv`, 1–3 Sep 2026): downloaded from the Reedu Mobile Datalogger resource.
+  Its `recording` values contain `senseBox_bike` filenames; the UI preserves the published dataset identity.
+  The heatmap uses only readings on 2 Sep 2026; select it from the map's temperature-source
+  control. Its humidity column (all three days) feeds `humidity`. → `heatmap`, `humidity`
+- **Hourly heat-map sources**: the UI labels Bright Sky data as **DWD**, because Bright Sky is the
+  access API for DWD station 03734 (Obersulm-Willsbach); the duplicate direct DWD Open Data export
+  was removed. Open-Meteo supplies an ERA5-Land grid estimate for Heilbronn. Both datasets are
+  separate point layers, not 25 m sensor coverage, each averaged over the Mobile Datalogger's
+  recording window (10:29–13:07). Enabling DWD frames Heilbronn and the station together because the station is about
+  10 km east of the city centre.
+- `createdAt` in the senseBox:bike and senseBox:home snapshots has no declared time zone and is kept
+  as recorded.
 - **Smart birdhouses** (Birdiary) and the **beehive** (Grafana link in the points of interest).
   → `birdhouses`, `points-of-interest`
 - **Green Capital 2027 projects**: the city's fact sheets `resources/Steckbriefe_10-2026.pdf` (German)
